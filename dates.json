@@ -1,0 +1,152 @@
+[
+  {
+    "annee": "1789",
+    "evenement": "Prise de la Bastille",
+    "contexte": "Le 14 juillet, le peuple parisien s'empare de la forteresse, symbole de l'arbitraire royal."
+  },
+  {
+    "annee": "1492",
+    "evenement": "Christophe Colomb atteint les Bahamas",
+    "contexte": "Le 12 octobre, il aborde une île des Caraïbes en croyant avoir atteint l'Asie."
+  },
+  {
+    "annee": "1969",
+    "evenement": "Premier pas sur la Lune",
+    "contexte": "Le 21 juillet (heure de Paris), Neil Armstrong foule le sol lunaire lors de la mission Apollo 11."
+  },
+  {
+    "annee": "800",
+    "evenement": "Charlemagne couronné empereur",
+    "contexte": "Le 25 décembre, le pape Léon III le couronne à Rome, restaurant un empire en Occident."
+  },
+  {
+    "annee": "1453",
+    "evenement": "Prise de Constantinople par les Ottomans",
+    "contexte": "Le 29 mai, Mehmed II s'empare de la ville : l'Empire byzantin disparaît."
+  },
+  {
+    "annee": "1848",
+    "evenement": "Abolition de l'esclavage dans les colonies françaises",
+    "contexte": "Le décret du 27 avril, porté par Victor Schœlcher, libère environ 250 000 personnes."
+  },
+  {
+    "annee": "1989",
+    "evenement": "Chute du mur de Berlin",
+    "contexte": "Dans la nuit du 9 novembre, les Berlinois franchissent librement le mur, érigé 28 ans plus tôt."
+  },
+  {
+    "annee": "52 av. J.-C.",
+    "evenement": "Siège d'Alésia",
+    "contexte": "Vercingétorix se rend à Jules César : une victoire décisive dans la conquête de la Gaule."
+  },
+  {
+    "annee": "1905",
+    "evenement": "Loi de séparation des Églises et de l'État",
+    "contexte": "Promulguée le 9 décembre, elle devient un pilier de la laïcité française."
+  },
+  {
+    "annee": "1215",
+    "evenement": "Magna Carta",
+    "contexte": "Le roi d'Angleterre Jean sans Terre concède une charte qui limite le pouvoir royal."
+  },
+  {
+    "annee": "1944",
+    "evenement": "Droit de vote des femmes en France",
+    "contexte": "Accordé par l'ordonnance du 21 avril, il est exercé pour la première fois en avril 1945."
+  },
+  {
+    "annee": "1914",
+    "evenement": "Assassinat de François-Ferdinand à Sarajevo",
+    "contexte": "Le 28 juin, ce meurtre déclenche l'engrenage qui mène à la Première Guerre mondiale."
+  },
+  {
+    "annee": "1517",
+    "evenement": "Les 95 thèses de Martin Luther",
+    "contexte": "Le moine dénonce le commerce des indulgences, point de départ de la Réforme protestante."
+  },
+  {
+    "annee": "1948",
+    "evenement": "Déclaration universelle des droits de l'homme",
+    "contexte": "Adoptée le 10 décembre à Paris par l'Assemblée générale des Nations unies."
+  },
+  {
+    "annee": "476",
+    "evenement": "Fin de l'Empire romain d'Occident",
+    "contexte": "Le chef germanique Odoacre dépose le jeune empereur Romulus Augustule."
+  },
+  {
+    "annee": "1929",
+    "evenement": "Krach de Wall Street",
+    "contexte": "Le « jeudi noir » du 24 octobre ouvre la voie à la Grande Dépression."
+  },
+  {
+    "annee": "1598",
+    "evenement": "Édit de Nantes",
+    "contexte": "Henri IV accorde aux protestants une liberté de culte encadrée et met fin aux guerres de Religion."
+  },
+  {
+    "annee": "1963",
+    "evenement": "Marche sur Washington",
+    "contexte": "Le 28 août, Martin Luther King y prononce son discours « I Have a Dream »."
+  },
+  {
+    "annee": "1066",
+    "evenement": "Bataille de Hastings",
+    "contexte": "Le 14 octobre, Guillaume, duc de Normandie, bat le roi Harold et conquiert l'Angleterre."
+  },
+  {
+    "annee": "1918",
+    "evenement": "Armistice de la Première Guerre mondiale",
+    "contexte": "Signé le 11 novembre à Rethondes, il met fin aux combats sur le front occidental."
+  },
+  {
+    "annee": "vers 1455",
+    "evenement": "Bible de Gutenberg",
+    "contexte": "Premier grand livre imprimé en Europe avec des caractères métalliques mobiles."
+  },
+  {
+    "annee": "1957",
+    "evenement": "Traité de Rome",
+    "contexte": "Signé le 25 mars par six pays, il crée la Communauté économique européenne."
+  },
+  {
+    "annee": "1347",
+    "evenement": "La peste noire atteint l'Europe",
+    "contexte": "En quelques années, elle tue entre un tiers et la moitié de la population européenne."
+  },
+  {
+    "annee": "1685",
+    "evenement": "Révocation de l'édit de Nantes",
+    "contexte": "Par l'édit de Fontainebleau, Louis XIV interdit le culte protestant en France."
+  },
+  {
+    "annee": "1945",
+    "evenement": "Capitulation de l'Allemagne nazie",
+    "contexte": "Signée à Reims le 7 mai puis à Berlin le 8 mai, elle met fin à la guerre en Europe."
+  },
+  {
+    "annee": "1804",
+    "evenement": "Sacre de Napoléon Ier",
+    "contexte": "Le 2 décembre, à Notre-Dame de Paris, en présence du pape Pie VII."
+  },
+  {
+    "annee": "1865",
+    "evenement": "Abolition de l'esclavage aux États-Unis",
+    "contexte": "Le 13e amendement de la Constitution est ratifié en décembre, après la guerre de Sécession."
+  },
+  {
+    "annee": "1648",
+    "evenement": "Traités de Westphalie",
+    "contexte": "Ils mettent fin à la guerre de Trente Ans et redessinent l'équilibre européen."
+  },
+  {
+    "annee": "1994",
+    "evenement": "Génocide des Tutsi au Rwanda",
+    "contexte": "D'avril à juillet, au moins 800 000 personnes, en majorité tutsi, sont massacrées."
+  },
+  {
+    "annee": "1991",
+    "evenement": "Dissolution de l'URSS",
+    "contexte": "Le 26 décembre, l'Union soviétique cesse d'exister, au lendemain de la démission de Gorbatchev."
+  }
+]

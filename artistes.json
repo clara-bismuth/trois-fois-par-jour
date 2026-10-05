@@ -1,0 +1,242 @@
+[
+  {
+    "nom": "Hilma af Klint",
+    "discipline": "Peinture",
+    "pays": "Suède",
+    "epoque": "1862-1944",
+    "oeuvre": "Les Dix Plus Grands (1907)",
+    "presentation": "Pionnière de l'abstraction, elle peint des toiles non figuratives avant Kandinsky."
+  },
+  {
+    "nom": "Hokusai",
+    "discipline": "Estampe",
+    "pays": "Japon",
+    "epoque": "1760-1849",
+    "oeuvre": "La Grande Vague de Kanagawa (vers 1831)",
+    "presentation": "Maître de l'ukiyo-e, il a profondément influencé les impressionnistes européens."
+  },
+  {
+    "nom": "Nina Simone",
+    "discipline": "Musique",
+    "pays": "États-Unis",
+    "epoque": "1933-2003",
+    "oeuvre": "Mississippi Goddam (1964)",
+    "presentation": "Pianiste de formation classique, elle devient une voix du mouvement des droits civiques."
+  },
+  {
+    "nom": "Satyajit Ray",
+    "discipline": "Cinéma",
+    "pays": "Inde",
+    "epoque": "1921-1992",
+    "oeuvre": "Pather Panchali (1955)",
+    "presentation": "Figure majeure du cinéma bengali, il filme l'Inde rurale avec une grande humanité."
+  },
+  {
+    "nom": "Artemisia Gentileschi",
+    "discipline": "Peinture",
+    "pays": "Italie",
+    "epoque": "1593-vers 1656",
+    "oeuvre": "Judith décapitant Holopherne (vers 1620)",
+    "presentation": "Caravagesque, elle est la première femme admise à l'Académie de dessin de Florence."
+  },
+  {
+    "nom": "Fela Kuti",
+    "discipline": "Musique",
+    "pays": "Nigeria",
+    "epoque": "1938-1997",
+    "oeuvre": "Zombie (1976)",
+    "presentation": "Figure de l'afrobeat, il mêle jazz, funk et rythmes yoruba contre la dictature militaire."
+  },
+  {
+    "nom": "Agnès Varda",
+    "discipline": "Cinéma",
+    "pays": "France",
+    "epoque": "1928-2019",
+    "oeuvre": "Cléo de 5 à 7 (1962)",
+    "presentation": "Pionnière de la Nouvelle Vague, elle invente un cinéma libre, entre fiction et documentaire."
+  },
+  {
+    "nom": "Caravage",
+    "discipline": "Peinture",
+    "pays": "Italie",
+    "epoque": "1571-1610",
+    "oeuvre": "La Vocation de saint Matthieu (1599-1600)",
+    "presentation": "Son clair-obscur dramatique a bouleversé la peinture européenne du XVIIe siècle."
+  },
+  {
+    "nom": "Toni Morrison",
+    "discipline": "Littérature",
+    "pays": "États-Unis",
+    "epoque": "1931-2019",
+    "oeuvre": "Beloved (1987)",
+    "presentation": "Prix Nobel 1993, elle raconte la mémoire de l'esclavage et l'expérience afro-américaine."
+  },
+  {
+    "nom": "Erik Satie",
+    "discipline": "Musique",
+    "pays": "France",
+    "epoque": "1866-1925",
+    "oeuvre": "Gymnopédies (1888)",
+    "presentation": "Excentrique et minimaliste avant l'heure, il annonce une bonne part de la musique du XXe siècle."
+  },
+  {
+    "nom": "Louise Bourgeois",
+    "discipline": "Sculpture",
+    "pays": "France et États-Unis",
+    "epoque": "1911-2010",
+    "oeuvre": "Maman (1999)",
+    "presentation": "Ses araignées géantes et ses installations explorent l'enfance, la mémoire et le corps."
+  },
+  {
+    "nom": "Akira Kurosawa",
+    "discipline": "Cinéma",
+    "pays": "Japon",
+    "epoque": "1910-1998",
+    "oeuvre": "Rashōmon (1950)",
+    "presentation": "Lion d'or à Venise en 1951, ce film révèle le cinéma japonais au monde entier."
+  },
+  {
+    "nom": "Yayoi Kusama",
+    "discipline": "Arts plastiques",
+    "pays": "Japon",
+    "epoque": "née en 1929",
+    "oeuvre": "Infinity Mirror Rooms (depuis 1965)",
+    "presentation": "Pois obsessionnels, citrouilles et salles de miroirs infinies : un univers reconnaissable entre tous."
+  },
+  {
+    "nom": "Gabriel García Márquez",
+    "discipline": "Littérature",
+    "pays": "Colombie",
+    "epoque": "1927-2014",
+    "oeuvre": "Cent ans de solitude (1967)",
+    "presentation": "Prix Nobel 1982, il est la figure majeure du réalisme magique latino-américain."
+  },
+  {
+    "nom": "Dorothea Lange",
+    "discipline": "Photographie",
+    "pays": "États-Unis",
+    "epoque": "1895-1965",
+    "oeuvre": "Migrant Mother (1936)",
+    "presentation": "Ses images de la Grande Dépression ont façonné la photographie documentaire."
+  },
+  {
+    "nom": "Ousmane Sembène",
+    "discipline": "Cinéma et littérature",
+    "pays": "Sénégal",
+    "epoque": "1923-2007",
+    "oeuvre": "La Noire de... (1966)",
+    "presentation": "Souvent considéré comme le premier long métrage d'un cinéaste d'Afrique subsaharienne."
+  },
+  {
+    "nom": "Frida Kahlo",
+    "discipline": "Peinture",
+    "pays": "Mexique",
+    "epoque": "1907-1954",
+    "oeuvre": "Les Deux Frida (1939)",
+    "presentation": "Ses autoportraits mêlent douleur intime, identité mexicaine et engagement politique."
+  },
+  {
+    "nom": "Arvo Pärt",
+    "discipline": "Musique",
+    "pays": "Estonie",
+    "epoque": "né en 1935",
+    "oeuvre": "Spiegel im Spiegel (1978)",
+    "presentation": "Son style dépouillé, dit tintinnabuli, en fait l'un des compositeurs contemporains les plus joués."
+  },
+  {
+    "nom": "Camille Claudel",
+    "discipline": "Sculpture",
+    "pays": "France",
+    "epoque": "1864-1943",
+    "oeuvre": "La Valse (1889-1905)",
+    "presentation": "Longtemps éclipsée par Rodin, elle est aujourd'hui reconnue comme une sculptrice majeure."
+  },
+  {
+    "nom": "Henri Cartier-Bresson",
+    "discipline": "Photographie",
+    "pays": "France",
+    "epoque": "1908-2004",
+    "oeuvre": "Derrière la gare Saint-Lazare (1932)",
+    "presentation": "Cofondateur de l'agence Magnum, il incarne la photographie de « l'instant décisif »."
+  },
+  {
+    "nom": "Oum Kalthoum",
+    "discipline": "Musique",
+    "pays": "Égypte",
+    "epoque": "vers 1900-1975",
+    "oeuvre": "Enta Omri (1964)",
+    "presentation": "Surnommée « l'Astre de l'Orient », elle reste l'une des plus grandes voix du monde arabe."
+  },
+  {
+    "nom": "Wifredo Lam",
+    "discipline": "Peinture",
+    "pays": "Cuba",
+    "epoque": "1902-1982",
+    "oeuvre": "La Jungle (1943)",
+    "presentation": "Il fusionne cubisme, surréalisme et héritages afro-cubains."
+  },
+  {
+    "nom": "Zaha Hadid",
+    "discipline": "Architecture",
+    "pays": "Irak et Royaume-Uni",
+    "epoque": "1950-2016",
+    "oeuvre": "Centre Heydar Aliyev, Bakou (2012)",
+    "presentation": "Première femme lauréate du prix Pritzker, en 2004, elle a imposé des formes fluides et spectaculaires."
+  },
+  {
+    "nom": "Mark Rothko",
+    "discipline": "Peinture",
+    "pays": "États-Unis",
+    "epoque": "1903-1970",
+    "oeuvre": "La chapelle Rothko, Houston (1971)",
+    "presentation": "Ses grands champs de couleur cherchent à provoquer une émotion presque spirituelle."
+  },
+  {
+    "nom": "Berthe Morisot",
+    "discipline": "Peinture",
+    "pays": "France",
+    "epoque": "1841-1895",
+    "oeuvre": "Le Berceau (1872)",
+    "presentation": "Figure fondatrice de l'impressionnisme, elle participe à la première exposition du groupe en 1874."
+  },
+  {
+    "nom": "El Anatsui",
+    "discipline": "Sculpture",
+    "pays": "Ghana",
+    "epoque": "né en 1944",
+    "oeuvre": "Gravity and Grace (2010)",
+    "presentation": "Ses immenses tentures de capsules métalliques recyclées évoquent les textiles kente."
+  },
+  {
+    "nom": "Clara Schumann",
+    "discipline": "Musique",
+    "pays": "Allemagne",
+    "epoque": "1819-1896",
+    "oeuvre": "Trio pour piano en sol mineur, op. 17 (1846)",
+    "presentation": "Pianiste virtuose et compositrice, elle fut l'une des grandes interprètes de son siècle."
+  },
+  {
+    "nom": "Mahmoud Darwich",
+    "discipline": "Poésie",
+    "pays": "Palestine",
+    "epoque": "1941-2008",
+    "oeuvre": "Pourquoi as-tu laissé le cheval à sa solitude ? (1995)",
+    "presentation": "Poète national palestinien, il a fait de l'exil une matière universelle."
+  },
+  {
+    "nom": "Leonora Carrington",
+    "discipline": "Peinture et littérature",
+    "pays": "Royaume-Uni et Mexique",
+    "epoque": "1917-2011",
+    "oeuvre": "Le Cornet acoustique (roman, 1974)",
+    "presentation": "Surréaliste, elle invente un monde peuplé de créatures hybrides et de rituels étranges."
+  },
+  {
+    "nom": "Jean-Michel Basquiat",
+    "discipline": "Peinture",
+    "pays": "États-Unis",
+    "epoque": "1960-1988",
+    "oeuvre": "Untitled (Skull) (1981)",
+    "presentation": "Venu du graffiti, il impose en quelques années une peinture brute et politique."
+  }
+]
