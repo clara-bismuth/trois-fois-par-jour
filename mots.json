@@ -3,180 +3,492 @@
     "mot": "Acception",
     "categorie": "n. f.",
     "definition": "Sens particulier dans lequel un mot est employé. À ne pas confondre avec acceptation.",
-    "exemple": "Dans son acception juridique, ce terme est bien plus restrictif."
+    "exemple": "Dans son acception juridique, ce terme est bien plus restrictif.",
+    "situations": [
+      "Ce mot a plusieurs acceptions : laquelle retenez-vous ?",
+      "Dans l'acception courante, « libéral » n'a pas le même sens qu'en économie."
+    ],
+    "synonymes": [
+      "sens",
+      "signification",
+      "emploi"
+    ],
+    "piege": "Ne pas confondre avec « acceptation », le fait d'accepter quelque chose."
   },
   {
     "mot": "Incessamment",
     "categorie": "adv.",
     "definition": "Très prochainement, sans délai. Ne signifie pas « sans cesse ».",
-    "exemple": "La directrice doit arriver incessamment, patientez quelques minutes."
+    "exemple": "La directrice doit arriver incessamment, patientez quelques minutes.",
+    "situations": [
+      "Le colis doit être livré incessamment.",
+      "Nous vous répondrons incessamment, dès réception du dossier."
+    ],
+    "synonymes": [
+      "bientôt",
+      "sous peu",
+      "sans délai",
+      "prochainement"
+    ],
+    "piege": "« Incessamment sous peu » est un pléonasme. Pour dire « sans arrêt », employez « sans cesse »."
   },
   {
     "mot": "Compendieux",
     "categorie": "adj.",
     "definition": "Qui exprime beaucoup en peu de mots. Le contraire de long et verbeux.",
-    "exemple": "En deux pages compendieuses, elle avait tout dit."
+    "exemple": "En deux pages compendieuses, elle avait tout dit.",
+    "situations": [
+      "Un résumé compendieux suffira pour le comité.",
+      "Sa lettre, compendieuse, allait droit à l'essentiel."
+    ],
+    "synonymes": [
+      "concis",
+      "bref",
+      "succinct",
+      "condensé"
+    ],
+    "piege": "Le mot sonne long, d'où un contresens fréquent : il signifie au contraire « bref »."
   },
   {
     "mot": "Alacrité",
     "categorie": "n. f.",
     "definition": "Vivacité joyeuse, entrain plein d'enthousiasme.",
-    "exemple": "Il se mit au travail avec une alacrité qui surprit toute l'équipe."
+    "exemple": "Il se mit au travail avec une alacrité qui surprit toute l'équipe.",
+    "situations": [
+      "Elle a accepté la mission avec alacrité.",
+      "Malgré l'heure tardive, il répondait aux questions avec alacrité."
+    ],
+    "synonymes": [
+      "entrain",
+      "allant",
+      "enjouement",
+      "vivacité"
+    ],
+    "piege": "Ne pas confondre avec l'âcreté ou l'acrimonie, qui évoquent au contraire l'aigreur."
   },
   {
     "mot": "Achalandé",
     "categorie": "adj.",
     "definition": "Qui a une nombreuse clientèle. Au sens strict, ne veut pas dire « bien approvisionné ».",
-    "exemple": "Cette boulangerie très achalandée ne désemplit pas le dimanche matin."
+    "exemple": "Cette boulangerie très achalandée ne désemplit pas le dimanche matin.",
+    "situations": [
+      "Un marché achalandé attire encore plus de chalands.",
+      "Ce restaurant, autrefois achalandé, s'est vidé après le départ du chef."
+    ],
+    "synonymes": [
+      "fréquenté",
+      "couru",
+      "prospère"
+    ],
+    "piege": "Le mot vient de « chaland », le client. Le sens « bien fourni en marchandises » est très répandu mais critiqué par l'Académie française."
   },
   {
     "mot": "Sérendipité",
     "categorie": "n. f.",
     "definition": "Fait de découvrir par hasard ce que l'on ne cherchait pas.",
-    "exemple": "La découverte de la pénicilline doit beaucoup à la sérendipité."
+    "exemple": "La découverte de la pénicilline doit beaucoup à la sérendipité.",
+    "situations": [
+      "Une part de sérendipité entre dans bien des découvertes scientifiques.",
+      "Flâner en librairie, c'est s'offrir un peu de sérendipité."
+    ],
+    "synonymes": [
+      "heureux hasard",
+      "trouvaille",
+      "découverte fortuite"
+    ],
+    "piege": "Calque de l'anglais serendipity, mot forgé par l'écrivain Horace Walpole en 1754."
   },
   {
     "mot": "Éponyme",
     "categorie": "adj.",
     "definition": "Qui donne son nom à quelque chose ou à quelqu'un, et non qui le reçoit.",
-    "exemple": "Athéna est la déesse éponyme de la ville d'Athènes."
+    "exemple": "Athéna est la déesse éponyme de la ville d'Athènes.",
+    "situations": [
+      "Emma Bovary est l'héroïne éponyme du roman de Flaubert.",
+      "Le héros éponyme d'une pièce est celui qui lui donne son titre."
+    ],
+    "synonymes": [],
+    "piege": "« L'album éponyme du groupe » est un emploi courant mais discuté : au sens strict, c'est le groupe qui est éponyme de l'album."
   },
   {
     "mot": "Péremptoire",
     "categorie": "adj.",
     "definition": "Qui tranche d'autorité et n'admet aucune contestation.",
-    "exemple": "Elle répondit d'un ton péremptoire que la discussion était close."
+    "exemple": "Elle répondit d'un ton péremptoire que la discussion était close.",
+    "situations": [
+      "Évitez les affirmations péremptoires sur un sujet que vous connaissez mal.",
+      "Son « non » péremptoire a mis fin à la négociation."
+    ],
+    "synonymes": [
+      "tranchant",
+      "catégorique",
+      "impérieux",
+      "sans appel"
+    ],
+    "piege": "Un argument péremptoire est décisif ; un ton péremptoire est tranchant, voire autoritaire."
   },
   {
     "mot": "Conséquent",
     "categorie": "adj.",
     "definition": "Qui agit avec logique, en accord avec ses principes. Ne veut pas dire « important ».",
-    "exemple": "Pour être conséquent, il a renoncé à l'avion après son discours sur le climat."
+    "exemple": "Pour être conséquent, il a renoncé à l'avion après son discours sur le climat.",
+    "situations": [
+      "Soyez conséquent : si vous fixez une règle, appliquez-la.",
+      "Elle est restée conséquente avec ses engagements."
+    ],
+    "synonymes": [
+      "cohérent",
+      "logique"
+    ],
+    "piege": "« Une somme conséquente » est critiqué : préférez « importante » ou « considérable »."
   },
   {
     "mot": "Velléité",
     "categorie": "n. f.",
     "definition": "Intention faible et passagère, qui ne se traduit pas en acte.",
-    "exemple": "Ses velléités de reprendre le piano n'ont jamais dépassé l'achat d'une partition."
+    "exemple": "Ses velléités de reprendre le piano n'ont jamais dépassé l'achat d'une partition.",
+    "situations": [
+      "Ses velléités de réforme ont vite été oubliées.",
+      "Il a eu une vague velléité de protester, puis s'est tu."
+    ],
+    "synonymes": [
+      "intention",
+      "désir passager",
+      "caprice"
+    ],
+    "piege": "La velléité n'est pas une ambition : c'est une volonté qui reste à l'état d'intention."
   },
   {
     "mot": "Pléthore",
     "categorie": "n. f.",
     "definition": "Abondance excessive, surplus. Pas une simple grande quantité.",
-    "exemple": "Il y a pléthore de candidats pour trop peu de postes."
+    "exemple": "Il y a pléthore de candidats pour trop peu de postes.",
+    "situations": [
+      "La pléthore de réunions finit par paralyser l'équipe.",
+      "Face à une pléthore d'offres, le consommateur ne sait plus choisir."
+    ],
+    "synonymes": [
+      "surabondance",
+      "excès",
+      "profusion",
+      "surplus"
+    ],
+    "piege": "Le mot implique un excès : il ne devrait pas servir à dire simplement « beaucoup »."
   },
   {
     "mot": "Abscons",
     "categorie": "adj.",
     "definition": "Difficile à comprendre, obscur, réservé aux initiés.",
-    "exemple": "Le contrat était rédigé dans un jargon abscons."
+    "exemple": "Le contrat était rédigé dans un jargon abscons.",
+    "situations": [
+      "Ce manuel abscons décourage les débutants.",
+      "Évitez le jargon abscons dans un message destiné au grand public."
+    ],
+    "synonymes": [
+      "obscur",
+      "hermétique",
+      "abstrus",
+      "sibyllin"
+    ],
+    "piege": "On rencontre aussi « abstrus », de sens très proche."
   },
   {
     "mot": "Avatar",
     "categorie": "n. m.",
     "definition": "Transformation, métamorphose. Ne signifie pas « mésaventure ».",
-    "exemple": "Le projet a connu bien des avatars avant de trouver sa forme définitive."
+    "exemple": "Le projet a connu bien des avatars avant de trouver sa forme définitive.",
+    "situations": [
+      "La chenille, la chrysalide et le papillon sont les avatars d'un même insecte.",
+      "Dans l'hindouisme, Krishna est un avatar de Vishnou."
+    ],
+    "synonymes": [
+      "métamorphose",
+      "transformation",
+      "incarnation"
+    ],
+    "piege": "Le sens « ennui, mésaventure » est critiqué. Le sens numérique, le personnage qui vous représente en ligne, vient de l'anglais."
   },
   {
     "mot": "Thuriféraire",
     "categorie": "n. m.",
     "definition": "Flatteur zélé. À l'origine, celui qui porte l'encensoir à l'église.",
-    "exemple": "Entouré de thuriféraires, le ministre n'entendait plus aucune critique."
+    "exemple": "Entouré de thuriféraires, le ministre n'entendait plus aucune critique.",
+    "situations": [
+      "Le dirigeant ne s'entoure que de thuriféraires.",
+      "Ses thuriféraires ont salué un discours pourtant creux."
+    ],
+    "synonymes": [
+      "flatteur",
+      "laudateur",
+      "courtisan",
+      "encenseur"
+    ],
+    "piege": "Au sens figuré, le mot est toujours péjoratif."
   },
   {
     "mot": "Prolixe",
     "categorie": "adj.",
     "definition": "Qui s'exprime trop longuement, avec trop de détails.",
-    "exemple": "L'orateur, prolixe, dépassa largement son temps de parole."
+    "exemple": "L'orateur, prolixe, dépassa largement son temps de parole.",
+    "situations": [
+      "Un écrivain peut être prolifique sans être prolixe.",
+      "Ce rapport prolixe aurait pu tenir en dix pages."
+    ],
+    "synonymes": [
+      "verbeux",
+      "bavard",
+      "diffus",
+      "redondant"
+    ],
+    "piege": "Ne pas confondre avec « prolifique », qui produit beaucoup d'œuvres."
   },
   {
     "mot": "Palinodie",
     "categorie": "n. f.",
     "definition": "Revirement complet d'opinion. S'emploie souvent au pluriel.",
-    "exemple": "Les palinodies du gouvernement ont fini par lasser les électeurs."
+    "exemple": "Les palinodies du gouvernement ont fini par lasser les électeurs.",
+    "situations": [
+      "Ses palinodies successives ont ruiné sa crédibilité.",
+      "Après tant de palinodies, plus personne ne croyait à ses promesses."
+    ],
+    "synonymes": [
+      "revirement",
+      "volte-face",
+      "rétractation",
+      "retournement de veste"
+    ],
+    "piege": "À l'origine, une palinodie est un poème dans lequel l'auteur rétracte ce qu'il avait dit dans un précédent."
   },
   {
     "mot": "Chafouin",
     "categorie": "adj.",
     "definition": "Qui a une mine sournoise et rusée. Ne signifie pas « boudeur ».",
-    "exemple": "Avec son air chafouin, il semblait toujours préparer un mauvais tour."
+    "exemple": "Avec son air chafouin, il semblait toujours préparer un mauvais tour.",
+    "situations": [
+      "Il jeta un regard chafouin vers le tiroir-caisse.",
+      "Ce personnage chafouin se révèle être le traître de l'histoire."
+    ],
+    "synonymes": [
+      "sournois",
+      "rusé",
+      "finaud",
+      "matois"
+    ],
+    "piege": "Le sens « contrarié, de mauvaise humeur » se répand, mais il reste critiqué."
   },
   {
     "mot": "Ineffable",
     "categorie": "adj.",
     "definition": "Qui ne peut être exprimé par des paroles, tant c'est intense.",
-    "exemple": "Devant ce paysage, elle éprouva une joie ineffable."
+    "exemple": "Devant ce paysage, elle éprouva une joie ineffable.",
+    "situations": [
+      "Un bonheur ineffable illuminait son visage.",
+      "La musique exprime parfois l'ineffable."
+    ],
+    "synonymes": [
+      "indicible",
+      "inexprimable",
+      "indescriptible"
+    ],
+    "piege": "Synonyme d'« indicible ». Ne pas confondre avec « ineffaçable »."
   },
   {
     "mot": "Atermoiement",
     "categorie": "n. m.",
     "definition": "Fait de remettre une décision à plus tard. Surtout au pluriel.",
-    "exemple": "Après des mois d'atermoiements, la mairie a enfin tranché."
+    "exemple": "Après des mois d'atermoiements, la mairie a enfin tranché.",
+    "situations": [
+      "Les atermoiements du conseil ont fait échouer le projet.",
+      "Assez d'atermoiements : il faut décider aujourd'hui."
+    ],
+    "synonymes": [
+      "tergiversation",
+      "hésitation",
+      "faux-fuyant",
+      "report"
+    ],
+    "piege": "À l'origine, terme de droit : délai accordé à un débiteur pour payer."
   },
   {
     "mot": "Démythifier",
     "categorie": "v.",
     "definition": "Ôter à quelque chose son caractère de mythe. Distinct de démystifier.",
-    "exemple": "Cette biographie démythifie l'artiste sans rien retirer à son génie."
+    "exemple": "Cette biographie démythifie l'artiste sans rien retirer à son génie.",
+    "situations": [
+      "Le documentaire démythifie la conquête de l'Ouest.",
+      "Il faut démythifier le génie solitaire : la science est collective."
+    ],
+    "synonymes": [
+      "désacraliser",
+      "démythologiser"
+    ],
+    "piege": "Démystifier : détromper quelqu'un d'une illusion. Démythifier : ôter à quelque chose son aura de mythe."
   },
   {
     "mot": "Captieux",
     "categorie": "adj.",
     "definition": "Qui cherche à tromper par une apparence de vérité.",
-    "exemple": "Méfiez-vous de cet argument captieux : il repose sur une fausse évidence."
+    "exemple": "Méfiez-vous de cet argument captieux : il repose sur une fausse évidence.",
+    "situations": [
+      "L'avocate a démonté une question captieuse.",
+      "Ce slogan repose sur un raccourci captieux."
+    ],
+    "synonymes": [
+      "fallacieux",
+      "spécieux",
+      "insidieux",
+      "trompeur"
+    ],
+    "piege": "Un raisonnement captieux paraît juste : c'est précisément ce qui le rend dangereux."
   },
   {
     "mot": "Inénarrable",
     "categorie": "adj.",
     "definition": "D'un comique extraordinaire, qu'on ne peut raconter sans rire.",
-    "exemple": "Son entrée en scène, déguisé en homard, fut inénarrable."
+    "exemple": "Son entrée en scène, déguisé en homard, fut inénarrable.",
+    "situations": [
+      "Les répliques inénarrables de ce film sont devenues cultes.",
+      "Il nous a fait le récit inénarrable de son déménagement."
+    ],
+    "synonymes": [
+      "désopilant",
+      "impayable",
+      "cocasse",
+      "hilarant"
+    ],
+    "piege": "Littéralement « qu'on ne peut raconter », le mot s'emploie presque toujours pour le comique."
   },
   {
     "mot": "Vindicte",
     "categorie": "n. f.",
     "definition": "Poursuite d'un crime au nom de la société, dans « vindicte publique ».",
-    "exemple": "Le procureur requiert au nom de la vindicte publique."
+    "exemple": "Le procureur requiert au nom de la vindicte publique.",
+    "situations": [
+      "Le parquet représente la vindicte publique devant le tribunal.",
+      "En droit, la vindicte publique appartient à l'État, non à la victime."
+    ],
+    "synonymes": [
+      "poursuite",
+      "répression"
+    ],
+    "piege": "« Vindicte populaire », pour désigner la colère de la foule, est un emploi critiqué."
   },
   {
     "mot": "Pusillanime",
     "categorie": "adj.",
     "definition": "Qui manque d'audace et de fermeté, qui craint de prendre des risques.",
-    "exemple": "Une direction pusillanime a laissé passer l'occasion."
+    "exemple": "Une direction pusillanime a laissé passer l'occasion.",
+    "situations": [
+      "Ce compromis pusillanime ne règle rien.",
+      "Ne soyez pas pusillanime : défendez votre idée en réunion."
+    ],
+    "synonymes": [
+      "timoré",
+      "craintif",
+      "frileux",
+      "pleutre"
+    ],
+    "piege": "Du latin pusillanimis, « qui a l'âme petite »."
   },
   {
     "mot": "Truchement",
     "categorie": "n. m.",
     "definition": "Intermédiaire. « Par le truchement de » : par l'entremise de.",
-    "exemple": "Les deux parties ont négocié par le truchement d'un avocat."
+    "exemple": "Les deux parties ont négocié par le truchement d'un avocat.",
+    "situations": [
+      "Elle a obtenu le poste par le truchement d'un ancien collègue.",
+      "Le message est passé par le truchement de la presse."
+    ],
+    "synonymes": [
+      "intermédiaire",
+      "entremise",
+      "canal",
+      "biais"
+    ],
+    "piege": "À l'origine, le truchement désignait un interprète."
   },
   {
     "mot": "Affres",
     "categorie": "n. f. pl.",
     "definition": "Tourments, angoisses extrêmes. Ne s'emploie qu'au pluriel.",
-    "exemple": "Il connut les affres de la page blanche pendant tout l'hiver."
+    "exemple": "Il connut les affres de la page blanche pendant tout l'hiver.",
+    "situations": [
+      "Les affres de l'attente ont duré tout le week-end.",
+      "Le roman décrit les affres de la jalousie."
+    ],
+    "synonymes": [
+      "tourments",
+      "angoisses",
+      "transes",
+      "supplices"
+    ],
+    "piege": "Le singulier « une affre » est sorti de l'usage."
   },
   {
     "mot": "Obvier",
     "categorie": "v.",
     "definition": "Prévenir un mal, y parer. Se construit avec « à ».",
-    "exemple": "Ces mesures visent à obvier aux pénuries de l'été."
+    "exemple": "Ces mesures visent à obvier aux pénuries de l'été.",
+    "situations": [
+      "Pour obvier à tout malentendu, précisons les délais par écrit.",
+      "Ce dispositif obvie aux risques d'incendie."
+    ],
+    "synonymes": [
+      "parer à",
+      "prévenir",
+      "remédier à"
+    ],
+    "piege": "On obvie à un risque, alors qu'on pallie un manque, sans « à »."
   },
   {
     "mot": "Perclus",
     "categorie": "adj.",
     "definition": "Privé, en tout ou partie, de la capacité de bouger.",
-    "exemple": "Perclus de rhumatismes, il ne quittait plus son fauteuil."
+    "exemple": "Perclus de rhumatismes, il ne quittait plus son fauteuil.",
+    "situations": [
+      "Après dix heures de route, il était perclus de courbatures.",
+      "Percluse de douleurs, elle a dû annuler son voyage."
+    ],
+    "synonymes": [
+      "paralysé",
+      "impotent",
+      "ankylosé"
+    ],
+    "piege": "Le féminin est « percluse »."
   },
   {
     "mot": "Dithyrambique",
     "categorie": "adj.",
     "definition": "Qui fait un éloge enthousiaste, souvent excessif.",
-    "exemple": "La critique, dithyrambique, parlait déjà de chef-d'œuvre."
+    "exemple": "La critique, dithyrambique, parlait déjà de chef-d'œuvre.",
+    "situations": [
+      "Les avis dithyrambiques ont rempli la salle.",
+      "Méfiez-vous des recommandations trop dithyrambiques."
+    ],
+    "synonymes": [
+      "élogieux",
+      "enthousiaste",
+      "louangeur",
+      "panégyrique"
+    ],
+    "piege": "Dans la Grèce antique, le dithyrambe était un chant en l'honneur de Dionysos."
   },
   {
     "mot": "Se gausser",
-    "categorie": "v.",
+    "categorie": "v. pron.",
+    "lemme": "gausser",
     "definition": "Se moquer ouvertement de quelqu'un ou de quelque chose.",
-    "exemple": "Ses collègues se gaussaient de ses prédictions, qui se sont pourtant réalisées."
+    "exemple": "Ses collègues se gaussaient de ses prédictions, qui se sont pourtant réalisées.",
+    "situations": [
+      "Ils se gaussaient de son accent, avant de l'adopter.",
+      "La presse satirique se gausse volontiers des puissants."
+    ],
+    "synonymes": [
+      "se moquer",
+      "railler",
+      "brocarder",
+      "persifler"
+    ],
+    "piege": "Verbe pronominal : on se gausse de quelqu'un, on ne « gausse » pas quelqu'un."
   }
 ]

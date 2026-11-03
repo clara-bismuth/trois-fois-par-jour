@@ -2,151 +2,211 @@
   {
     "annee": "1789",
     "evenement": "Prise de la Bastille",
-    "contexte": "Le 14 juillet, le peuple parisien s'empare de la forteresse, symbole de l'arbitraire royal."
+    "contexte": "Le 14 juillet, le peuple parisien s'empare de la forteresse, symbole de l'arbitraire royal.",
+    "recit": "L'événement survient dans un climat de crise : prix du pain au plus haut, renvoi du ministre Necker, troupes massées autour de Paris. Les émeutiers cherchent surtout de la poudre pour les fusils pris le matin aux Invalides. La forteresse ne détenait plus que sept prisonniers, mais sa chute devient le symbole de la fin de l'Ancien Régime. Le 14 juillet est la fête nationale depuis 1880.",
+    "wikipedia": "Prise de la Bastille"
   },
   {
     "annee": "1492",
     "evenement": "Christophe Colomb atteint les Bahamas",
-    "contexte": "Le 12 octobre, il aborde une île des Caraïbes en croyant avoir atteint l'Asie."
+    "contexte": "Le 12 octobre, il aborde une île des Caraïbes en croyant avoir atteint l'Asie.",
+    "recit": "Parti de Palos en août avec trois navires financés par les Rois catholiques, Colomb cherche une route vers l'Asie par l'ouest. Après avoir touché les Bahamas, il explore Cuba et Hispaniola. Il mourra en 1506 sans avoir admis qu'il s'agissait d'un autre continent. Le nom « Amérique » vient du navigateur Amerigo Vespucci.",
+    "wikipedia": "Premier voyage de Christophe Colomb"
   },
   {
     "annee": "1969",
     "evenement": "Premier pas sur la Lune",
-    "contexte": "Le 21 juillet (heure de Paris), Neil Armstrong foule le sol lunaire lors de la mission Apollo 11."
+    "contexte": "Le 21 juillet (heure de Paris), Neil Armstrong foule le sol lunaire lors de la mission Apollo 11.",
+    "recit": "Lancée le 16 juillet, la mission emporte Neil Armstrong, Buzz Aldrin et Michael Collins, resté en orbite. Armstrong et Aldrin passent environ deux heures et demie hors du module lunaire. Des centaines de millions de téléspectateurs suivent l'événement en direct. C'est l'aboutissement de la course à l'espace engagée avec l'URSS.",
+    "wikipedia": "Apollo 11"
   },
   {
     "annee": "800",
     "evenement": "Charlemagne couronné empereur",
-    "contexte": "Le 25 décembre, le pape Léon III le couronne à Rome, restaurant un empire en Occident."
+    "contexte": "Le 25 décembre, le pape Léon III le couronne à Rome, restaurant un empire en Occident.",
+    "recit": "Roi des Francs depuis 768, Charlemagne a considérablement étendu son royaume. Son couronnement à Saint-Pierre de Rome fait renaître un titre impérial disparu en Occident depuis 476 et scelle l'alliance entre la papauté et les Francs. Son empire sera partagé entre ses petits-fils au traité de Verdun, en 843.",
+    "wikipedia": "Charlemagne"
   },
   {
     "annee": "1453",
     "evenement": "Prise de Constantinople par les Ottomans",
-    "contexte": "Le 29 mai, Mehmed II s'empare de la ville : l'Empire byzantin disparaît."
+    "contexte": "Le 29 mai, Mehmed II s'empare de la ville : l'Empire byzantin disparaît.",
+    "recit": "Après un siège de près de deux mois, l'armée du sultan Mehmed II, appuyée par une puissante artillerie, prend la ville. Le dernier empereur byzantin, Constantin XI, meurt au combat. Constantinople devient la capitale de l'Empire ottoman. L'événement est souvent retenu comme l'une des bornes de la fin du Moyen Âge.",
+    "wikipedia": "Chute de Constantinople"
   },
   {
     "annee": "1848",
     "evenement": "Abolition de l'esclavage dans les colonies françaises",
-    "contexte": "Le décret du 27 avril, porté par Victor Schœlcher, libère environ 250 000 personnes."
+    "contexte": "Le décret du 27 avril, porté par Victor Schœlcher, libère environ 250 000 personnes.",
+    "recit": "L'esclavage avait été aboli une première fois en 1794 par la Convention, puis rétabli par Bonaparte en 1802. Au lendemain de la révolution de février 1848, Victor Schœlcher fait adopter le décret d'abolition. Les colons sont indemnisés, pas les anciens esclaves. La loi Taubira de 2001 reconnaît la traite et l'esclavage comme crime contre l'humanité.",
+    "wikipedia": "Abolition de l'esclavage en France"
   },
   {
     "annee": "1989",
     "evenement": "Chute du mur de Berlin",
-    "contexte": "Dans la nuit du 9 novembre, les Berlinois franchissent librement le mur, érigé 28 ans plus tôt."
+    "contexte": "Dans la nuit du 9 novembre, les Berlinois franchissent librement le mur, érigé 28 ans plus tôt.",
+    "recit": "Construit en 1961 par la RDA pour empêcher la fuite de ses habitants vers l'Ouest, le mur encerclait Berlin-Ouest. Le 9 novembre, une annonce confuse sur l'ouverture des frontières pousse des milliers de Berlinois de l'Est vers les points de passage, et les gardes finissent par ouvrir. L'Allemagne est réunifiée moins d'un an plus tard, le 3 octobre 1990.",
+    "wikipedia": "Chute du mur de Berlin"
   },
   {
     "annee": "52 av. J.-C.",
     "evenement": "Siège d'Alésia",
-    "contexte": "Vercingétorix se rend à Jules César : une victoire décisive dans la conquête de la Gaule."
+    "contexte": "Vercingétorix se rend à Jules César : une victoire décisive dans la conquête de la Gaule.",
+    "recit": "Chef des Arvernes, Vercingétorix a fédéré une grande partie des peuples gaulois contre Rome. Assiégé dans l'oppidum d'Alésia, il attend une armée de secours, que César repousse grâce à une double ligne de fortifications. Après sa reddition, il est emmené à Rome et exécuté quelques années plus tard. Le site est situé à Alise-Sainte-Reine, en Côte-d'Or.",
+    "wikipedia": "Siège d'Alésia"
   },
   {
     "annee": "1905",
     "evenement": "Loi de séparation des Églises et de l'État",
-    "contexte": "Promulguée le 9 décembre, elle devient un pilier de la laïcité française."
+    "contexte": "Promulguée le 9 décembre, elle devient un pilier de la laïcité française.",
+    "recit": "La loi garantit la liberté de conscience et le libre exercice des cultes, et dispose que la République ne reconnaît, ne salarie ni ne subventionne aucun culte. Elle met fin au Concordat de 1801. Défendue notamment par Aristide Briand, elle est adoptée après des débats houleux. Elle ne s'applique pas en Alsace-Moselle, alors allemande.",
+    "wikipedia": "Loi de séparation des Églises et de l'État"
   },
   {
     "annee": "1215",
     "evenement": "Magna Carta",
-    "contexte": "Le roi d'Angleterre Jean sans Terre concède une charte qui limite le pouvoir royal."
+    "contexte": "Le roi d'Angleterre Jean sans Terre concède une charte qui limite le pouvoir royal.",
+    "recit": "Contesté par ses barons après des défaites militaires et une fiscalité lourde, le roi Jean scelle la Grande Charte à Runnymede, en juin. Le texte prévoit notamment qu'aucun homme libre ne peut être emprisonné sans jugement légal. Le pape l'annule quelques semaines plus tard, mais elle sera révisée et confirmée par les rois suivants. Elle reste une référence des libertés publiques.",
+    "wikipedia": "Magna Carta"
   },
   {
     "annee": "1944",
     "evenement": "Droit de vote des femmes en France",
-    "contexte": "Accordé par l'ordonnance du 21 avril, il est exercé pour la première fois en avril 1945."
+    "contexte": "Accordé par l'ordonnance du 21 avril, il est exercé pour la première fois en avril 1945.",
+    "recit": "La France est l'un des derniers pays d'Europe occidentale à accorder ce droit. Dans l'entre-deux-guerres, le Sénat avait bloqué à plusieurs reprises les textes votés par les députés. L'ordonnance est signée à Alger par le Gouvernement provisoire du général de Gaulle. Les Françaises votent pour la première fois aux municipales du 29 avril 1945.",
+    "wikipedia": "Droit de vote des femmes en France"
   },
   {
     "annee": "1914",
     "evenement": "Assassinat de François-Ferdinand à Sarajevo",
-    "contexte": "Le 28 juin, ce meurtre déclenche l'engrenage qui mène à la Première Guerre mondiale."
+    "contexte": "Le 28 juin, ce meurtre déclenche l'engrenage qui mène à la Première Guerre mondiale.",
+    "recit": "L'archiduc François-Ferdinand, héritier du trône d'Autriche-Hongrie, est tué avec son épouse par Gavrilo Princip, un jeune Serbe de Bosnie. Vienne déclare la guerre à la Serbie un mois plus tard. Le jeu des alliances entraîne en quelques jours la Russie, l'Allemagne, la France et le Royaume-Uni dans le conflit.",
+    "wikipedia": "Attentat de Sarajevo"
   },
   {
     "annee": "1517",
     "evenement": "Les 95 thèses de Martin Luther",
-    "contexte": "Le moine dénonce le commerce des indulgences, point de départ de la Réforme protestante."
+    "contexte": "Le moine dénonce le commerce des indulgences, point de départ de la Réforme protestante.",
+    "recit": "Moine augustin et professeur à Wittenberg, Luther conteste la vente des indulgences, censées réduire le temps passé au purgatoire. Ses thèses, diffusées grâce à l'imprimerie, se répandent très vite. Excommunié en 1521, il traduit la Bible en allemand. La Réforme divise durablement la chrétienté occidentale.",
+    "wikipedia": "Quatre-vingt-quinze thèses"
   },
   {
     "annee": "1948",
     "evenement": "Déclaration universelle des droits de l'homme",
-    "contexte": "Adoptée le 10 décembre à Paris par l'Assemblée générale des Nations unies."
+    "contexte": "Adoptée le 10 décembre à Paris par l'Assemblée générale des Nations unies.",
+    "recit": "Rédigée au lendemain de la Seconde Guerre mondiale, la Déclaration énonce des droits civils, politiques, économiques et sociaux valables pour tous les êtres humains. Le juriste français René Cassin compte parmi ses principaux rédacteurs, aux côtés d'Eleanor Roosevelt, qui préside la commission. Adoptée au palais de Chaillot, elle n'est pas juridiquement contraignante, mais elle a inspiré de nombreux traités.",
+    "wikipedia": "Déclaration universelle des droits de l'homme"
   },
   {
     "annee": "476",
     "evenement": "Fin de l'Empire romain d'Occident",
-    "contexte": "Le chef germanique Odoacre dépose le jeune empereur Romulus Augustule."
+    "contexte": "Le chef germanique Odoacre dépose le jeune empereur Romulus Augustule.",
+    "recit": "Affaibli par des crises politiques et les migrations de peuples germaniques, l'Empire d'Occident n'est plus qu'une façade. Odoacre dépose Romulus Augustule et renvoie les insignes impériaux à Constantinople. L'Empire romain d'Orient, lui, survivra jusqu'en 1453. La date de 476 est une convention : la chute fut un long processus.",
+    "wikipedia": "Chute de l'Empire romain d'Occident"
   },
   {
     "annee": "1929",
     "evenement": "Krach de Wall Street",
-    "contexte": "Le « jeudi noir » du 24 octobre ouvre la voie à la Grande Dépression."
+    "contexte": "Le « jeudi noir » du 24 octobre ouvre la voie à la Grande Dépression.",
+    "recit": "Après des années de spéculation, la Bourse de New York s'effondre fin octobre. Les faillites bancaires et la contraction du crédit propagent la crise à l'économie réelle, puis au reste du monde. Aux États-Unis, le chômage atteint près de 25 % en 1933. La crise favorise la montée des extrémismes en Europe.",
+    "wikipedia": "Krach de 1929"
   },
   {
     "annee": "1598",
     "evenement": "Édit de Nantes",
-    "contexte": "Henri IV accorde aux protestants une liberté de culte encadrée et met fin aux guerres de Religion."
+    "contexte": "Henri IV accorde aux protestants une liberté de culte encadrée et met fin aux guerres de Religion.",
+    "recit": "Après plus de trente ans de guerres de Religion, Henri IV, protestant converti au catholicisme, signe l'édit à Nantes. Il accorde aux protestants la liberté de conscience, une liberté de culte limitée à certains lieux, l'égalité civile et des places de sûreté. Le catholicisme reste la religion du royaume.",
+    "wikipedia": "Édit de Nantes"
   },
   {
     "annee": "1963",
     "evenement": "Marche sur Washington",
-    "contexte": "Le 28 août, Martin Luther King y prononce son discours « I Have a Dream »."
+    "contexte": "Le 28 août, Martin Luther King y prononce son discours « I Have a Dream ».",
+    "recit": "Plus de 250 000 personnes manifestent pour l'emploi et l'égalité des droits des Afro-Américains. Le discours de Martin Luther King, prononcé devant le Lincoln Memorial, devient l'un des plus célèbres du XXe siècle. La mobilisation contribue à l'adoption du Civil Rights Act en 1964, qui interdit la ségrégation dans les lieux publics.",
+    "wikipedia": "Marche sur Washington pour l'emploi et la liberté"
   },
   {
     "annee": "1066",
     "evenement": "Bataille de Hastings",
-    "contexte": "Le 14 octobre, Guillaume, duc de Normandie, bat le roi Harold et conquiert l'Angleterre."
+    "contexte": "Le 14 octobre, Guillaume, duc de Normandie, bat le roi Harold et conquiert l'Angleterre.",
+    "recit": "À la mort d'Édouard le Confesseur, Harold Godwinson est couronné, mais Guillaume de Normandie revendique le trône. Il débarque dans le Sussex et remporte la bataille, au cours de laquelle Harold est tué. Couronné à Westminster le jour de Noël, Guillaume transforme l'Angleterre : le français devient pour longtemps la langue de la cour. La tapisserie de Bayeux raconte cette conquête.",
+    "wikipedia": "Bataille d'Hastings"
   },
   {
     "annee": "1918",
     "evenement": "Armistice de la Première Guerre mondiale",
-    "contexte": "Signé le 11 novembre à Rethondes, il met fin aux combats sur le front occidental."
+    "contexte": "Signé le 11 novembre à Rethondes, il met fin aux combats sur le front occidental.",
+    "recit": "Signé vers 5 heures du matin dans un wagon stationné en forêt de Compiègne, l'armistice entre en vigueur à 11 heures. La guerre a fait environ 10 millions de morts parmi les soldats. La paix est fixée par le traité de Versailles, signé en juin 1919.",
+    "wikipedia": "Armistice du 11 novembre 1918"
   },
   {
     "annee": "vers 1455",
     "evenement": "Bible de Gutenberg",
-    "contexte": "Premier grand livre imprimé en Europe avec des caractères métalliques mobiles."
+    "contexte": "Premier grand livre imprimé en Europe avec des caractères métalliques mobiles.",
+    "recit": "À Mayence, Johannes Gutenberg met au point un procédé qui combine caractères mobiles en alliage métallique, encre grasse et presse. Sa Bible latine est tirée à environ 180 exemplaires, dont une cinquantaine sont conservés aujourd'hui. L'imprimerie accélère la diffusion des idées, de la Renaissance à la Réforme.",
+    "wikipedia": "Bible de Gutenberg"
   },
   {
     "annee": "1957",
     "evenement": "Traité de Rome",
-    "contexte": "Signé le 25 mars par six pays, il crée la Communauté économique européenne."
+    "contexte": "Signé le 25 mars par six pays, il crée la Communauté économique européenne.",
+    "recit": "L'Allemagne de l'Ouest, la Belgique, la France, l'Italie, le Luxembourg et les Pays-Bas créent la CEE et, par un second traité, Euratom. Le texte prévoit un marché commun fondé sur la libre circulation des marchandises, des personnes, des services et des capitaux. La CEE est l'ancêtre de l'Union européenne, instituée par le traité de Maastricht.",
+    "wikipedia": "Traité de Rome (1957)"
   },
   {
     "annee": "1347",
     "evenement": "La peste noire atteint l'Europe",
-    "contexte": "En quelques années, elle tue entre un tiers et la moitié de la population européenne."
+    "contexte": "En quelques années, elle tue entre un tiers et la moitié de la population européenne.",
+    "recit": "Venue d'Asie, l'épidémie atteint la Crimée puis, par les navires marchands, les ports de Méditerranée en 1347. Elle se répand dans toute l'Europe en quatre ou cinq ans. Transmise par les puces des rats et, sous sa forme pulmonaire, d'humain à humain, elle bouleverse les sociétés : pénurie de main-d'œuvre, massacres de Juifs accusés à tort, processions de flagellants.",
+    "wikipedia": "Peste noire"
   },
   {
     "annee": "1685",
     "evenement": "Révocation de l'édit de Nantes",
-    "contexte": "Par l'édit de Fontainebleau, Louis XIV interdit le culte protestant en France."
+    "contexte": "Par l'édit de Fontainebleau, Louis XIV interdit le culte protestant en France.",
+    "recit": "Après des années de persécutions, dont les dragonnades, Louis XIV révoque l'édit de Nantes. Les temples sont détruits et les pasteurs bannis. Environ 200 000 protestants fuient vers les Provinces-Unies, la Suisse, l'Angleterre ou la Prusse, privant le royaume de nombreux artisans, marchands et savants.",
+    "wikipedia": "Édit de Fontainebleau (1685)"
   },
   {
     "annee": "1945",
     "evenement": "Capitulation de l'Allemagne nazie",
-    "contexte": "Signée à Reims le 7 mai puis à Berlin le 8 mai, elle met fin à la guerre en Europe."
+    "contexte": "Signée à Reims le 7 mai puis à Berlin le 8 mai, elle met fin à la guerre en Europe.",
+    "recit": "Hitler s'est suicidé le 30 avril dans Berlin encerclé par l'Armée rouge. L'acte de capitulation est signé à Reims, au quartier général d'Eisenhower, puis de nouveau à Berlin à la demande de Staline, ce qui explique que la Russie commémore la victoire le 9 mai. La guerre se poursuit dans le Pacifique jusqu'à la capitulation du Japon, le 2 septembre.",
+    "wikipedia": "Capitulation de l'Allemagne nazie"
   },
   {
     "annee": "1804",
     "evenement": "Sacre de Napoléon Ier",
-    "contexte": "Le 2 décembre, à Notre-Dame de Paris, en présence du pape Pie VII."
+    "contexte": "Le 2 décembre, à Notre-Dame de Paris, en présence du pape Pie VII.",
+    "recit": "Premier consul depuis le coup d'État de 1799, Napoléon Bonaparte est proclamé empereur des Français en mai 1804. Lors de la cérémonie, il se couronne lui-même, puis couronne Joséphine, scène immortalisée par le peintre Jacques-Louis David. Le Premier Empire durera jusqu'en 1815.",
+    "wikipedia": "Sacre de Napoléon Ier"
   },
   {
     "annee": "1865",
     "evenement": "Abolition de l'esclavage aux États-Unis",
-    "contexte": "Le 13e amendement de la Constitution est ratifié en décembre, après la guerre de Sécession."
+    "contexte": "Le 13e amendement de la Constitution est ratifié en décembre, après la guerre de Sécession.",
+    "recit": "La proclamation d'émancipation d'Abraham Lincoln, en 1863, ne libérait que les esclaves des États confédérés en rébellion. Le 13e amendement abolit l'esclavage sur tout le territoire. Lincoln est assassiné en avril 1865, avant sa ratification. Environ quatre millions de personnes sont libérées.",
+    "wikipedia": "Treizième amendement de la Constitution des États-Unis"
   },
   {
     "annee": "1648",
     "evenement": "Traités de Westphalie",
-    "contexte": "Ils mettent fin à la guerre de Trente Ans et redessinent l'équilibre européen."
+    "contexte": "Ils mettent fin à la guerre de Trente Ans et redessinent l'équilibre européen.",
+    "recit": "Signés à Münster et à Osnabrück, les traités concluent un conflit qui a ravagé le Saint-Empire romain germanique. Ils reconnaissent l'indépendance des Provinces-Unies et de la Confédération suisse, et renforcent la France, qui obtient des droits en Alsace. On y voit souvent la naissance d'un ordre européen fondé sur la souveraineté des États.",
+    "wikipedia": "Traités de Westphalie"
   },
   {
     "annee": "1994",
     "evenement": "Génocide des Tutsi au Rwanda",
-    "contexte": "D'avril à juillet, au moins 800 000 personnes, en majorité tutsi, sont massacrées."
+    "contexte": "D'avril à juillet, au moins 800 000 personnes, en majorité tutsi, sont massacrées.",
+    "recit": "Le 6 avril, l'avion du président Juvénal Habyarimana est abattu. Dès le lendemain, des extrémistes hutu organisent l'extermination des Tutsi et le meurtre d'opposants hutu, avec des milices et la propagande de la radio des Mille Collines. Les massacres cessent en juillet avec la victoire du Front patriotique rwandais. Le rôle de la France a fait l'objet du rapport de la commission Duclert, remis en 2021.",
+    "wikipedia": "Génocide des Tutsi au Rwanda"
   },
   {
     "annee": "1991",
     "evenement": "Dissolution de l'URSS",
-    "contexte": "Le 26 décembre, l'Union soviétique cesse d'exister, au lendemain de la démission de Gorbatchev."
+    "contexte": "Le 26 décembre, l'Union soviétique cesse d'exister, au lendemain de la démission de Gorbatchev.",
+    "recit": "Le coup d'État manqué d'août 1991 contre Mikhaïl Gorbatchev accélère la désagrégation de l'URSS. Les républiques proclament leur indépendance les unes après les autres. Le 8 décembre, la Russie, l'Ukraine et la Biélorussie constatent la fin de l'Union. Gorbatchev démissionne le 25 décembre et le drapeau soviétique est descendu du Kremlin.",
+    "wikipedia": "Dislocation de l'URSS"
   }
 ]

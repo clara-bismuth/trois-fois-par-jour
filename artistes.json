@@ -5,7 +5,17 @@
     "pays": "Suède",
     "epoque": "1862-1944",
     "oeuvre": "Les Dix Plus Grands (1907)",
-    "presentation": "Pionnière de l'abstraction, elle peint des toiles non figuratives avant Kandinsky."
+    "presentation": "Pionnière de l'abstraction, elle peint des toiles non figuratives avant Kandinsky.",
+    "bio": "Formée à l'Académie royale des beaux-arts de Stockholm, elle mène une carrière de peintre de paysages et de portraits. En parallèle, nourrie de spiritisme et de théosophie, elle crée à partir de 1906 des œuvres abstraites monumentales. Elle souhaitait que ces œuvres ne soient pas montrées avant vingt ans après sa mort : leur redécouverte a bouleversé l'histoire de l'abstraction.",
+    "mouvement": {
+      "nom": "Abstraction",
+      "texte": "Art qui renonce à représenter le monde visible. Longtemps attribuée à Kandinsky, Mondrian ou Malevitch vers 1910-1915, son invention est aujourd'hui partagée avec des pionnières comme af Klint."
+    },
+    "oeuvres_cles": [
+      "Les Dix Plus Grands (1907)",
+      "Peintures pour le Temple (1906-1915)",
+      "Série du Cygne (1914-1915)"
+    ]
   },
   {
     "nom": "Hokusai",
@@ -13,7 +23,18 @@
     "pays": "Japon",
     "epoque": "1760-1849",
     "oeuvre": "La Grande Vague de Kanagawa (vers 1831)",
-    "presentation": "Maître de l'ukiyo-e, il a profondément influencé les impressionnistes européens."
+    "presentation": "Maître de l'ukiyo-e, il a profondément influencé les impressionnistes européens.",
+    "bio": "Né à Edo, l'actuelle Tokyo, il produit pendant soixante-dix ans des milliers de dessins et d'estampes, sous plus de trente noms d'artiste. Il publie vers 70 ans sa série la plus célèbre, les Trente-six vues du mont Fuji. Ses carnets, les Manga, circulent en Europe et fascinent Monet, Degas ou Van Gogh.",
+    "mouvement": {
+      "nom": "Ukiyo-e",
+      "texte": "« Images du monde flottant » : estampes gravées sur bois (XVIIe-XIXe siècles) représentant acteurs, courtisanes et paysages. Leur découverte en Europe nourrit le japonisme."
+    },
+    "oeuvres_cles": [
+      "La Grande Vague de Kanagawa (vers 1831)",
+      "Le Fuji par temps clair, dit Le Fuji rouge (vers 1831)",
+      "Hokusai Manga (à partir de 1814)"
+    ],
+    "wikipedia": "Katsushika Hokusai"
   },
   {
     "nom": "Nina Simone",
@@ -21,7 +42,17 @@
     "pays": "États-Unis",
     "epoque": "1933-2003",
     "oeuvre": "Mississippi Goddam (1964)",
-    "presentation": "Pianiste de formation classique, elle devient une voix du mouvement des droits civiques."
+    "presentation": "Pianiste de formation classique, elle devient une voix du mouvement des droits civiques.",
+    "bio": "Née Eunice Waymon en Caroline du Nord, elle rêve de devenir la première grande pianiste classique noire. Refusée au Curtis Institute de Philadelphie, elle chante dans des bars sous le nom de Nina Simone. Dans les années 1960, elle s'engage aux côtés du mouvement des droits civiques. Elle passe la fin de sa vie en France, à Carry-le-Rouet.",
+    "mouvement": {
+      "nom": "Jazz, soul et chanson engagée",
+      "texte": "Simone refusait les étiquettes : son répertoire mêle jazz, gospel, blues, musique classique et folk, au service d'un chant souvent politique."
+    },
+    "oeuvres_cles": [
+      "I Put a Spell on You (1965)",
+      "Feeling Good (1965)",
+      "To Be Young, Gifted and Black (1969)"
+    ]
   },
   {
     "nom": "Satyajit Ray",
@@ -29,7 +60,17 @@
     "pays": "Inde",
     "epoque": "1921-1992",
     "oeuvre": "Pather Panchali (1955)",
-    "presentation": "Figure majeure du cinéma bengali, il filme l'Inde rurale avec une grande humanité."
+    "presentation": "Figure majeure du cinéma bengali, il filme l'Inde rurale avec une grande humanité.",
+    "bio": "Né à Calcutta dans une famille d'artistes et d'intellectuels bengalis, il travaille d'abord comme graphiste publicitaire. Sa rencontre avec Jean Renoir, venu tourner Le Fleuve en Inde, le décide à faire du cinéma. Il réalise une trentaine de longs métrages et reçoit un Oscar d'honneur en 1992.",
+    "mouvement": {
+      "nom": "Cinéma parallèle indien",
+      "texte": "Cinéma d'auteur réaliste, en marge des grandes productions musicales de Bombay, influencé par le néoréalisme italien."
+    },
+    "oeuvres_cles": [
+      "La Trilogie d'Apu (1955-1959)",
+      "Le Salon de musique (1958)",
+      "Charulata (1964)"
+    ]
   },
   {
     "nom": "Artemisia Gentileschi",
@@ -37,7 +78,17 @@
     "pays": "Italie",
     "epoque": "1593-vers 1656",
     "oeuvre": "Judith décapitant Holopherne (vers 1620)",
-    "presentation": "Caravagesque, elle est la première femme admise à l'Académie de dessin de Florence."
+    "presentation": "Caravagesque, elle est la première femme admise à l'Académie de dessin de Florence.",
+    "bio": "Fille du peintre Orazio Gentileschi, elle se forme dans l'atelier paternel à Rome. Victime d'un viol, elle affronte en 1612 un procès éprouvant contre son agresseur, le peintre Agostino Tassi. Elle travaille ensuite à Florence, Venise, Naples et Londres, et peint souvent des héroïnes fortes de la Bible et de l'Antiquité. Redécouverte au XXe siècle, elle est devenue une figure majeure de l'histoire de l'art.",
+    "mouvement": {
+      "nom": "Caravagisme",
+      "texte": "Courant inspiré par Caravage au début du XVIIe siècle : réalisme des corps, cadrages serrés et violents contrastes d'ombre et de lumière."
+    },
+    "oeuvres_cles": [
+      "Suzanne et les vieillards (1610)",
+      "Judith décapitant Holopherne (vers 1620)",
+      "Autoportrait en allégorie de la peinture (vers 1638)"
+    ]
   },
   {
     "nom": "Fela Kuti",
@@ -45,7 +96,17 @@
     "pays": "Nigeria",
     "epoque": "1938-1997",
     "oeuvre": "Zombie (1976)",
-    "presentation": "Figure de l'afrobeat, il mêle jazz, funk et rythmes yoruba contre la dictature militaire."
+    "presentation": "Figure de l'afrobeat, il mêle jazz, funk et rythmes yoruba contre la dictature militaire.",
+    "bio": "Né à Abeokuta, fils de la militante féministe Funmilayo Ransome-Kuti, il étudie la musique à Londres. Avec son groupe Africa 70, il crée un son long et hypnotique aux textes très politiques. Harcelé par le régime militaire, il est arrêté à de nombreuses reprises, et sa communauté, la Kalakuta Republic, est détruite par l'armée en 1977.",
+    "mouvement": {
+      "nom": "Afrobeat",
+      "texte": "Genre né au Nigeria à la fin des années 1960 : fusion du highlife, du jazz, du funk de James Brown et des percussions yoruba."
+    },
+    "oeuvres_cles": [
+      "Zombie (1976)",
+      "Water No Get Enemy (1975)",
+      "Expensive Shit (1975)"
+    ]
   },
   {
     "nom": "Agnès Varda",
@@ -53,7 +114,17 @@
     "pays": "France",
     "epoque": "1928-2019",
     "oeuvre": "Cléo de 5 à 7 (1962)",
-    "presentation": "Pionnière de la Nouvelle Vague, elle invente un cinéma libre, entre fiction et documentaire."
+    "presentation": "Pionnière de la Nouvelle Vague, elle invente un cinéma libre, entre fiction et documentaire.",
+    "bio": "Née à Bruxelles, photographe de formation, elle tourne La Pointe Courte en 1954, souvent considéré comme un précurseur de la Nouvelle Vague. Elle alterne fictions, documentaires et installations, avec un regard attentif aux femmes et aux marges. Elle reçoit une Palme d'honneur à Cannes en 2015 et un Oscar d'honneur en 2017.",
+    "mouvement": {
+      "nom": "Nouvelle Vague",
+      "texte": "Renouveau du cinéma français à la fin des années 1950 : tournages légers, en décors réels, avec une grande liberté de ton et de forme."
+    },
+    "oeuvres_cles": [
+      "Cléo de 5 à 7 (1962)",
+      "Sans toit ni loi (1985)",
+      "Les Glaneurs et la Glaneuse (2000)"
+    ]
   },
   {
     "nom": "Caravage",
@@ -61,7 +132,17 @@
     "pays": "Italie",
     "epoque": "1571-1610",
     "oeuvre": "La Vocation de saint Matthieu (1599-1600)",
-    "presentation": "Son clair-obscur dramatique a bouleversé la peinture européenne du XVIIe siècle."
+    "presentation": "Son clair-obscur dramatique a bouleversé la peinture européenne du XVIIe siècle.",
+    "bio": "Michelangelo Merisi, dit le Caravage, s'installe à Rome vers 1592. Ses tableaux d'église, peuplés de modèles pris dans la rue, font scandale autant qu'ils fascinent. Condamné pour meurtre en 1606, il fuit à Naples, à Malte et en Sicile, et meurt à 38 ans en tentant de regagner Rome.",
+    "mouvement": {
+      "nom": "Baroque",
+      "texte": "Art du XVIIe siècle qui recherche l'émotion et le mouvement. Caravage en incarne le versant réaliste, d'où naîtra le caravagisme."
+    },
+    "oeuvres_cles": [
+      "Corbeille de fruits (vers 1599)",
+      "La Vocation de saint Matthieu (1599-1600)",
+      "David avec la tête de Goliath (vers 1610)"
+    ]
   },
   {
     "nom": "Toni Morrison",
@@ -69,7 +150,17 @@
     "pays": "États-Unis",
     "epoque": "1931-2019",
     "oeuvre": "Beloved (1987)",
-    "presentation": "Prix Nobel 1993, elle raconte la mémoire de l'esclavage et l'expérience afro-américaine."
+    "presentation": "Prix Nobel 1993, elle raconte la mémoire de l'esclavage et l'expérience afro-américaine.",
+    "bio": "Née Chloe Wofford dans l'Ohio, elle est éditrice chez Random House, où elle publie de nombreux auteurs afro-américains. Son premier roman, L'Œil le plus bleu, paraît en 1970. Beloved, inspiré de l'histoire vraie de Margaret Garner, obtient le prix Pulitzer en 1988.",
+    "mouvement": {
+      "nom": "Littérature afro-américaine",
+      "texte": "Morrison ancre son œuvre dans l'histoire et les voix noires américaines, avec une écriture poétique et polyphonique."
+    },
+    "oeuvres_cles": [
+      "L'Œil le plus bleu (1970)",
+      "Le Chant de Salomon (1977)",
+      "Beloved (1987)"
+    ]
   },
   {
     "nom": "Erik Satie",
@@ -77,7 +168,17 @@
     "pays": "France",
     "epoque": "1866-1925",
     "oeuvre": "Gymnopédies (1888)",
-    "presentation": "Excentrique et minimaliste avant l'heure, il annonce une bonne part de la musique du XXe siècle."
+    "presentation": "Excentrique et minimaliste avant l'heure, il annonce une bonne part de la musique du XXe siècle.",
+    "bio": "Né à Honfleur, pianiste de cabaret à Montmartre, il compose des pièces d'une simplicité déroutante, aux titres pleins d'humour. Proche de Debussy, puis de Cocteau et Picasso, il signe le ballet Parade en 1917. Il invente la « musique d'ameublement », pensée pour accompagner le quotidien sans être écoutée attentivement.",
+    "mouvement": {
+      "nom": "Avant-garde",
+      "texte": "Satie rompt avec les grandes formes romantiques. Sa sobriété et ses répétitions inspireront John Cage, puis les compositeurs minimalistes."
+    },
+    "oeuvres_cles": [
+      "Gymnopédies (1888)",
+      "Gnossiennes (1890-1897)",
+      "Parade (1917)"
+    ]
   },
   {
     "nom": "Louise Bourgeois",
@@ -85,7 +186,17 @@
     "pays": "France et États-Unis",
     "epoque": "1911-2010",
     "oeuvre": "Maman (1999)",
-    "presentation": "Ses araignées géantes et ses installations explorent l'enfance, la mémoire et le corps."
+    "presentation": "Ses araignées géantes et ses installations explorent l'enfance, la mémoire et le corps.",
+    "bio": "Née à Paris, elle grandit dans une famille de restaurateurs de tapisseries anciennes. Installée à New York en 1938, elle ne connaît la reconnaissance qu'à plus de 70 ans, avec une rétrospective au MoMA en 1982. Son œuvre, nourrie de souvenirs d'enfance, explore la peur, le désir et la relation à la mère.",
+    "mouvement": {
+      "nom": "Art contemporain",
+      "texte": "Indépendante des courants qu'elle a côtoyés, surréalisme et expressionnisme abstrait, elle a ouvert la voie à la sculpture autobiographique et à l'installation."
+    },
+    "oeuvres_cles": [
+      "La Destruction du père (1974)",
+      "Les Cells (années 1990)",
+      "Maman (1999)"
+    ]
   },
   {
     "nom": "Akira Kurosawa",
@@ -93,7 +204,17 @@
     "pays": "Japon",
     "epoque": "1910-1998",
     "oeuvre": "Rashōmon (1950)",
-    "presentation": "Lion d'or à Venise en 1951, ce film révèle le cinéma japonais au monde entier."
+    "presentation": "Lion d'or à Venise en 1951, ce film révèle le cinéma japonais au monde entier.",
+    "bio": "Ancien étudiant en peinture, il entre en 1936 comme assistant réalisateur dans les studios qui deviendront la Toho. Il signe une trentaine de films, du film de samouraïs au drame social. Son influence est immense : Les Sept Samouraïs inspire le western Les Sept Mercenaires, et George Lucas cite La Forteresse cachée parmi les sources de Star Wars.",
+    "mouvement": {
+      "nom": "Âge d'or du cinéma japonais",
+      "texte": "Années 1950 : avec Ozu et Mizoguchi, le cinéma japonais est découvert et célébré dans les festivals occidentaux."
+    },
+    "oeuvres_cles": [
+      "Rashōmon (1950)",
+      "Les Sept Samouraïs (1954)",
+      "Ran (1985)"
+    ]
   },
   {
     "nom": "Yayoi Kusama",
@@ -101,7 +222,17 @@
     "pays": "Japon",
     "epoque": "née en 1929",
     "oeuvre": "Infinity Mirror Rooms (depuis 1965)",
-    "presentation": "Pois obsessionnels, citrouilles et salles de miroirs infinies : un univers reconnaissable entre tous."
+    "presentation": "Pois obsessionnels, citrouilles et salles de miroirs infinies : un univers reconnaissable entre tous.",
+    "bio": "Née à Matsumoto, elle transpose dès l'enfance ses visions en motifs répétés à l'infini. Installée à New York de 1958 à 1973, elle participe à l'avant-garde avec ses toiles, ses sculptures molles et ses performances. De retour au Japon, elle poursuit une production intense et devient l'une des artistes les plus exposées au monde.",
+    "mouvement": {
+      "nom": "Pop art et art minimal",
+      "texte": "À New York, Kusama côtoie le pop art et l'art minimal, tout en développant un univers personnel fondé sur la répétition et l'accumulation."
+    },
+    "oeuvres_cles": [
+      "Infinity Nets (à partir de 1959)",
+      "Infinity Mirror Rooms (depuis 1965)",
+      "Pumpkin (1994, île de Naoshima)"
+    ]
   },
   {
     "nom": "Gabriel García Márquez",
@@ -109,7 +240,17 @@
     "pays": "Colombie",
     "epoque": "1927-2014",
     "oeuvre": "Cent ans de solitude (1967)",
-    "presentation": "Prix Nobel 1982, il est la figure majeure du réalisme magique latino-américain."
+    "presentation": "Prix Nobel 1982, il est la figure majeure du réalisme magique latino-américain.",
+    "bio": "Né à Aracataca, il grandit chez ses grands-parents, dont les récits nourriront son œuvre. Journaliste avant d'être romancier, il invente avec Macondo un village imaginaire devenu mythique. Il écrit Cent ans de solitude au Mexique, où il vivra une grande partie de sa vie.",
+    "mouvement": {
+      "nom": "Réalisme magique",
+      "texte": "Le surnaturel s'y mêle au quotidien sans étonner les personnages. Courant emblématique du « boom » de la littérature latino-américaine des années 1960."
+    },
+    "oeuvres_cles": [
+      "Cent ans de solitude (1967)",
+      "Chronique d'une mort annoncée (1981)",
+      "L'Amour aux temps du choléra (1985)"
+    ]
   },
   {
     "nom": "Dorothea Lange",
@@ -117,7 +258,17 @@
     "pays": "États-Unis",
     "epoque": "1895-1965",
     "oeuvre": "Migrant Mother (1936)",
-    "presentation": "Ses images de la Grande Dépression ont façonné la photographie documentaire."
+    "presentation": "Ses images de la Grande Dépression ont façonné la photographie documentaire.",
+    "bio": "Portraitiste à San Francisco, elle descend dans la rue au début de la Grande Dépression pour photographier chômeurs et sans-abri. Engagée par la Farm Security Administration, elle documente l'exode des fermiers ruinés vers la Californie. En 1942, elle photographie aussi l'internement des Américains d'origine japonaise.",
+    "mouvement": {
+      "nom": "Photographie documentaire",
+      "texte": "Photographie qui témoigne du réel et de la condition sociale, portée aux États-Unis par les programmes de la Farm Security Administration."
+    },
+    "oeuvres_cles": [
+      "White Angel Breadline (1933)",
+      "Migrant Mother (1936)",
+      "Photographies de l'internement des Américains d'origine japonaise (1942)"
+    ]
   },
   {
     "nom": "Ousmane Sembène",
@@ -125,7 +276,17 @@
     "pays": "Sénégal",
     "epoque": "1923-2007",
     "oeuvre": "La Noire de... (1966)",
-    "presentation": "Souvent considéré comme le premier long métrage d'un cinéaste d'Afrique subsaharienne."
+    "presentation": "Souvent considéré comme le premier long métrage d'un cinéaste d'Afrique subsaharienne.",
+    "bio": "Docker à Marseille après la Seconde Guerre mondiale, il devient écrivain avec Le Docker noir, en 1956. Il se forme au cinéma à Moscou pour toucher un public plus large que celui du livre. Ses films dénoncent le colonialisme, la corruption et l'oppression des femmes. On le surnomme le « père du cinéma africain ».",
+    "mouvement": {
+      "nom": "Cinéma africain postcolonial",
+      "texte": "Cinéma né avec les indépendances, qui raconte l'Afrique depuis l'Afrique, souvent en langues africaines."
+    },
+    "oeuvres_cles": [
+      "Les Bouts de bois de Dieu (roman, 1960)",
+      "La Noire de... (1966)",
+      "Moolaadé (2004)"
+    ]
   },
   {
     "nom": "Frida Kahlo",
@@ -133,7 +294,17 @@
     "pays": "Mexique",
     "epoque": "1907-1954",
     "oeuvre": "Les Deux Frida (1939)",
-    "presentation": "Ses autoportraits mêlent douleur intime, identité mexicaine et engagement politique."
+    "presentation": "Ses autoportraits mêlent douleur intime, identité mexicaine et engagement politique.",
+    "bio": "Grièvement blessée à 18 ans dans un accident de bus, elle commence à peindre alitée, face à un miroir. Épouse du muraliste Diego Rivera, elle fréquente les milieux communistes. André Breton la rattache au surréalisme, ce qu'elle conteste : elle disait peindre sa propre réalité, et non des rêves.",
+    "mouvement": {
+      "nom": "Mexicanidad",
+      "texte": "Mouvement d'affirmation culturelle mexicaine après la Révolution. Kahlo puise dans l'art populaire et précolombien ; les surréalistes la revendiquent sans qu'elle s'y reconnaisse."
+    },
+    "oeuvres_cles": [
+      "Les Deux Frida (1939)",
+      "Autoportrait au collier d'épines et colibri (1940)",
+      "La Colonne brisée (1944)"
+    ]
   },
   {
     "nom": "Arvo Pärt",
@@ -141,7 +312,17 @@
     "pays": "Estonie",
     "epoque": "né en 1935",
     "oeuvre": "Spiegel im Spiegel (1978)",
-    "presentation": "Son style dépouillé, dit tintinnabuli, en fait l'un des compositeurs contemporains les plus joués."
+    "presentation": "Son style dépouillé, dit tintinnabuli, en fait l'un des compositeurs contemporains les plus joués.",
+    "bio": "Né à Paide, il compose d'abord dans un style moderniste mal vu des autorités soviétiques. Après plusieurs années de silence consacrées à l'étude du chant grégorien et de la polyphonie ancienne, il invente en 1976 le style tintinnabuli. Il émigre en 1980 à Vienne, puis à Berlin, avant de revenir vivre en Estonie.",
+    "mouvement": {
+      "nom": "Minimalisme sacré",
+      "texte": "Musique lente, épurée et méditative, nourrie de spiritualité, souvent rapprochée de celles de Górecki et Tavener."
+    },
+    "oeuvres_cles": [
+      "Für Alina (1976)",
+      "Tabula Rasa (1977)",
+      "Spiegel im Spiegel (1978)"
+    ]
   },
   {
     "nom": "Camille Claudel",
@@ -149,7 +330,17 @@
     "pays": "France",
     "epoque": "1864-1943",
     "oeuvre": "La Valse (1889-1905)",
-    "presentation": "Longtemps éclipsée par Rodin, elle est aujourd'hui reconnue comme une sculptrice majeure."
+    "presentation": "Longtemps éclipsée par Rodin, elle est aujourd'hui reconnue comme une sculptrice majeure.",
+    "bio": "Sculptrice précoce, elle entre vers 1884 dans l'atelier d'Auguste Rodin, dont elle devient l'élève, la collaboratrice et la compagne. Après leur rupture, elle développe une œuvre très personnelle. Internée en 1913 à la demande de sa famille, elle passe les trente dernières années de sa vie en asile, sans plus jamais sculpter.",
+    "mouvement": {
+      "nom": "Sculpture moderne",
+      "texte": "Héritière du réalisme de Rodin, elle y ajoute une intensité intime et l'influence de l'art japonais."
+    },
+    "oeuvres_cles": [
+      "La Valse (1889-1905)",
+      "L'Âge mûr (1890-1913)",
+      "La Vague (1897-1903)"
+    ]
   },
   {
     "nom": "Henri Cartier-Bresson",
@@ -157,7 +348,17 @@
     "pays": "France",
     "epoque": "1908-2004",
     "oeuvre": "Derrière la gare Saint-Lazare (1932)",
-    "presentation": "Cofondateur de l'agence Magnum, il incarne la photographie de « l'instant décisif »."
+    "presentation": "Cofondateur de l'agence Magnum, il incarne la photographie de « l'instant décisif ».",
+    "bio": "Formé à la peinture auprès d'André Lhote, il se tourne vers la photographie au début des années 1930, avec un petit appareil Leica. Fait prisonnier pendant la guerre, il s'évade en 1943. En 1947, il fonde l'agence Magnum avec Robert Capa, George Rodger et David Seymour.",
+    "mouvement": {
+      "nom": "Photographie humaniste",
+      "texte": "Courant français d'après-guerre qui saisit la vie quotidienne avec empathie, aux côtés de Doisneau, Ronis ou Boubat."
+    },
+    "oeuvres_cles": [
+      "Derrière la gare Saint-Lazare (1932)",
+      "Funérailles de Gandhi (1948)",
+      "Images à la sauvette (livre, 1952)"
+    ]
   },
   {
     "nom": "Oum Kalthoum",
@@ -165,7 +366,17 @@
     "pays": "Égypte",
     "epoque": "vers 1900-1975",
     "oeuvre": "Enta Omri (1964)",
-    "presentation": "Surnommée « l'Astre de l'Orient », elle reste l'une des plus grandes voix du monde arabe."
+    "presentation": "Surnommée « l'Astre de l'Orient », elle reste l'une des plus grandes voix du monde arabe.",
+    "bio": "Fille d'un imam du delta du Nil, elle chante enfant des poèmes religieux. Installée au Caire dans les années 1920, elle devient une vedette de la radio. Ses concerts mensuels, retransmis dans tout le monde arabe, duraient plusieurs heures. Ses funérailles, en 1975, rassemblent des millions de personnes.",
+    "mouvement": {
+      "nom": "Tarab",
+      "texte": "Le tarab désigne l'émotion musicale partagée entre l'interprète et son public, nourrie d'improvisations et de reprises de phrases."
+    },
+    "oeuvres_cles": [
+      "Enta Omri (1964)",
+      "Al-Atlal (1966)",
+      "Alf Leila wa Leila (1969)"
+    ]
   },
   {
     "nom": "Wifredo Lam",
@@ -173,7 +384,16 @@
     "pays": "Cuba",
     "epoque": "1902-1982",
     "oeuvre": "La Jungle (1943)",
-    "presentation": "Il fusionne cubisme, surréalisme et héritages afro-cubains."
+    "presentation": "Il fusionne cubisme, surréalisme et héritages afro-cubains.",
+    "bio": "Né à Sagua La Grande d'un père chinois et d'une mère d'ascendance africaine et espagnole, il étudie la peinture à Madrid. À Paris, en 1938, il se lie avec Picasso et les surréalistes. De retour à Cuba en 1941, il crée une peinture qui puise dans les cultes afro-cubains.",
+    "mouvement": {
+      "nom": "Surréalisme",
+      "texte": "Mouvement fondé par André Breton en 1924, qui explore le rêve, l'inconscient et le hasard. Lam y introduit les mythologies afro-caribéennes."
+    },
+    "oeuvres_cles": [
+      "La Jungle (1943)",
+      "Les Noces (1947)"
+    ]
   },
   {
     "nom": "Zaha Hadid",
@@ -181,7 +401,17 @@
     "pays": "Irak et Royaume-Uni",
     "epoque": "1950-2016",
     "oeuvre": "Centre Heydar Aliyev, Bakou (2012)",
-    "presentation": "Première femme lauréate du prix Pritzker, en 2004, elle a imposé des formes fluides et spectaculaires."
+    "presentation": "Première femme lauréate du prix Pritzker, en 2004, elle a imposé des formes fluides et spectaculaires.",
+    "bio": "Née à Bagdad, elle étudie les mathématiques à Beyrouth, puis l'architecture à Londres. Longtemps célèbre pour des projets jugés irréalisables, elle construit à partir des années 1990 musées, opéras, stades et gares dans le monde entier.",
+    "mouvement": {
+      "nom": "Déconstructivisme",
+      "texte": "Architecture des années 1980-1990 qui fragmente les volumes et rompt avec l'angle droit : Gehry, Koolhaas, Libeskind, Hadid."
+    },
+    "oeuvres_cles": [
+      "Caserne de pompiers Vitra (1993)",
+      "MAXXI, Rome (2010)",
+      "Centre Heydar Aliyev, Bakou (2012)"
+    ]
   },
   {
     "nom": "Mark Rothko",
@@ -189,7 +419,17 @@
     "pays": "États-Unis",
     "epoque": "1903-1970",
     "oeuvre": "La chapelle Rothko, Houston (1971)",
-    "presentation": "Ses grands champs de couleur cherchent à provoquer une émotion presque spirituelle."
+    "presentation": "Ses grands champs de couleur cherchent à provoquer une émotion presque spirituelle.",
+    "bio": "Né Markus Rothkowitz à Dvinsk, dans l'Empire russe, il émigre enfant aux États-Unis. Après une période figurative puis surréaliste, il trouve vers 1949 sa forme : de grands rectangles de couleur aux bords flous. Il refusait que ses toiles soient vues comme de simples exercices de couleur.",
+    "mouvement": {
+      "nom": "Expressionnisme abstrait",
+      "texte": "École de New York des années 1940-1950 (Pollock, de Kooning, Rothko) : peinture abstraite, gestuelle ou méditative, sur de très grands formats."
+    },
+    "oeuvres_cles": [
+      "No. 61 (Rust and Blue) (1953)",
+      "Peintures pour le Seagram Building (1958-1959)",
+      "La chapelle Rothko, Houston (1971)"
+    ]
   },
   {
     "nom": "Berthe Morisot",
@@ -197,7 +437,17 @@
     "pays": "France",
     "epoque": "1841-1895",
     "oeuvre": "Le Berceau (1872)",
-    "presentation": "Figure fondatrice de l'impressionnisme, elle participe à la première exposition du groupe en 1874."
+    "presentation": "Figure fondatrice de l'impressionnisme, elle participe à la première exposition du groupe en 1874.",
+    "bio": "Issue de la bourgeoisie, elle copie les maîtres au Louvre, où elle rencontre Édouard Manet, dont elle épousera le frère Eugène. Elle participe à sept des huit expositions impressionnistes. Elle peint surtout la vie intime des femmes, avec une touche rapide et lumineuse.",
+    "mouvement": {
+      "nom": "Impressionnisme",
+      "texte": "Mouvement né en France vers 1870 : peinture en plein air, touche visible, attention aux variations de la lumière. Son nom vient d'Impression, soleil levant de Monet."
+    },
+    "oeuvres_cles": [
+      "Le Berceau (1872)",
+      "Jeune Fille au bal (1875)",
+      "Eugène Manet et sa fille au jardin de Bougival (1881)"
+    ]
   },
   {
     "nom": "El Anatsui",
@@ -205,7 +455,16 @@
     "pays": "Ghana",
     "epoque": "né en 1944",
     "oeuvre": "Gravity and Grace (2010)",
-    "presentation": "Ses immenses tentures de capsules métalliques recyclées évoquent les textiles kente."
+    "presentation": "Ses immenses tentures de capsules métalliques recyclées évoquent les textiles kente.",
+    "bio": "Né à Anyako, au Ghana, il enseigne longtemps la sculpture à l'université du Nigeria, à Nsukka. Il travaille d'abord le bois et la céramique, puis assemble, à partir de la fin des années 1990, des milliers de capsules de bouteilles aplaties reliées par du fil de cuivre. Il reçoit en 2015 le Lion d'or de la Biennale de Venise pour l'ensemble de sa carrière.",
+    "mouvement": {
+      "nom": "Art contemporain africain",
+      "texte": "El Anatsui est associé au groupe de Nsukka, des artistes qui réinventent les traditions visuelles africaines dans un langage contemporain."
+    },
+    "oeuvres_cles": [
+      "Gravity and Grace (2010)",
+      "Behind the Red Moon (2023, Tate Modern)"
+    ]
   },
   {
     "nom": "Clara Schumann",
@@ -213,7 +472,17 @@
     "pays": "Allemagne",
     "epoque": "1819-1896",
     "oeuvre": "Trio pour piano en sol mineur, op. 17 (1846)",
-    "presentation": "Pianiste virtuose et compositrice, elle fut l'une des grandes interprètes de son siècle."
+    "presentation": "Pianiste virtuose et compositrice, elle fut l'une des grandes interprètes de son siècle.",
+    "bio": "Née Clara Wieck à Leipzig, elle se produit en concert dès l'enfance. Elle épouse Robert Schumann en 1840, contre l'avis de son père. Mère de huit enfants, elle mène pendant soixante ans une carrière de concertiste et défend les œuvres de son mari et de Brahms.",
+    "mouvement": {
+      "nom": "Romantisme",
+      "texte": "Mouvement du XIXe siècle qui privilégie l'expression des sentiments ; en musique, Chopin, Liszt ou Robert Schumann."
+    },
+    "oeuvres_cles": [
+      "Concerto pour piano en la mineur, op. 7 (1835)",
+      "Trio pour piano, op. 17 (1846)",
+      "Trois Romances pour violon et piano, op. 22 (1853)"
+    ]
   },
   {
     "nom": "Mahmoud Darwich",
@@ -221,7 +490,17 @@
     "pays": "Palestine",
     "epoque": "1941-2008",
     "oeuvre": "Pourquoi as-tu laissé le cheval à sa solitude ? (1995)",
-    "presentation": "Poète national palestinien, il a fait de l'exil une matière universelle."
+    "presentation": "Poète national palestinien, il a fait de l'exil une matière universelle.",
+    "bio": "Né en Galilée, il est encore enfant lorsque son village, Al-Birwa, est détruit en 1948. Emprisonné à plusieurs reprises en Israël, il s'exile en 1970 et vit à Beyrouth, Tunis et Paris. Il rédige la Déclaration d'indépendance palestinienne de 1988.",
+    "mouvement": {
+      "nom": "Poésie arabe moderne",
+      "texte": "Rupture avec la métrique classique et place faite au vers libre. Darwich y passe d'une poésie de résistance à une méditation universelle sur l'exil."
+    },
+    "oeuvres_cles": [
+      "Carte d'identité (1964)",
+      "Pourquoi as-tu laissé le cheval à sa solitude ? (1995)",
+      "Murale (2000)"
+    ]
   },
   {
     "nom": "Leonora Carrington",
@@ -229,7 +508,17 @@
     "pays": "Royaume-Uni et Mexique",
     "epoque": "1917-2011",
     "oeuvre": "Le Cornet acoustique (roman, 1974)",
-    "presentation": "Surréaliste, elle invente un monde peuplé de créatures hybrides et de rituels étranges."
+    "presentation": "Surréaliste, elle invente un monde peuplé de créatures hybrides et de rituels étranges.",
+    "bio": "Issue d'une riche famille anglaise, elle rejoint en 1937 Max Ernst à Paris, puis dans le sud de la France. Après l'internement d'Ernst et une période très difficile, elle s'installe au Mexique en 1942, où elle vivra jusqu'à sa mort.",
+    "mouvement": {
+      "nom": "Surréalisme",
+      "texte": "Mouvement du rêve et de l'inconscient. Au Mexique, Carrington forme avec Remedios Varo un pôle féminin du surréalisme."
+    },
+    "oeuvres_cles": [
+      "Autoportrait, dit L'Auberge du cheval d'aube (vers 1937-1938)",
+      "Le Monde magique des Mayas (1963)",
+      "Le Cornet acoustique (roman, 1974)"
+    ]
   },
   {
     "nom": "Jean-Michel Basquiat",
@@ -237,6 +526,16 @@
     "pays": "États-Unis",
     "epoque": "1960-1988",
     "oeuvre": "Untitled (Skull) (1981)",
-    "presentation": "Venu du graffiti, il impose en quelques années une peinture brute et politique."
+    "presentation": "Venu du graffiti, il impose en quelques années une peinture brute et politique.",
+    "bio": "Né à Brooklyn de parents haïtien et portoricain, il se fait connaître à la fin des années 1970 par des graffitis signés SAMO. Repéré par le monde de l'art, il collabore avec Andy Warhol. Il meurt à 27 ans, laissant plus d'un millier d'œuvres.",
+    "mouvement": {
+      "nom": "Néo-expressionnisme",
+      "texte": "Retour, au début des années 1980, à une peinture figurative et violente, en réaction à l'art minimal et conceptuel."
+    },
+    "oeuvres_cles": [
+      "Untitled (Skull) (1981)",
+      "Irony of Negro Policeman (1981)",
+      "Hollywood Africans (1983)"
+    ]
   }
 ]
