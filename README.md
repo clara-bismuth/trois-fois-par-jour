@@ -8,7 +8,14 @@ Un widget pour iPhone qui vous apprend trois choses chaque jour, directement sur
 
 Touchez le widget pour ouvrir la fiche du jour : mises en situation, synonymes et nuances du mot ; récit historique de la date ; biographie, œuvres et courant de l'artiste. Chaque fiche propose des émissions de France Culture choisies pour le sujet, ainsi que des liens vers Wikipédia, le CNRTL et Google Arts & Culture.
 
-Le **carnet** garde, jour après jour, tout ce que vous avez appris, dans un calendrier. Ce qui n'est pas encore révélé reste caché : ni le mot de demain, ni la date de midi quand il n'est que 10 heures.
+L'app s'organise en quatre onglets :
+
+- **Aujourd'hui** : les trois contenus du jour, chacun sur sa couleur. Ce qui n'est pas encore révélé reste caché, avec l'heure du rendez-vous.
+- **Carnet** : un calendrier qui garde, jour après jour, tout ce que vous avez appris. Les jours à venir restent fermés.
+- **Favoris** : les fiches que vous avez choisi de garder.
+- **Progrès** : votre série de jours de lecture, les sept derniers jours et le nombre de mots, dates et artistes découverts.
+
+Chaque fiche peut être gardée en favori ou partagée en un geste.
 
 Le widget fonctionne avec [Scriptable](https://apps.apple.com/app/scriptable/id1405459188), une app gratuite. Il n'y a rien à acheter, aucun compte à créer et aucune donnée collectée.
 
@@ -46,7 +53,7 @@ Tous les utilisateurs voient le même contenu le même jour. Une fois toutes les
 
 Les extraits et les images de la fiche viennent de Wikipédia en français, qui n'utilise que des images sous licence libre. Les émissions recommandées (Le Cours de l'histoire, Concordance des temps, Toute une vie, Les Regardeurs) renvoient vers leur page officielle sur Radio France, avec une recherche dans leurs archives. Un épisode précis peut être ajouté à une entrée avec le champ `ecouter`.
 
-Le carnet est enregistré uniquement sur votre téléphone. Il commence le jour de la première ouverture de cette version.
+Le carnet et les favoris sont enregistrés uniquement sur votre téléphone. Il commence le jour de la première ouverture de cette version.
 
 Les dates et les définitions sont relues, mais une erreur reste toujours possible. Si vous en repérez une, merci de la signaler.
 
