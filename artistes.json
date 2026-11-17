@@ -15,6 +15,14 @@
       "Les Dix Plus Grands (1907)",
       "Peintures pour le Temple (1906-1915)",
       "Série du Cygne (1914-1915)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Hilma af Klint, ou l’esprit de l’abstraction",
+        "emission": "Allons-y voir",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/allons-y-voir/hilma-af-klint-ou-l-esprit-de-l-abstraction-3990990"
+      }
     ]
   },
   {
@@ -34,7 +42,21 @@
       "Le Fuji par temps clair, dit Le Fuji rouge (vers 1831)",
       "Hokusai Manga (à partir de 1814)"
     ],
-    "wikipedia": "Katsushika Hokusai"
+    "wikipedia": "Katsushika Hokusai",
+    "ecouter": [
+      {
+        "titre": "Hokusai : pourquoi n’a-t-on retenu que « La Vague » ?",
+        "emission": "Sans oser le demander",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/sans-oser-le-demander/hokusai-pourquoi-n-a-t-on-retenu-que-la-vague-4972858"
+      },
+      {
+        "titre": "Dans le mystérieux « Manoir aux assiettes » d’Hokusai",
+        "emission": "Les Regardeurs",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/les-regardeurs/manoir-aux-assiettes-estampe-d-hokusai-1822792"
+      }
+    ]
   },
   {
     "nom": "Nina Simone",
@@ -52,6 +74,14 @@
       "I Put a Spell on You (1965)",
       "Feeling Good (1965)",
       "To Be Young, Gifted and Black (1969)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Nina Simone, trouver sa voix",
+        "emission": "Avoir 20 ans avec",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/avoir-20-ans-avec/nina-simone-chanter-plus-fort-2570012"
+      }
     ]
   },
   {
@@ -70,6 +100,14 @@
       "La Trilogie d'Apu (1955-1959)",
       "Le Salon de musique (1958)",
       "Charulata (1964)"
+    ],
+    "ecouter": [
+      {
+        "titre": "« La trilogie d’Apu » de Satyajit Ray",
+        "emission": "Les Nuits de France Culture",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/les-nuits-de-france-culture/le-cinema-des-cineastes-la-trilogie-d-apu-de-satyajit-ray-9438137"
+      }
     ]
   },
   {
@@ -88,6 +126,14 @@
       "Suzanne et les vieillards (1610)",
       "Judith décapitant Holopherne (vers 1620)",
       "Autoportrait en allégorie de la peinture (vers 1638)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Artemisia Gentileschi, une femme dans l’histoire de l’art",
+        "emission": "Le Cours de l’histoire",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/le-cours-de-l-histoire/artemisia-gentileschi-une-femme-dans-l-histoire-de-l-art-4802018"
+      }
     ]
   },
   {
@@ -106,6 +152,14 @@
       "Zombie (1976)",
       "Water No Get Enemy (1975)",
       "Expensive Shit (1975)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Fela Kuti : « La musique est révolution »",
+        "emission": "Les Nuits de France Culture",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/les-nuits-de-france-culture/nuits-magnetiques-fela-anikulapo-kuti-1ere-diffusion-19-01-1981-3499174"
+      }
     ]
   },
   {
@@ -124,6 +178,14 @@
       "Cléo de 5 à 7 (1962)",
       "Sans toit ni loi (1985)",
       "Les Glaneurs et la Glaneuse (2000)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Agnès Varda, sur les planches d’Avignon",
+        "emission": "Avoir 20 ans avec",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/avoir-20-ans-avec/agnes-varda-sur-les-planches-d-avignon-4243218"
+      }
     ]
   },
   {
@@ -142,6 +204,14 @@
       "Corbeille de fruits (vers 1599)",
       "La Vocation de saint Matthieu (1599-1600)",
       "David avec la tête de Goliath (vers 1610)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Le Caravage parmi nous",
+        "emission": "Répliques",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/repliques/le-caravage-parmi-nous-2240079"
+      }
     ]
   },
   {
@@ -160,6 +230,14 @@
       "L'Œil le plus bleu (1970)",
       "Le Chant de Salomon (1977)",
       "Beloved (1987)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Toni Morrison, la mémoire en héritage (5/5)",
+        "emission": "À voix nue",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/a-voix-nue/toni-morrison-je-suis-plutot-du-cote-de-la-transgression-que-de-la-loi-5204102"
+      }
     ]
   },
   {
@@ -178,6 +256,14 @@
       "Gymnopédies (1888)",
       "Gnossiennes (1890-1897)",
       "Parade (1917)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Erik Satie (1/2)",
+        "emission": "Les Greniers de la mémoire",
+        "chaine": "France Musique",
+        "url": "https://www.radiofrance.fr/francemusique/podcasts/les-greniers-de-la-memoire/erik-satie-1-2-9670781"
+      }
     ]
   },
   {
@@ -196,6 +282,14 @@
       "La Destruction du père (1974)",
       "Les Cells (années 1990)",
       "Maman (1999)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Louise Bourgeois, « une femme enragée et agrippée »",
+        "emission": "Une vie, une œuvre",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/une-vie-une-oeuvre/louise-bourgeois-8248083"
+      }
     ]
   },
   {
@@ -214,13 +308,21 @@
       "Rashōmon (1950)",
       "Les Sept Samouraïs (1954)",
       "Ran (1985)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Akira Kurosawa, l’autre samouraï (1910-1998)",
+        "emission": "Une vie, une œuvre",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/une-vie-une-oeuvre/akira-kurosawa-l-autre-samourai-1910-1998-4190950"
+      }
     ]
   },
   {
     "nom": "Yayoi Kusama",
     "discipline": "Arts plastiques",
     "pays": "Japon",
-    "epoque": "née en 1929",
+    "epoque": "1929-2026",
     "oeuvre": "Infinity Mirror Rooms (depuis 1965)",
     "presentation": "Pois obsessionnels, citrouilles et salles de miroirs infinies : un univers reconnaissable entre tous.",
     "bio": "Née à Matsumoto, elle transpose dès l'enfance ses visions en motifs répétés à l'infini. Installée à New York de 1958 à 1973, elle participe à l'avant-garde avec ses toiles, ses sculptures molles et ses performances. De retour au Japon, elle poursuit une production intense et devient l'une des artistes les plus exposées au monde.",
@@ -232,6 +334,14 @@
       "Infinity Nets (à partir de 1959)",
       "Infinity Mirror Rooms (depuis 1965)",
       "Pumpkin (1994, île de Naoshima)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Yayoi Kusama, Paul Klee, fondation Bernard Magrez",
+        "emission": "La Dispute",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/la-dispute/yayoi-kusama-paul-klee-fondation-bernard-magrez-3040360"
+      }
     ]
   },
   {
@@ -250,6 +360,14 @@
       "Cent ans de solitude (1967)",
       "Chronique d'une mort annoncée (1981)",
       "L'Amour aux temps du choléra (1985)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Gabriel García Márquez, légende de la littérature",
+        "emission": "Une vie, une œuvre",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/une-vie-une-oeuvre/gabriel-garcia-marquez-legende-de-la-litterature-2157218"
+      }
     ]
   },
   {
@@ -268,6 +386,14 @@
       "White Angel Breadline (1933)",
       "Migrant Mother (1936)",
       "Photographies de l'internement des Américains d'origine japonaise (1942)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Histoire d’une photo : « Migrant Mother » de Dorothea Lange (1936)",
+        "emission": "La Fabrique de l’histoire",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/la-fabrique-de-l-histoire/histoire-d-une-photo-migrant-mother-de-dorothea-lange-1936-1922590"
+      }
     ]
   },
   {
@@ -286,6 +412,14 @@
       "Les Bouts de bois de Dieu (roman, 1960)",
       "La Noire de... (1966)",
       "Moolaadé (2004)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Ousmane Sembène (1923-2007) : le militant à l’œuvre",
+        "emission": "Toute une vie",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/toute-une-vie/ousmane-sembene-1923-2007-le-militant-a-l-oeuvre-8382768"
+      }
     ]
   },
   {
@@ -304,6 +438,14 @@
       "Les Deux Frida (1939)",
       "Autoportrait au collier d'épines et colibri (1940)",
       "La Colonne brisée (1944)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Frida Kahlo : peindre la vie pour oublier la douleur",
+        "emission": "Les Odyssées",
+        "chaine": "France Inter",
+        "url": "https://www.radiofrance.fr/franceinter/podcasts/les-odyssees/frida-kahlo-peindre-la-vie-pour-oublier-la-douleur-2081539"
+      }
     ]
   },
   {
@@ -322,6 +464,14 @@
       "Für Alina (1976)",
       "Tabula Rasa (1977)",
       "Spiegel im Spiegel (1978)"
+    ],
+    "ecouter": [
+      {
+        "titre": "« Spiegel im Spiegel », la berceuse idéale d’Arvo Pärt",
+        "emission": "Maxxi Classique",
+        "chaine": "France Musique",
+        "url": "https://www.radiofrance.fr/francemusique/podcasts/maxxi-classique/spiegel-im-spiegel-la-berceuse-ideale-d-arvo-paert-9020765"
+      }
     ]
   },
   {
@@ -340,6 +490,14 @@
       "La Valse (1889-1905)",
       "L'Âge mûr (1890-1913)",
       "La Vague (1897-1903)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Camille Claudel, une œuvre à soi",
+        "emission": "Autant en emporte l’histoire",
+        "chaine": "France Inter",
+        "url": "https://www.radiofrance.fr/franceinter/podcasts/autant-en-emporte-l-histoire/autant-en-emporte-l-histoire-du-dimanche-31-mars-2024-2721484"
+      }
     ]
   },
   {
@@ -358,6 +516,14 @@
       "Derrière la gare Saint-Lazare (1932)",
       "Funérailles de Gandhi (1948)",
       "Images à la sauvette (livre, 1952)"
+    ],
+    "ecouter": [
+      {
+        "titre": "La vie photographique d’Henri Cartier-Bresson",
+        "emission": "La Compagnie des œuvres",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/la-compagnie-des-oeuvres/la-vie-photographique-d-henri-cartier-bresson-6107920"
+      }
     ]
   },
   {
@@ -376,6 +542,14 @@
       "Enta Omri (1964)",
       "Al-Atlal (1966)",
       "Alf Leila wa Leila (1969)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Oum Kalthoum, la diva du Moyen-Orient",
+        "emission": "Les Odyssées",
+        "chaine": "France Inter",
+        "url": "https://www.radiofrance.fr/franceinter/podcasts/les-odyssees/oum-kalsoum-la-diva-du-moyen-orient-5217957"
+      }
     ]
   },
   {
@@ -393,6 +567,14 @@
     "oeuvres_cles": [
       "La Jungle (1943)",
       "Les Noces (1947)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Une vie, une œuvre : Wifredo Lam",
+        "emission": "Les Nuits de France Culture",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/les-nuits-de-france-culture/une-vie-une-oeuvre-wifredo-lam-5614331"
+      }
     ]
   },
   {
@@ -411,6 +593,14 @@
       "Caserne de pompiers Vitra (1993)",
       "MAXXI, Rome (2010)",
       "Centre Heydar Aliyev, Bakou (2012)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Les métamorphoses de Zaha Hadid",
+        "emission": "La Compagnie des œuvres",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/la-compagnie-des-oeuvres/les-metamorphoses-de-zaha-hadid-8888719"
+      }
     ]
   },
   {
@@ -429,6 +619,14 @@
       "No. 61 (Rust and Blue) (1953)",
       "Peintures pour le Seagram Building (1958-1959)",
       "La chapelle Rothko, Houston (1971)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Mark Rothko, le peintre qui ne souriait jamais",
+        "emission": "Une vie, une œuvre",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/une-vie-une-oeuvre/mark-rothko-1903-1970-8297452"
+      }
     ]
   },
   {
@@ -447,6 +645,14 @@
       "Le Berceau (1872)",
       "Jeune Fille au bal (1875)",
       "Eugène Manet et sa fille au jardin de Bougival (1881)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Berthe Morisot (1841-1895), un atelier à soi",
+        "emission": "Une vie, une œuvre",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/une-vie-une-oeuvre/berthe-morisot-un-atelier-a-soi-1841-1895-8698176"
+      }
     ]
   },
   {
@@ -464,6 +670,14 @@
     "oeuvres_cles": [
       "Gravity and Grace (2010)",
       "Behind the Red Moon (2023, Tate Modern)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Les tentures métalliques d’El Anatsui",
+        "emission": "Le Sens de la visite",
+        "chaine": "France Inter",
+        "url": "https://www.radiofrance.fr/franceinter/podcasts/le-sens-de-la-visite/les-tentures-metalliques-d-el-anatsui-domaine-de-chaumont-sur-loire-2697600"
+      }
     ]
   },
   {
@@ -482,6 +696,14 @@
       "Concerto pour piano en la mineur, op. 7 (1835)",
       "Trio pour piano, op. 17 (1846)",
       "Trois Romances pour violon et piano, op. 22 (1853)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Le secret du concerto de Clara Schumann",
+        "emission": "Maxxi Classique",
+        "chaine": "France Musique",
+        "url": "https://www.radiofrance.fr/francemusique/podcasts/maxxi-classique/le-secret-du-concerto-de-clara-schumann-3164645"
+      }
     ]
   },
   {
@@ -500,6 +722,14 @@
       "Carte d'identité (1964)",
       "Pourquoi as-tu laissé le cheval à sa solitude ? (1995)",
       "Murale (2000)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Mahmoud Darwich : « Je n’ai nullement cherché à devenir un symbole »",
+        "emission": "Les Nuits de France Culture",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/les-nuits-de-france-culture/mahmoud-darwich-je-n-ai-nullement-cherche-a-devenir-ou-a-rester-un-symbole-de-quoi-que-ce-soit-1831383"
+      }
     ]
   },
   {
@@ -518,6 +748,14 @@
       "Autoportrait, dit L'Auberge du cheval d'aube (vers 1937-1938)",
       "Le Monde magique des Mayas (1963)",
       "Le Cornet acoustique (roman, 1974)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Dans le monde de Leonora Carrington (1/15)",
+        "emission": "Les Nuits de France Culture",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/les-nuits-de-france-culture/presentation-dans-le-monde-de-leonora-carrington-1ere-diffusion-10-05-2026-2547124"
+      }
     ]
   },
   {
@@ -536,6 +774,14 @@
       "Untitled (Skull) (1981)",
       "Irony of Negro Policeman (1981)",
       "Hollywood Africans (1983)"
+    ],
+    "ecouter": [
+      {
+        "titre": "Eroica Basquiat (1960-1988)",
+        "emission": "Une vie, une œuvre",
+        "chaine": "France Culture",
+        "url": "https://www.radiofrance.fr/franceculture/podcasts/une-vie-une-oeuvre/jean-michel-basquiat-1960-1988-3435643"
+      }
     ]
   }
 ]

@@ -1,5 +1,5 @@
 // ============================================================
-// Trois fois par jour · version 4
+// Trois fois par jour · version 5
 // Un mot à 7h, une date à 12h, un artiste à 18h.
 // Widget Scriptable pour l'écran verrouillé et l'écran d'accueil de l'iPhone.
 // Code sous licence MIT. Contenus sous licence CC BY 4.0.
@@ -23,62 +23,45 @@ const HORAIRES = {
 // Point de départ de la rotation. Ne pas modifier une fois le projet publié.
 const DEBUT = new Date(2026, 0, 1)
 
-// Une couleur pastel par moment de la journée : rose le matin, jaune à midi, pervenche le soir.
-// Sur l'écran verrouillé, iOS impose sa propre teinte.
-const COULEURS = {
-  encre: new Color("#161616"),
-  fond: {
-    mot: Color.dynamic(new Color("#F7C8DF"), new Color("#E9B6CF")),
-    date: Color.dynamic(new Color("#F5E3A0"), new Color("#E6D38E")),
-    artiste: Color.dynamic(new Color("#BAC7FD"), new Color("#A9B6EE")),
-  },
-}
-
-const POLICE_TITRE = "Charter-Bold"
-const POLICE_TITRE_FINE = "Charter-Roman"
-
 const DEPOT = "https://github.com/clara-bismuth/trois-fois-par-jour"
 
-// Émissions recommandées. Seules des émissions dont l'adresse a été vérifiée figurent ici.
-const EMISSIONS = {
-  "cours-histoire": {
-    titre: "Le Cours de l’histoire",
-    chaine: "France Culture",
-    texte: "Une heure d’histoire avec des historiennes et des historiens, du lundi au vendredi, par Xavier Mauduit.",
-    url: "https://www.radiofrance.fr/franceculture/podcasts/le-cours-de-l-histoire",
-    site: "radiofrance.fr/franceculture/podcasts/le-cours-de-l-histoire",
-  },
-  "concordance": {
-    titre: "Concordance des temps",
-    chaine: "France Culture",
-    texte: "Chaque samedi, Jean-Noël Jeanneney éclaire l’actualité par les précédents de l’histoire.",
-    url: "https://www.radiofrance.fr/franceculture/podcasts/concordance-des-temps",
-    site: "radiofrance.fr/franceculture/podcasts/concordance-des-temps",
-  },
-  "toute-une-vie": {
-    titre: "Toute une vie",
-    chaine: "France Culture",
-    texte: "Chaque samedi, le portrait documentaire d’une femme ou d’un homme d’exception.",
-    url: "https://www.radiofrance.fr/franceculture/podcasts/toute-une-vie",
-    site: "radiofrance.fr/franceculture/podcasts/toute-une-vie",
-  },
-  "regardeurs": {
-    titre: "Les Regardeurs",
-    chaine: "France Culture",
-    texte: "Une œuvre d’art par épisode, regardée et racontée par plusieurs voix.",
-    url: "https://www.radiofrance.fr/franceculture/podcasts/les-regardeurs",
-    site: "radiofrance.fr/franceculture/podcasts/les-regardeurs",
+// Charte inspirée du Bauhaus : papier gris clair, une couleur primaire par moment.
+// Sur l'écran verrouillé, iOS impose sa propre teinte.
+const COULEURS = {
+  encre: Color.dynamic(new Color("#1A1A1A"), new Color("#EDEDE8")),
+  papier: Color.dynamic(new Color("#E9E9E5"), new Color("#161615")),
+  doux: Color.dynamic(new Color("#55554F"), new Color("#A3A39B")),
+  moment: {
+    mot: new Color("#F7D117"),
+    date: new Color("#D7261E"),
+    artiste: new Color("#2F74C0"),
   },
 }
 
+// Futura, dessinée en 1927, est installée sur tous les iPhone.
+const POLICE = "Futura-Medium"
+
+// Jauge : un point par fiche lue, un point par bonne réponse au quiz de la semaine.
+// Grades inspirés des ateliers du Bauhaus.
+const NIVEAUX = [
+  { nom: "Apprenti", seuil: 0 },
+  { nom: "Compagnon", seuil: 50 },
+  { nom: "Maître", seuil: 150 },
+]
+
+// Le quiz de la semaine ouvre le dimanche, avec le mot du matin.
+const QUESTIONS_SEMAINE = 10
+const QUESTIONS_REVISION = 5
+
 const ENTETES_WIKI = {
-  "Api-User-Agent": "TroisFoisParJour/3.0 (https://github.com/clara-bismuth/trois-fois-par-jour)",
+  "Api-User-Agent": "TroisFoisParJour/5.0 (https://github.com/clara-bismuth/trois-fois-par-jour)",
 }
 
 const TYPES = ["mot", "date", "artiste"]
 
 
 // ---------- CONTENU DE SECOURS ----------
+// Affiché seulement si GitHub est inaccessible lors de la toute première utilisation.
 
 const SECOURS = {
   mot: [{
@@ -133,7 +116,8 @@ async function charger(type) {
 
 function enMinutes(h) { return h[0] * 60 + h[1] }
 function minutesActuelles(d) { return d.getHours() * 60 + d.getMinutes() }
-function veille(d) { const v = new Date(d); v.setDate(v.getDate() - 1); return v }
+function decaler(d, n) { const v = new Date(d); v.setDate(v.getDate() + n); return v }
+function veille(d) { return decaler(d, -1) }
 function revele(type, maintenant) { return minutesActuelles(maintenant) >= enMinutes(HORAIRES[type]) }
 
 function cle(d) {
@@ -172,23 +156,38 @@ function prochainChangement(maintenant) {
     d.setHours(HORAIRES[t][0], HORAIRES[t][1], 0, 0)
     return d
   })
-  const demain = new Date(maintenant)
-  demain.setDate(demain.getDate() + 1)
+  const demain = decaler(maintenant, 1)
   demain.setHours(HORAIRES.mot[0], HORAIRES.mot[1], 0, 0)
   candidats.push(demain)
   return candidats.filter(d => d > maintenant).sort((a, b) => a - b)[0]
 }
 
+// Dimanche du quiz en cours : le dernier dimanche passé, à partir du mot du matin.
+// Le quiz porte sur les six jours qui le précèdent et reste ouvert jusqu'au dimanche suivant.
+function dimancheDuQuiz(maintenant) {
+  const d = new Date(maintenant)
+  d.setHours(0, 0, 0, 0)
+  const ecart = d.getDay()
+  let dimanche = decaler(d, -ecart)
+  if (ecart === 0 && !revele("mot", maintenant)) dimanche = decaler(dimanche, -7)
+  return dimanche
+}
 
-// ---------- CARNET (historique local, jamais envoyé ailleurs) ----------
+
+// ---------- CARNET, FAVORIS ET QUIZ (enregistrés sur le téléphone, jamais envoyés ailleurs) ----------
 
 function lireHistorique() {
   try {
-    if (fm.fileExists(CHEMIN_HISTORIQUE)) return JSON.parse(fm.readString(CHEMIN_HISTORIQUE))
+    if (fm.fileExists(CHEMIN_HISTORIQUE)) {
+      const h = JSON.parse(fm.readString(CHEMIN_HISTORIQUE))
+      h.jours = h.jours || {}
+      h.quiz = h.quiz || {}
+      return h
+    }
   } catch (e) {
     console.log("Carnet illisible, il repart de zéro")
   }
-  return { debut: null, jours: {} }
+  return { debut: null, jours: {}, quiz: {} }
 }
 
 function ecrireHistorique(h) {
@@ -247,17 +246,18 @@ function fiche(type, e) {
   }
 }
 
-function policeTitre(taille) { return new Font(POLICE_TITRE, taille) }
+function police(taille) { return new Font(POLICE, taille) }
 
+// Écran verrouillé, format rectangulaire
 function widgetRectangulaire(f) {
   const w = new ListWidget()
   w.setPadding(0, 0, 0, 0)
-  const libelle = w.addText(f.libelle)
-  libelle.font = Font.mediumSystemFont(11)
+  const libelle = w.addText(f.libelle.toUpperCase())
+  libelle.font = police(10)
   libelle.textOpacity = 0.75
   w.addSpacer(1)
   const titre = w.addText(f.titre)
-  titre.font = policeTitre(20)
+  titre.font = police(20)
   titre.lineLimit = 1
   titre.minimumScaleFactor = 0.6
   const texte = w.addText(f.court)
@@ -278,48 +278,58 @@ function widgetRond(f) {
   const w = new ListWidget()
   w.addAccessoryWidgetBackground = true
   const t = w.addText(f.titre)
-  t.font = policeTitre(12)
+  t.font = police(12)
   t.centerAlignText()
   t.lineLimit = 2
   t.minimumScaleFactor = 0.5
   return w
 }
 
+// Écran d'accueil et StandBy : papier gris, un filet aux trois couleurs, le moment en cours en tête
 function widgetCouleur(f, type, grand) {
   const w = new ListWidget()
-  w.backgroundColor = COULEURS.fond[type]
-  w.setPadding(16, 16, 16, 16)
+  w.backgroundColor = COULEURS.papier
+  w.setPadding(14, 16, 14, 16)
+
+  const filet = w.addStack()
+  filet.layoutHorizontally()
+  filet.size = new Size(0, 5)
+  for (const t of TYPES) {
+    const s = filet.addStack()
+    s.backgroundColor = COULEURS.moment[t]
+    s.size = new Size(t === type ? 40 : 14, 5)
+    filet.addSpacer(3)
+  }
+
+  w.addSpacer(10)
   const libelle = w.addText(f.libelle)
-  libelle.font = Font.mediumSystemFont(12)
-  libelle.textColor = COULEURS.encre
-  libelle.textOpacity = 0.7
-  w.addSpacer(6)
+  libelle.font = police(12)
+  libelle.textColor = COULEURS.doux
+  w.addSpacer(2)
   const titre = w.addText(f.titre)
-  titre.font = new Font(POLICE_TITRE_FINE, grand ? 30 : 26)
+  titre.font = police(grand ? 30 : 25)
   titre.textColor = COULEURS.encre
   titre.lineLimit = 1
   titre.minimumScaleFactor = 0.5
   if (f.meta) {
     const meta = w.addText(f.meta)
     meta.font = Font.systemFont(12)
-    meta.textColor = COULEURS.encre
-    meta.textOpacity = 0.7
+    meta.textColor = COULEURS.doux
     meta.lineLimit = 1
     meta.minimumScaleFactor = 0.7
   }
-  w.addSpacer(8)
+  w.addSpacer(6)
   const principal = w.addText(f.principal)
   principal.font = Font.systemFont(grand ? 14 : 13)
   principal.textColor = COULEURS.encre
-  principal.lineLimit = grand ? 2 : 4
+  principal.lineLimit = grand ? 2 : 3
   principal.minimumScaleFactor = 0.8
   if (grand && f.detail) {
     w.addSpacer(4)
     const detail = w.addText(f.detail)
     detail.font = Font.italicSystemFont(13)
-    detail.textColor = COULEURS.encre
-    detail.textOpacity = 0.75
-    detail.lineLimit = 3
+    detail.textColor = COULEURS.doux
+    detail.lineLimit = 2
     detail.minimumScaleFactor = 0.8
   }
   w.addSpacer()
@@ -363,6 +373,7 @@ async function wikipedia(recherche, avecGalerie) {
       extrait: resume.extract || "",
       // L'original s'il reste léger, sinon la vignette de Wikipédia
       image: (resume.originalimage && resume.originalimage.width <= 1600 && resume.originalimage.source) || (resume.thumbnail && resume.thumbnail.source) || "",
+      url: (resume.content_urls && resume.content_urls.mobile && resume.content_urls.mobile.page) || `https://fr.wikipedia.org/wiki/${t}`,
       galerie,
     }
   } catch (e) {
@@ -376,162 +387,201 @@ async function wikipedia(recherche, avecGalerie) {
 
 const STYLES = `
 :root {
-  --fond: #F6F6F3; --encre: #161616; --doux: #66665F; --filet: rgba(22, 22, 22, .12); --vide: #E4E3DD;
-  --rose: #F7C8DF; --jaune: #F5E3A0; --pervenche: #BAC7FD; --sauge: #C5D9A4; --ciel: #CFE1F6; --peche: #F7CC9F;
-  --sur-pastel: #161616; --barre: #161616; --barre-texte: #F6F6F3;
-  --titre: "Charter", "New York", "Iowan Old Style", serif;
-  --sans: -apple-system, "SF Pro Text", "Helvetica Neue", sans-serif;
+  --papier: #E9E9E5; --encre: #1A1A1A; --doux: #55554F; --gris: #CFCFC9; --carte: #F5F5F2;
+  --jaune: #F7D117; --rouge: #D7261E; --bleu: #2F74C0; --vert: #157A43; --noir: #1A1A1A; --blanc: #FFFFFF;
+  --police: Futura, "Jost", "Avenir Next", -apple-system, sans-serif;
+  --m: 10px; --e: 8px; --nav: 62px;
+  --haut: env(safe-area-inset-top, 0px); --bas: env(safe-area-inset-bottom, 0px);
 }
 @media (prefers-color-scheme: dark) {
-  :root {
-    --fond: #151514; --encre: #F2F1EC; --doux: #A8A79F; --filet: rgba(242, 241, 236, .14); --vide: #2B2B28;
-    --rose: #E9B6CF; --jaune: #E6D38E; --pervenche: #A9B6EE; --sauge: #B3C892; --ciel: #BACDE4; --peche: #E6B98B;
-    --barre: #2A2A27;
-  }
+  :root { --papier: #161615; --encre: #EDEDE8; --doux: #A3A39B; --gris: #3A3A36; --carte: #222220; }
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--fond); color: var(--encre); font: 17px/1.55 var(--sans);
-       -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--papier); color: var(--encre); font: 17px/1.5 var(--police); -webkit-font-smoothing: antialiased; }
 button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: inherit; }
 a { color: inherit; }
-:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--bleu); outline-offset: 3px; }
 svg { display: block; }
+h1, h2, h3, p { margin: 0; }
 
-.page { max-width: 640px; margin: 0 auto; padding: calc(24px + env(safe-area-inset-top)) 20px calc(120px + env(safe-area-inset-bottom)); }
+/* Le cadre : la jauge en 21 segments */
+.bord { position: fixed; display: flex; z-index: 5; }
+.bord-haut { left: var(--m); right: var(--m); top: calc(var(--haut) + var(--m)); height: var(--e); }
+.bord-bas { left: var(--m); right: var(--m); bottom: calc(var(--bas) + var(--nav) + var(--m)); height: var(--e); flex-direction: row-reverse; }
+.bord-droite, .bord-gauche { width: var(--e); top: calc(var(--haut) + var(--m) + var(--e)); bottom: calc(var(--bas) + var(--nav) + var(--m) + var(--e)); }
+.bord-droite { right: var(--m); flex-direction: column; }
+.bord-gauche { left: var(--m); flex-direction: column-reverse; }
+.seg { flex: 1; background: var(--gris); }
+.s-mot { background: var(--jaune); } .s-date { background: var(--rouge); } .s-artiste { background: var(--bleu); } .s-quiz { background: var(--vert); }
+.lib { position: fixed; z-index: 5; font-size: 12px; font-weight: 500; white-space: nowrap; }
+.lib-haut { top: calc(var(--haut) + var(--m) + var(--e) + 9px); left: calc(var(--m) + var(--e) + 22px); right: calc(var(--m) + var(--e) + 22px); display: flex; justify-content: space-between; }
+.lib-bas { bottom: calc(var(--bas) + var(--nav) + var(--m) + var(--e) + 9px); left: calc(var(--m) + var(--e) + 22px); right: calc(var(--m) + var(--e) + 22px); overflow: hidden; text-overflow: ellipsis; }
+.lib-droite { right: calc(var(--m) + var(--e) + 4px); top: calc(var(--haut) + var(--m) + var(--e) + 44px); writing-mode: vertical-rl; }
+.lib-gauche { left: calc(var(--m) + var(--e) + 4px); bottom: calc(var(--bas) + var(--nav) + var(--m) + var(--e) + 44px); writing-mode: vertical-rl; transform: rotate(180deg); }
+.zone { position: fixed; z-index: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  top: calc(var(--haut) + var(--m) + var(--e) + 34px); bottom: calc(var(--bas) + var(--nav) + var(--m) + var(--e) + 32px);
+  left: calc(var(--m) + var(--e) + 22px); right: calc(var(--m) + var(--e) + 22px); padding: 6px 0 20px; scrollbar-width: none; }
+.zone::-webkit-scrollbar { display: none; }
 
-/* En-tête des onglets */
-.marque { display: flex; justify-content: space-between; align-items: center; font: 600 14px/1 var(--sans); color: var(--doux); }
-.serie { font: 500 13px/1 var(--sans); color: var(--sur-pastel); background: var(--sauge); padding: 6px 10px; border-radius: 6px; }
-.grand-titre { font: 400 clamp(34px, 9.5vw, 42px)/1.08 var(--titre); margin: 14px 0 26px; letter-spacing: -.01em; }
+/* Menu */
+.nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; height: calc(var(--nav) + var(--bas)); padding: 0 var(--m) var(--bas);
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: var(--papier); }
+.nav button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; font-size: 13px; font-weight: 500; color: var(--doux); }
+.nav i { width: 24px; height: 5px; }
+.nav [aria-current] { color: var(--encre); }
+.nav [aria-current] i { background: var(--c); }
 
-/* Tuiles du jour */
-.tuiles { display: grid; gap: 12px; }
-.tuile { position: relative; display: block; width: 100%; background: var(--teinte); color: var(--sur-pastel);
-         border-radius: 26px; padding: 20px 20px 22px; min-height: 150px; overflow: hidden; }
-.tuile-tete { display: flex; justify-content: space-between; font: 500 14px/1.2 var(--sans); margin-bottom: 14px; }
-.tuile-tete .h { opacity: .7; }
-.tuile h2 { font: 400 clamp(30px, 8.6vw, 36px)/1.05 var(--titre); margin: 0; max-width: 78%; overflow-wrap: break-word; }
-.tuile p { margin: 8px 0 0; font-size: 15px; line-height: 1.45; max-width: 80%;
-           display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.tuile .mini { position: absolute; right: 14px; bottom: 14px; width: 74px; opacity: .95; }
-.tuile.fermee { min-height: 0; padding-bottom: 20px; }
-.tuile.fermee h2 { font-size: 26px; }
-.tuile.fermee .verrou { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 15px; }
+/* Aujourd'hui */
+.titre-page { font-size: 46px; line-height: 1; font-weight: 500; letter-spacing: -0.02em; }
+.sous-titre { font-size: 19px; font-weight: 500; margin: 6px 0 20px; }
+.lignes { border-bottom: 1.5px solid var(--encre); }
+.ligne { display: grid; grid-template-columns: 24px minmax(0, 1fr) 22px; gap: 10px; width: 100%; padding: 16px 0; border-top: 1.5px solid var(--encre); align-items: start; text-decoration: none; }
+.marque { display: block; width: 14px; height: 14px; margin-top: 3px; }
+.m-mot { background: var(--jaune); } .m-date { background: var(--rouge); } .m-artiste { background: var(--bleu); } .m-quiz { background: var(--vert); }
+.contour { background: transparent; box-shadow: inset 0 0 0 2px var(--c); }
+.ligne small { display: block; font-size: 12px; font-weight: 500; }
+.ligne strong { display: block; font-size: 28px; line-height: 1.12; font-weight: 500; margin-top: 3px; overflow-wrap: break-word; }
+.ligne .resume { display: block; font-size: 14px; line-height: 1.4; margin-top: 4px; color: var(--doux); }
+.ligne .fin { align-self: center; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.fermee strong { color: var(--doux); }
+.encart { display: block; width: 100%; margin-top: 22px; padding: 16px; text-decoration: none; }
+.encart-vert { background: var(--vert); color: var(--blanc); }
+.encart-bord { border: 1.5px solid var(--encre); }
+.encart small { display: block; font-size: 12px; font-weight: 500; }
+.encart strong { display: block; font-size: 22px; line-height: 1.2; font-weight: 500; margin: 4px 0 6px; }
+.encart span { font-size: 14px; line-height: 1.45; }
+.note { font-size: 14px; color: var(--doux); margin-top: 18px; }
 
-.m-mot { --teinte: var(--rose); --surligne: var(--jaune); }
-.m-date { --teinte: var(--jaune); --surligne: var(--rose); }
-.m-artiste { --teinte: var(--pervenche); --surligne: var(--jaune); }
-
-/* Fiche plein écran */
-.fiche { background: var(--teinte); color: var(--sur-pastel); min-height: 100vh; }
-.fiche .page { padding-top: calc(16px + env(safe-area-inset-top)); }
-.fiche-haut { display: flex; justify-content: space-between; align-items: center; }
-.rond { width: 44px; height: 44px; border-radius: 50%; border: 1.5px dashed rgba(22, 22, 22, .45);
-        display: flex; align-items: center; justify-content: center; }
-.illus { width: 168px; margin: 8px auto 18px; }
-.fiche h1 { font: 400 clamp(40px, 12vw, 58px)/1.02 var(--titre); margin: 0; letter-spacing: -.015em; overflow-wrap: break-word; }
-.sous-titre { font: 400 22px/1.3 var(--titre); margin: 10px 0 0; }
-.nature { display: inline-block; margin-top: 12px; font-size: 14px; background: var(--surligne); padding: 2px 8px; border-radius: 4px; }
-.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 24px 0 0; }
-.action { display: flex; align-items: center; gap: 10px; padding: 13px 14px; border-radius: 12px;
-          border: 1px solid rgba(22, 22, 22, .16); background: rgba(255, 255, 255, .28); font: 600 15px/1 var(--sans); }
-.action[aria-pressed="true"] { background: rgba(255, 255, 255, .6); }
-.chiffres { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 26px 0 0; }
-.chiffres strong { display: block; font: 400 32px/1.1 var(--titre); }
-.chiffres span { font-size: 14px; }
-.lead { font-size: 19px; line-height: 1.55; margin: 26px 0 0; }
-.citation { font: italic 19px/1.5 var(--titre); margin: 16px 0 0; }
-.corps { margin: 16px 0 0; }
-.visuel { margin: 26px 0 0; }
-.visuel img { display: block; width: 100%; max-height: 380px; object-fit: cover; border-radius: 18px; }
-.legende-img { font-size: 12px; opacity: .7; margin-top: 6px; }
-.visuel:empty, .galerie:empty { display: none; }
-.galerie { display: flex; gap: 10px; overflow-x: auto; margin: 26px -20px 0; padding: 0 20px 4px;
-           scroll-snap-type: x mandatory; scrollbar-width: none; }
-.galerie::-webkit-scrollbar { display: none; }
-.galerie figure { margin: 0; flex: 0 0 76%; scroll-snap-align: start; }
-.galerie img { display: block; width: 100%; height: 240px; object-fit: cover; border-radius: 18px; background: rgba(255, 255, 255, .3); }
-.galerie figcaption { font-size: 12px; opacity: .75; margin-top: 6px; }
-.commencer { margin: 24px 0 0; padding: 16px; border-radius: 16px; background: rgba(255, 255, 255, .32); }
-.commencer span { display: block; font-size: 13px; opacity: .7; }
-.commencer strong { font: 400 20px/1.3 var(--titre); }
-
-h3 { font: 400 26px/1.2 var(--titre); margin: 38px 0 10px; }
-.ecoute { padding: 16px 0; border-top: 1px solid rgba(22, 22, 22, .14); }
-.ecoute:first-of-type { border-top: 0; padding-top: 4px; }
-.ecoute-titre { font: 400 21px/1.3 var(--titre); text-decoration: none; }
-.ecoute-texte { font-size: 14px; line-height: 1.5; opacity: .78; margin: 4px 0 8px; }
-.lien { font-weight: 600; font-size: 15px; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-.liens .lien { display: block; padding: 7px 0; }
-.surligne { background: var(--surligne); padding: 1px 6px; border-radius: 4px; margin: 0 6px 8px 0; display: inline-block; font-size: 15px; }
-
-.volets { margin-top: 32px; border-bottom: 1px solid rgba(22, 22, 22, .14); }
-details { border-top: 1px solid rgba(22, 22, 22, .14); }
-summary { list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 17px 0;
-          font: 600 16px/1.3 var(--sans); cursor: pointer; }
-summary::-webkit-details-marker { display: none; }
-summary i { position: relative; width: 14px; height: 14px; flex: none; }
-summary i::before, summary i::after { content: ""; position: absolute; left: 0; top: 6.5px; width: 14px; height: 1.5px;
-                                      background: currentColor; transition: transform .25s ease; }
-summary i::after { transform: rotate(90deg); }
-details[open] summary i::after { transform: rotate(0deg); }
-.volet { padding: 0 0 20px; }
-.volet p { margin: 0 0 12px; }
-.volet ul { margin: 0; padding-left: 18px; }
-.volet li { margin: 0 0 8px; }
-.source { font-size: 12px; opacity: .7; }
-.attente { opacity: .7; font-style: italic; }
+/* Boutons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 18px; font-size: 15px; font-weight: 500; border: 2px solid var(--encre); }
+.btn-plein { background: var(--encre); color: var(--papier); }
+.btn-vert { background: var(--vert); border-color: var(--vert); color: var(--blanc); }
+.btn-large { width: 100%; }
+.rangee-btn { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
 
 /* Carnet */
+.bascule { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1.5px solid var(--encre); margin-bottom: 20px; }
+.bascule button { min-height: 40px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; }
+.bascule [aria-pressed="true"] { background: var(--encre); color: var(--papier); }
 .mois { display: flex; justify-content: space-between; align-items: center; }
-.mois h2 { font: 400 30px/1.1 var(--titre); margin: 0; }
-.fleche { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--filet); display: flex; align-items: center; justify-content: center; }
-.fleche:disabled { opacity: .25; cursor: default; }
-.semaine, .grille { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; }
-.semaine { font: 500 12px/1 var(--sans); color: var(--doux); margin: 22px 0 8px; }
-.case { height: 52px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 15px; }
-.hors, .futur { color: var(--doux); opacity: .4; }
-.case { min-width: 0; }
-.num { display: block; width: 36px; height: 36px; line-height: 36px; border-radius: 50%; text-align: center; }
+.mois h2 { font-size: 26px; font-weight: 500; }
+.fleche { width: 44px; height: 44px; border: 1.5px solid var(--encre); display: flex; align-items: center; justify-content: center; }
+.fleche:disabled { opacity: 0.25; cursor: default; }
+.semaine, .grille { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); text-align: center; }
+.semaine { font-size: 12px; font-weight: 500; color: var(--doux); margin: 18px 0 6px; }
+.case { height: 50px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 15px; min-width: 0; }
+.hors, .futur { color: var(--doux); opacity: 0.45; }
+.num { display: block; width: 32px; height: 32px; line-height: 32px; text-align: center; }
 .auj .num { box-shadow: inset 0 0 0 1.5px var(--encre); }
-.choisi .num { background: var(--encre); color: var(--fond); box-shadow: none; }
-.points { display: flex; gap: 3px; margin-top: 3px; height: 5px; }
-.points b { width: 5px; height: 5px; border-radius: 50%; }
-.p-mot { background: #D9799F; } .p-date { background: #D2A92E; } .p-artiste { background: #6E7FDA; }
-.cles { display: flex; gap: 16px; font-size: 13px; color: var(--doux); margin: 14px 0 0; }
+.choisi .num { background: var(--encre); color: var(--papier); box-shadow: none; }
+.pts { display: flex; gap: 2px; margin-top: 3px; height: 5px; }
+.pts b { width: 5px; height: 5px; background: var(--gris); }
+.pts .l-mot { background: var(--jaune); } .pts .l-date { background: var(--rouge); } .pts .l-artiste { background: var(--bleu); }
+.cles { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--doux); margin-top: 12px; }
 .cles span { display: inline-flex; align-items: center; gap: 6px; }
-.cles b { width: 7px; height: 7px; border-radius: 50%; }
-.titre-section { font: 400 28px/1.15 var(--titre); margin: 34px 0 14px; }
-.rangee { display: flex; align-items: center; gap: 14px; width: 100%; background: var(--teinte); color: var(--sur-pastel);
-          border-radius: 18px; padding: 14px 16px; margin-bottom: 10px; }
-.rangee .mini { width: 46px; flex: none; }
-.rangee .txt { min-width: 0; }
-.rangee small { display: block; font-size: 13px; opacity: .7; }
-.rangee strong { display: block; font: 400 21px/1.2 var(--titre); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.vide-texte { color: var(--doux); margin: 16px 0 0; }
+.cles b { width: 8px; height: 8px; }
+.titre-section { font-size: 24px; line-height: 1.15; font-weight: 500; margin: 28px 0 10px; }
+.vide { color: var(--doux); font-size: 15px; margin-top: 14px; }
+
+/* Quiz */
+.q-tete { display: flex; justify-content: space-between; font-size: 12px; font-weight: 500; }
+.q-barre { display: grid; gap: 3px; margin: 8px 0 18px; }
+.q-barre i { height: 6px; background: var(--gris); }
+.q-barre .ok { background: var(--vert); } .q-barre .ko { background: var(--encre); }
+.q-type { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; }
+.q-type .marque { margin-top: 0; }
+.q-enonce { font-size: 24px; line-height: 1.2; font-weight: 500; margin: 10px 0 10px; }
+.q-citation { font-size: 18px; line-height: 1.45; margin: 0 0 16px; padding: 12px 14px; background: var(--carte); }
+.option { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 12px; align-items: center; width: 100%; padding: 10px; margin-bottom: 8px; border: 1.5px solid var(--encre); font-size: 16px; line-height: 1.35; }
+.option .lettre { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: var(--encre); color: var(--papier); font-weight: 500; }
+.option.bonne { background: var(--vert); border-color: var(--vert); color: var(--blanc); }
+.option.bonne .lettre { background: var(--blanc); color: var(--vert); }
+.option.fausse { background: var(--encre); color: var(--papier); }
+.option.fausse .lettre { background: var(--papier); color: var(--encre); }
+.option.terne { opacity: 0.4; }
+.verdict { margin: 8px 0 14px; padding: 14px; background: var(--carte); }
+.verdict strong { display: block; font-size: 17px; font-weight: 500; margin-bottom: 4px; }
+.verdict p { font-size: 15px; line-height: 1.5; }
+.score { font-size: 88px; line-height: 1; font-weight: 500; letter-spacing: -0.03em; }
+.score small { font-size: 36px; color: var(--doux); }
+.historique { margin-top: 8px; border-bottom: 1.5px solid var(--encre); }
+.historique div { display: flex; justify-content: space-between; padding: 12px 0; border-top: 1.5px solid var(--encre); font-size: 15px; }
 
 /* Progrès */
-.anneau { position: relative; width: 250px; height: 250px; margin: 6px auto 0; }
-.anneau .centre { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-.anneau strong { font: 400 72px/1 var(--titre); }
-.anneau span { font-size: 14px; color: var(--doux); margin-top: 6px; max-width: 140px; }
-.semaine-lue { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-size: 12px; color: var(--doux); width: 250px; margin: 8px auto 0; }
-.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 30px; }
-.stat { border-radius: 22px; padding: 18px; background: var(--teinte); color: var(--sur-pastel); }
-.stat strong { display: block; font: 400 40px/1 var(--titre); }
-.stat span { font-size: 14px; }
-.s-sauge { --teinte: var(--sauge); } .s-ciel { --teinte: var(--ciel); } .s-peche { --teinte: var(--peche); }
-.explication { color: var(--doux); font-size: 14px; margin: 18px 0 0; }
+.petit { font-size: 13px; font-weight: 500; color: var(--doux); }
+.grade { font-size: 52px; line-height: 1; font-weight: 500; letter-spacing: -0.02em; margin-top: 4px; }
+.jauge { display: grid; grid-template-columns: repeat(21, minmax(0, 1fr)); gap: 2px; margin: 16px 0 10px; }
+.jauge i { height: 16px; background: var(--gris); }
+.jauge .s-mot { background: var(--jaune); } .jauge .s-date { background: var(--rouge); } .jauge .s-artiste { background: var(--bleu); } .jauge .s-quiz { background: var(--vert); }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 20px; }
+.stat { padding: 14px; background: var(--carte); }
+.stat strong { display: block; font-size: 34px; line-height: 1; font-weight: 500; }
+.stat span { font-size: 13px; }
+.stat i { display: block; width: 14px; height: 14px; margin-bottom: 10px; }
+.sept { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; margin-top: 10px; text-align: center; font-size: 12px; color: var(--doux); }
+.sept .col { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.sept b { width: 16px; height: 16px; background: var(--gris); }
+.sept .l-mot { background: var(--jaune); } .sept .l-date { background: var(--rouge); } .sept .l-artiste { background: var(--bleu); }
+.bareme { margin-top: 8px; border-bottom: 1.5px solid var(--encre); }
+.bareme div { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-top: 1.5px solid var(--encre); font-size: 15px; }
 
-/* Barre de navigation */
-.barre { position: fixed; left: 16px; right: 16px; bottom: calc(12px + env(safe-area-inset-bottom)); max-width: 460px; margin: 0 auto;
-         background: var(--barre); color: var(--barre-texte); border-radius: 30px; padding: 8px; display: grid;
-         grid-template-columns: repeat(4, 1fr); gap: 4px; z-index: 10; }
-.barre button { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 0 7px; border-radius: 22px;
-                font: 500 11px/1 var(--sans); color: var(--barre-texte); }
-.barre button[aria-current] { background: var(--rose); color: #161616; }
-.barre svg { width: 22px; height: 22px; }
+/* Fiche : la diagonale */
+.fiche { min-height: 100vh; background: var(--papier); }
+.f-mot { --h: var(--jaune); --ht: var(--noir); --tri: var(--bleu); --tagc: var(--bleu); --tagt: var(--blanc); --jouer: var(--bleu); }
+.f-date { --h: var(--rouge); --ht: var(--blanc); --tri: var(--jaune); --tagc: var(--jaune); --tagt: var(--noir); --jouer: var(--bleu); }
+.f-artiste { --h: var(--bleu); --ht: var(--blanc); --tri: var(--jaune); --tagc: var(--jaune); --tagt: var(--noir); --jouer: var(--rouge); }
+.hero { position: relative; height: calc(300px + var(--haut)); overflow: hidden; background: var(--h); color: var(--ht); clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); }
+.hero-tri { position: absolute; right: 0; top: 0; width: 92px; height: 110px; background: var(--tri); clip-path: polygon(0 0, 100% 0, 100% 100%); }
+.hero-haut { position: absolute; left: 20px; right: 100px; top: calc(18px + var(--haut)); display: flex; align-items: center; gap: 14px; font-size: 14px; font-weight: 500; }
+.retour { width: 44px; height: 44px; flex: none; border: 2px solid currentColor; display: flex; align-items: center; justify-content: center; }
+.hero-vers { position: absolute; left: 24px; top: calc(102px + var(--haut)); font-size: 18px; font-weight: 500; }
+.hero-titre { position: absolute; left: 18px; right: 18px; top: calc(114px + var(--haut)); line-height: 1; font-weight: 500; letter-spacing: -0.03em; overflow-wrap: break-word; }
+.bas-casse { text-transform: lowercase; }
+.corps { padding: 4px 22px 0; display: flex; flex-direction: column; gap: 20px; }
+.corps h1 { font-size: 34px; line-height: 1.12; font-weight: 500; letter-spacing: -0.01em; text-transform: lowercase; }
+.tag { align-self: flex-start; padding: 4px 12px; font-size: 14px; font-weight: 500; transform: rotate(-3deg); background: var(--tagc); color: var(--tagt); }
+.actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.action { height: 48px; display: flex; align-items: center; justify-content: center; gap: 8px; border: 2px solid var(--encre); font-size: 15px; font-weight: 500; }
+.action-plein { background: var(--encre); color: var(--papier); }
+.lead { font-size: 21px; line-height: 1.4; font-weight: 500; }
+.texte { font-size: 17px; line-height: 1.6; }
+.citation { font-size: 18px; line-height: 1.5; font-style: italic; padding: 14px 16px; background: var(--carte); }
+.section { display: flex; align-items: center; gap: 12px; font-size: 20px; font-weight: 500; margin-bottom: -6px; }
+.section i { width: 28px; height: 8px; background: var(--encre); transform: rotate(-35deg); flex: none; }
+.mots { display: flex; flex-wrap: wrap; gap: 8px; }
+.mots span { border: 1.5px solid var(--encre); padding: 5px 12px; font-size: 15px; }
+.ecoute { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 14px; align-items: center; padding: 14px; border: 2px solid var(--encre); background: var(--carte); text-decoration: none; }
+.jouer { width: 56px; height: 56px; background: var(--jouer); display: flex; align-items: center; justify-content: center; }
+.ecoute small, .lire small { display: block; font-size: 12px; font-weight: 500; }
+.ecoute strong { display: block; font-size: 16px; line-height: 1.3; font-weight: 500; margin-top: 3px; }
+.lire { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 0; border-top: 2px solid var(--encre); border-bottom: 2px solid var(--encre); text-decoration: none; }
+.lire strong { display: block; font-size: 17px; font-weight: 500; margin-top: 2px; }
+.lire + .lire { border-top: 0; }
+.visuel img { display: block; width: 100%; max-height: 360px; object-fit: cover; }
+.legende-img { font-size: 12px; color: var(--doux); margin-top: 6px; }
+.visuel:empty, .galerie:empty, .zone-lire:empty { display: none; }
+.galerie { display: flex; gap: 10px; overflow-x: auto; margin: 0 -22px; padding: 0 22px 4px; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.galerie::-webkit-scrollbar { display: none; }
+.galerie figure { margin: 0; flex: 0 0 78%; scroll-snap-align: start; }
+.galerie img { display: block; width: 100%; height: 240px; object-fit: cover; background: var(--gris); }
+.galerie figcaption { font-size: 12px; color: var(--doux); margin-top: 6px; }
+.volets { border-bottom: 2px solid var(--encre); }
+details { border-top: 2px solid var(--encre); }
+summary { list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 15px 0; font-size: 18px; font-weight: 500; cursor: pointer; }
+summary::-webkit-details-marker { display: none; }
+summary i { position: relative; width: 14px; height: 14px; flex: none; }
+summary i::before, summary i::after { content: ""; position: absolute; left: 0; top: 6px; width: 14px; height: 2px; background: currentColor; transition: transform 0.25s ease; }
+summary i::after { transform: rotate(90deg); }
+details[open] summary i::after { transform: rotate(0deg); }
+.volet { padding: 0 0 18px; }
+.volet p { margin: 0 0 10px; font-size: 16px; line-height: 1.6; }
+.volet ul { margin: 0; padding-left: 18px; }
+.volet li { margin: 0 0 8px; }
+.source { font-size: 12px; color: var(--doux); }
+.attente { color: var(--doux); font-style: italic; }
+.bandeau { margin-top: 30px; padding: 18px 22px calc(18px + var(--bas)); background: var(--encre); color: var(--papier); display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; }
+.plus { display: inline-block; margin-left: 6px; padding: 2px 8px; background: var(--jaune); color: var(--noir); transform: rotate(-4deg); }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 `
@@ -545,6 +595,7 @@ const SCRIPT_PAGE = String.raw`
   var NB = String.fromCharCode(160);
   var TYPES = ['mot', 'date', 'artiste'];
   var NOMS = { mot: 'Le mot du matin', date: 'La date de midi', artiste: 'L’artiste du soir' };
+  var NOMS_FICHE = { mot: 'mot du matin', date: 'date de midi', artiste: 'artiste du soir' };
   var COURTS = { mot: 'Mot', date: 'Date', artiste: 'Artiste' };
   var ANNONCES = { mot: 'Un mot à apprivoiser', date: 'Une date à retenir', artiste: 'Une œuvre à découvrir' };
   var CATEGORIES = { 'n. f.': 'nom féminin', 'n. m.': 'nom masculin', 'n. f. pl.': 'nom féminin pluriel',
@@ -552,9 +603,13 @@ const SCRIPT_PAGE = String.raw`
   var MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
   var SEMAINE = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
   var INITIALES = ['D', 'L', 'M', 'M', 'J', 'V', 'S'];
-  var etat = { onglet: 'jour', fiche: null, mois: null, choisi: null };
+  var SEGMENTS = 21;
+  var CYCLE = ['mot', 'date', 'artiste', 'quiz', 'mot', 'artiste', 'date'];
+  var COULEUR_ONGLET = { jour: 'var(--jaune)', carnet: 'var(--rouge)', quiz: 'var(--vert)', progres: 'var(--bleu)' };
+  var etat = { onglet: 'jour', fiche: null, mois: null, choisi: null, vueCarnet: 'calendrier', quiz: null };
   var wiki = {}, demandes = {};
   var favoris = D.favoris || [];
+  var quizFaits = D.quiz || {};
 
   // ---------- Outils ----------
   function esc(s) {
@@ -564,7 +619,8 @@ const SCRIPT_PAGE = String.raw`
   function capitale(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
   function dateDe(k) { var p = k.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
   function cleDe(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
-  function titreJour(k) { var d = dateDe(k); return SEMAINE[d.getDay()] + ' ' + d.getDate() + (d.getDate() === 1 ? 'er' : '') + ' ' + MOIS[d.getMonth()]; }
+  function jourMois(k) { var d = dateDe(k); return d.getDate() + (d.getDate() === 1 ? 'er' : '') + ' ' + MOIS[d.getMonth()]; }
+  function titreJour(k) { return SEMAINE[dateDe(k).getDay()] + ' ' + jourMois(k); }
   function heure(t) { var h = D.horaires[t]; return h[0] + NB + 'h' + (h[1] ? NB + pad(h[1]) : ''); }
   function nombre(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, NB); }
   function reste(t) {
@@ -576,10 +632,8 @@ const SCRIPT_PAGE = String.raw`
   }
   function identite(t, e) { return t === 'mot' ? e.mot : t === 'date' ? e.annee + '|' + e.evenement : e.nom; }
   function titreDe(t, e) { return t === 'mot' ? e.mot : t === 'date' ? e.annee : e.nom; }
-  function resumeDe(t, e) { return t === 'mot' ? e.definition : t === 'date' ? e.evenement : [e.discipline, e.epoque].filter(Boolean).join(', '); }
-  function lien(url, texte, classe) { return '<a class="' + (classe || 'lien') + '" href="' + esc(url) + '">' + esc(texte) + '</a>'; }
-  function wikiUrl(q) { return 'https://fr.wikipedia.org/w/index.php?search=' + encodeURIComponent(q); }
-  function archives(site, q) { return 'https://duckduckgo.com/?q=' + encodeURIComponent('site:' + site + ' ' + q); }
+  function resumeDe(t, e) { return t === 'mot' ? e.definition : t === 'date' ? e.evenement : [e.discipline, e.pays, e.epoque].filter(Boolean).join(', '); }
+  function lien(url, contenu, classe) { return '<a class="' + classe + '" href="' + esc(url) + '">' + contenu + '</a>'; }
   function liste(items) { return items && items.length ? '<ul>' + items.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul>' : ''; }
   function volet(titre, contenu) {
     if (!contenu) return '';
@@ -596,269 +650,450 @@ const SCRIPT_PAGE = String.raw`
     var id = identite(t, e);
     return favoris.some(function (f) { return f.type === t && f.id === id; });
   }
+  function estLu(t, k) { var j = D.jours[k]; return !!(j && j.lus && j.lus[t]); }
 
-  // ---------- Dessins au trait ----------
-  var TRAIT = ' fill="none" stroke="#161616" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"';
-  var ILLUS = {
-    mot: '<svg viewBox="0 0 160 130"' + TRAIT + ' aria-hidden="true">' +
-      '<path d="M28 24c32-7 74-8 102-2 9 2 13 8 13 17v31c0 9-5 15-14 16-14 2-30 2-44 2l-23 19 4-19c-12-1-24-2-35-4-8-2-11-8-11-15V40c0-9 3-14 8-16z"/>' +
-      '<text x="80" y="70" text-anchor="middle" font-family="Charter, Georgia, serif" font-size="36" font-style="italic" fill="#161616" stroke="none">Aa</text>' +
-      '<path d="M146 12l5-7M152 22l8-2M139 8l-1-6"/></svg>',
-    date: '<svg viewBox="0 0 160 130"' + TRAIT + ' aria-hidden="true">' +
-      '<path d="M50 14c18-2 42-2 60 0M50 116c18 2 42 2 60 0"/>' +
-      '<path d="M57 16c-1 24 20 32 23 48 3-16 24-24 23-48"/>' +
-      '<path d="M57 114c-1-24 20-32 23-48 3 16 24 24 23 48"/>' +
-      '<path d="M66 106c5-9 23-9 28 0"/><path d="M80 70v26" stroke-dasharray="2 6"/>' +
-      '<path d="M66 32c5 5 23 5 28 0"/><path d="M122 36l9-5M126 52l10 1M30 44l-10-3M34 60l-9 4"/></svg>',
-    artiste: '<svg viewBox="0 0 160 130"' + TRAIT + ' aria-hidden="true">' +
-      '<path d="M76 20c-34 1-58 22-58 47 0 22 18 39 41 39 11 0 13-8 9-15-4-7 0-14 9-14h14c19 0 31-10 31-25 0-19-19-33-46-32z"/>' +
-      '<circle cx="52" cy="50" r="7"/><circle cx="76" cy="38" r="7"/><circle cx="101" cy="44" r="7"/><circle cx="44" cy="75" r="7"/>' +
-      '<path d="M116 110l26-40"/><path d="M137 66c3-7 11-9 14-4 3 4-1 11-8 12"/><path d="M112 117c-3 4-9 4-11 1"/></svg>'
-  };
-  var ICONES = {
-    jour: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>',
-    carnet: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/><circle cx="8.5" cy="14.5" r=".6" fill="currentColor"/><circle cx="12" cy="14.5" r=".6" fill="currentColor"/></svg>',
-    favoris: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></svg>',
-    progres: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3.5a8.5 8.5 0 1 1-8.1 5.9"/><path d="M12 8a4 4 0 1 1-3.8 2.8"/></svg>',
-    retour: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>',
-    coeur: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></svg>',
-    coeurPlein: '<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></svg>',
-    partager: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v11M8 7.5l4-4 4 4"/><path d="M7 11H5.5v9.5h13V11H17"/></svg>',
-    cadenas: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>',
-    gauche: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>',
-    droite: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>'
+  // ---------- Icônes ----------
+  var I = {
+    retour: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2"></path></svg>',
+    chevron: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M5 2l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"></path></svg>',
+    cadenas: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="5" y="11" width="14" height="10" fill="none" stroke="currentColor" stroke-width="1.8"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.8"></path></svg>',
+    coche: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"></path></svg>',
+    garder: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 3h12v18l-6-5-6 5z" fill="none" stroke="currentColor" stroke-width="1.8"></path></svg>',
+    garde: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 3h12v18l-6-5-6 5z" fill="currentColor" stroke="currentColor" stroke-width="1.8"></path></svg>',
+    partager: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v8h14v-8" fill="none" stroke="currentColor" stroke-width="1.8"></path></svg>',
+    jouer: '<svg viewBox="0 0 22 22" width="22" height="22" aria-hidden="true"><polygon points="5,2 20,11 5,20" fill="#FFFFFF"></polygon></svg>',
+    sortie: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 12L12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.8"></path></svg>',
+    gauche: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8"></path></svg>',
+    droite: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8"></path></svg>'
   };
 
-  // ---------- Série et statistiques ----------
-  function serie() {
-    var n = 0, d = dateDe(D.aujourdhui);
-    while (true) {
-      var j = D.jours[cleDe(d)];
-      if (!j || !j.lu) break;
-      n++; d.setDate(d.getDate() - 1);
-    }
+  // ---------- Jauge ----------
+  function fichesLues() {
+    var n = { mot: 0, date: 0, artiste: 0, total: 0 };
+    Object.keys(D.jours).forEach(function (k) {
+      var l = D.jours[k].lus;
+      if (l) TYPES.forEach(function (t) { if (l[t]) { n[t]++; n.total++; } });
+    });
     return n;
   }
+  function pointsQuiz() { var n = 0; Object.keys(quizFaits).forEach(function (k) { n += quizFaits[k].score || 0; }); return n; }
+  function niveau() {
+    var p = fichesLues().total + pointsQuiz(), N = D.niveaux, i = 0;
+    while (i + 1 < N.length && p >= N[i + 1].seuil) i++;
+    var suivant = N[i + 1];
+    var part = suivant ? (p - N[i].seuil) / (suivant.seuil - N[i].seuil) : 1;
+    return { nom: N[i].nom, points: p, suivant: suivant, manque: suivant ? suivant.seuil - p : 0, part: Math.max(0, Math.min(1, part)) };
+  }
+  function actif(k) { var j = D.jours[k]; return !!(j && (j.lu || (j.lus && (j.lus.mot || j.lus.date || j.lus.artiste)))); }
+  function serie() {
+    var d = dateDe(D.aujourdhui);
+    if (!actif(D.aujourdhui)) d.setDate(d.getDate() - 1);
+    var n = 0;
+    while (actif(cleDe(d))) { n++; d.setDate(d.getDate() - 1); }
+    return n;
+  }
+  function segments(rempli) {
+    var out = [];
+    for (var i = 0; i < SEGMENTS; i++) out.push(i < rempli ? 's-' + CYCLE[i % CYCLE.length] : '');
+    return out;
+  }
+  function cadre(n) {
+    var s = segments(Math.round(n.part * SEGMENTS)), idx = 0, html = '';
+    [['haut', 5], ['droite', 6], ['bas', 5], ['gauche', 5]].forEach(function (c) {
+      var h = '';
+      for (var k = 0; k < c[1]; k++) h += '<i class="seg ' + s[idx++] + '"></i>';
+      html += '<div class="bord bord-' + c[0] + '" aria-hidden="true">' + h + '</div>';
+    });
+    return html;
+  }
+  function libelleNiveau(n) {
+    return n.suivant ? n.nom + ' · ' + n.points + ' / ' + n.suivant.seuil : n.nom + ' · ' + n.points + ' points';
+  }
 
-  // ---------- Écoute ----------
-  function emissionsPour(type, e) {
-    if (e.ecouter && e.ecouter.length) return e.ecouter;
-    if (type === 'date') return ['cours-histoire', 'concordance'];
-    if (type === 'artiste') {
-      var d = (e.discipline || '').toLowerCase();
-      return /peinture|sculpture|estampe|arts plastiques/.test(d) ? ['regardeurs', 'toute-une-vie'] : ['toute-une-vie'];
+  // ---------- Quiz ----------
+  function alea(graine) {
+    var h = 2166136261;
+    for (var i = 0; i < graine.length; i++) { h ^= graine.charCodeAt(i); h = Math.imul(h, 16777619); }
+    return function () {
+      h += 0x6D2B79F5;
+      var t = h;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function melanger(arr, r) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(r() * (i + 1)); var x = a[i]; a[i] = a[j]; a[j] = x; }
+    return a;
+  }
+  // Trois propositions : la bonne et deux autres tirées des fichiers, toutes différentes
+  function propositions(bonne, autres, r) {
+    var vues = {}, opts = [{ texte: bonne, bon: true }];
+    vues[bonne] = true;
+    for (var i = 0; i < autres.length && opts.length < 3; i++) {
+      if (autres[i] && !vues[autres[i]]) { vues[autres[i]] = true; opts.push({ texte: autres[i], bon: false }); }
     }
-    return [];
+    return melanger(opts, r);
   }
-  function blocEcoute(type, e, sujet) {
-    var html = emissionsPour(type, e).map(function (c) {
-      if (typeof c === 'object') {
-        return '<div class="ecoute">' + lien(c.url, c.titre, 'ecoute-titre') + (c.texte ? '<p class="ecoute-texte">' + esc(c.texte) + '</p>' : '') + '</div>';
-      }
-      var em = D.emissions[c];
-      if (!em) return '';
-      return '<div class="ecoute">' + lien(em.url, em.titre, 'ecoute-titre') +
-        '<p class="ecoute-texte">' + esc(em.chaine + '. ' + em.texte) + '</p>' +
-        lien(archives(em.site, sujet), 'Chercher « ' + sujet + ' » dans les archives') + '</div>';
-    }).join('');
-    return html ? '<h3>À écouter</h3>' + html : '';
+  function question(item, r, variante) {
+    var t = item.type, e = item.entree;
+    var autres = melanger((D.listes[t] || []).filter(function (x) { return identite(t, x) !== identite(t, e); }), r);
+    var q = { type: t, jour: item.jour, entree: e };
+    if (t === 'mot' && variante) {
+      q.enonce = 'Quel mot signifie :';
+      q.citation = e.definition;
+      q.options = propositions(e.mot, autres.map(function (x) { return x.mot; }), r);
+      q.explication = e.exemple ? '« ' + e.exemple + ' »' : '';
+    } else if (t === 'mot') {
+      q.enonce = 'Que signifie « ' + e.mot + ' » ?';
+      q.options = propositions(e.definition, autres.map(function (x) { return x.definition; }), r);
+      q.explication = e.exemple ? '« ' + e.exemple + ' »' : '';
+    } else if (t === 'date') {
+      q.enonce = 'En quelle année ?';
+      q.citation = e.evenement;
+      q.options = propositions(e.annee, autres.map(function (x) { return x.annee; }), r);
+      q.explication = e.contexte || '';
+    } else if (e.oeuvre && !variante) {
+      q.enonce = 'Qui a créé cette œuvre ?';
+      q.citation = e.oeuvre;
+      q.options = propositions(e.nom, autres.map(function (x) { return x.nom; }), r);
+      q.explication = e.nom + '. ' + (e.presentation || '');
+    } else {
+      q.enonce = 'De qui parle-t-on ?';
+      q.citation = e.presentation;
+      q.options = propositions(e.nom, autres.map(function (x) { return x.nom; }), r);
+      q.explication = [e.discipline, e.pays, e.epoque].filter(Boolean).join(', ');
+    }
+    return q;
+  }
+  function entreesCarnet() {
+    var items = [];
+    Object.keys(D.jours).sort().reverse().slice(0, 21).forEach(function (k) {
+      TYPES.forEach(function (t) { if (D.jours[k][t]) items.push({ type: t, jour: k, entree: D.jours[k][t] }); });
+    });
+    return items;
+  }
+  function lancerQuiz(mode) {
+    var semaine = mode === 'semaine';
+    var items = semaine ? D.quizSemaine.entrees : entreesCarnet();
+    var r = alea(semaine ? 'semaine-' + D.quizSemaine.cle : 'revision-' + Date.now());
+    var total = Math.min(semaine ? D.questionsSemaine : D.questionsRevision, items.length);
+    var choisis = melanger(items, r).slice(0, total);
+    etat.quiz = {
+      mode: mode,
+      compte: semaine && !quizFaits[D.quizSemaine.cle],
+      questions: choisis.map(function (it, i) { return question(it, r, i % 2 === 1); }),
+      i: 0, reponses: [], fini: false
+    };
+    etat.onglet = 'quiz';
+    etat.fiche = null;
+  }
+  function repondre(n) {
+    var q = etat.quiz, cour = q.questions[q.i];
+    if (q.reponses[q.i] != null) return;
+    q.reponses[q.i] = n;
+    cour.juste = !!cour.options[n].bon;
+  }
+  function suivante() {
+    var q = etat.quiz;
+    if (q.i + 1 < q.questions.length) { q.i++; return; }
+    q.fini = true;
+    q.score = q.questions.filter(function (x) { return x.juste; }).length;
+    if (q.compte) {
+      quizFaits[D.quizSemaine.cle] = { score: q.score, total: q.questions.length };
+      pont('quiz', { cle: D.quizSemaine.cle, score: q.score, total: q.questions.length });
+    }
+  }
+  function etatQuizSemaine() {
+    var fait = quizFaits[D.quizSemaine.cle];
+    return { fait: fait, debut: D.quizSemaine.entrees.length ? D.quizSemaine.entrees[0].jour : D.quizSemaine.cle };
   }
 
-  // ---------- Vue : aujourd'hui ----------
-  function tuile(t, k, e) {
+  // ---------- Écran Aujourd'hui ----------
+  function ligne(t, k, e) {
     if (!e) {
       var r = reste(t);
-      return '<div class="tuile fermee m-' + t + '"><div class="tuile-tete"><span>' + NOMS[t] + '</span><span class="h">' + heure(t) + '</span></div>' +
-        '<h2>' + ANNONCES[t] + '</h2><div class="verrou">' + ICONES.cadenas + '<span>Rendez-vous à ' + heure(t) + (r ? ', ' + r : '') + '</span></div></div>';
+      return '<div class="ligne fermee" style="--c: var(--' + { mot: 'jaune', date: 'rouge', artiste: 'bleu' }[t] + ')">' +
+        '<i class="marque contour"></i><span><small>' + heure(t) + ' · ' + COURTS[t] + '</small><strong>' + ANNONCES[t] + '</strong>' +
+        '<span class="resume">Rendez-vous à ' + heure(t) + (r ? ', ' + r : '') + '</span></span><span class="fin">' + I.cadenas + '</span></div>';
     }
-    return '<button class="tuile m-' + t + '" data-ouvrir="' + t + '|' + k + '">' +
-      '<div class="tuile-tete"><span>' + NOMS[t] + '</span><span class="h">' + heure(t) + '</span></div>' +
-      '<h2>' + esc(titreDe(t, e)) + '</h2><p>' + esc(resumeDe(t, e)) + '</p>' +
-      '<div class="mini">' + ILLUS[t] + '</div></button>';
+    return '<button class="ligne" data-ouvrir="' + t + '|' + k + '"><i class="marque m-' + t + '"></i>' +
+      '<span><small>' + heure(t) + ' · ' + COURTS[t] + '</small><strong>' + esc(titreDe(t, e)) + '</strong>' +
+      '<span class="resume">' + esc(resumeDe(t, e)) + '</span></span>' +
+      '<span class="fin">' + (estLu(t, k) ? I.coche : I.chevron) + '</span></button>';
+  }
+  function encartQuiz() {
+    var s = etatQuizSemaine();
+    if (!D.quizSemaine.entrees.length) return '';
+    if (s.fait) {
+      return '<button class="encart encart-bord" data-onglet="quiz"><small>Quiz de la semaine</small><strong>' + s.fait.score + ' / ' + s.fait.total + '</strong>' +
+        '<span>Prochain quiz ' + titreJour(D.quizSemaine.prochain) + ', à ' + heure('mot') + '.</span></button>';
+    }
+    return '<button class="encart encart-vert" data-quiz="semaine"><small>Quiz de la semaine</small><strong>' + D.questionsSemaine + ' questions vous attendent</strong>' +
+      '<span>Sur ce que vous avez découvert du ' + jourMois(s.debut) + ' au ' + jourMois(D.quizSemaine.entrees[D.quizSemaine.entrees.length - 1].jour) + '. Une bonne réponse, un point.</span></button>';
   }
   function vueJour() {
     var j = D.jours[D.aujourdhui] || {};
-    var s = serie();
-    return '<div class="page"><div class="marque"><span>Trois fois par jour</span>' +
-      (s > 1 ? '<span class="serie">Série de ' + s + ' jours</span>' : '') + '</div>' +
-      '<h1 class="grand-titre">' + capitale(titreJour(D.aujourdhui)) + '</h1>' +
-      '<div class="tuiles">' + TYPES.map(function (t) { return tuile(t, D.aujourdhui, j[t]); }).join('') + '</div>' +
-      (!j.mot ? '<p class="vide-texte">La journée commence à ' + heure('mot') + '. Celle d’hier vous attend dans le carnet.</p>' : '') +
-      '</div>';
+    var d = dateDe(D.aujourdhui);
+    return '<h1 class="titre-page">' + capitale(SEMAINE[d.getDay()]) + '</h1><p class="sous-titre">' + jourMois(D.aujourdhui) + '</p>' +
+      '<div class="lignes">' + TYPES.map(function (t) { return ligne(t, D.aujourdhui, j[t]); }).join('') + '</div>' +
+      (!j.mot ? '<p class="note">La journée commence à ' + heure('mot') + '. Celle d’hier vous attend dans le carnet.</p>' : '') +
+      encartQuiz();
   }
 
-  // ---------- Vue : fiche ----------
-  function ilYa(annee) {
-    var txt = String(annee), n = parseInt(txt.replace(/[^0-9]/g, ''), 10);
-    if (!n) return null;
-    var auj = new Date().getFullYear();
-    var ecart = /av\./.test(txt) ? auj + n - 1 : auj - n;
-    if (ecart < 1) return null;
-    return { valeur: (/vers/.test(txt) ? 'env.' + NB : '') + nombre(ecart) + NB + 'ans', libelle: 'se sont écoulés depuis' };
-  }
-  function actions(t, e) {
-    var fav = estFavori(t, e);
-    return '<div class="actions"><button class="action" data-favori aria-pressed="' + fav + '">' + (fav ? ICONES.coeurPlein : ICONES.coeur) +
-      '<span>' + (fav ? 'Gardé' : 'Garder') + '</span></button>' +
-      '<button class="action" data-partager>' + ICONES.partager + '<span>Partager</span></button></div>';
-  }
-  function zone(k, t, partie, attente) {
-    return '<div data-wiki="' + t + '|' + k + '" data-part="' + partie + '">' + (attente ? '<p class="attente">Chargement du résumé…</p>' : '') + '</div>';
-  }
-  function ficheMot(e, k) {
-    var lemme = e.lemme || String(e.mot).toLowerCase();
-    var nature = CATEGORIES[e.categorie] || e.categorie || '';
-    return '<h1>' + esc(e.mot) + '</h1>' + (nature ? '<span class="nature">' + esc(nature) + '</span>' : '') + actions('mot', e) +
-      '<p class="lead">' + esc(e.definition) + '</p>' +
-      (e.exemple ? '<p class="citation">« ' + esc(e.exemple) + ' »</p>' : '') +
-      (e.synonymes && e.synonymes.length ? '<h3>Synonymes</h3><p>' + e.synonymes.map(function (s) { return '<span class="surligne">' + esc(s) + '</span>'; }).join('') + '</p>' : '') +
-      '<div class="volets">' +
-        volet('En situation', liste(e.situations)) +
-        volet('La nuance', e.piege ? '<p>' + esc(e.piege) + '</p>' : '') +
-        volet('Pour aller plus loin', '<p class="liens">' +
-          lien('https://www.cnrtl.fr/definition/' + encodeURIComponent(lemme), 'Définition et étymologie au CNRTL') +
-          lien('https://www.cnrtl.fr/synonymie/' + encodeURIComponent(lemme), 'Tous les synonymes au CNRTL') + '</p>') +
-      '</div>';
-  }
-  function ficheDate(e, k) {
-    var sujet = e.wikipedia || e.evenement, ecart = ilYa(e.annee);
-    return '<h1>' + esc(e.annee) + '</h1><p class="sous-titre">' + esc(e.evenement) + '</p>' + actions('date', e) +
-      (ecart ? '<div class="chiffres"><div><strong>' + ecart.valeur + '</strong><span>' + ecart.libelle + '</span></div></div>' : '') +
-      '<p class="lead">' + esc(e.contexte) + '</p>' +
-      '<div class="visuel" data-wiki="date|' + k + '" data-part="image"></div>' +
-      (e.recit ? '<p class="corps">' + esc(e.recit) + '</p>' : '') +
-      blocEcoute('date', e, sujet) +
-      '<div class="volets">' +
-        volet('Le résumé de Wikipédia', zone(k, 'date', 'extrait', true)) +
-        volet('Pour aller plus loin', '<p class="liens">' + lien(wikiUrl(sujet), 'L’article complet sur Wikipédia') +
-          lien('https://www.youtube.com/results?search_query=' + encodeURIComponent(sujet + ' histoire'), 'Des vidéos sur YouTube') + '</p>') +
-      '</div>';
-  }
-  function ficheArtiste(e, k) {
-    var meta = [e.discipline, e.pays, e.epoque].filter(Boolean).join(', ');
-    var mv = e.mouvement || {};
-    return '<h1>' + esc(e.nom) + '</h1>' + (meta ? '<span class="nature">' + esc(meta) + '</span>' : '') + actions('artiste', e) +
-      '<p class="lead">' + esc(e.presentation) + '</p>' +
-      '<div class="galerie" data-wiki="artiste|' + k + '" data-part="galerie"></div>' +
-      (e.oeuvre ? '<div class="commencer"><span>Pour commencer</span><strong>' + esc(e.oeuvre) + '</strong></div>' : '') +
-      (e.bio ? '<h3>Sa vie</h3><p class="corps">' + esc(e.bio) + '</p>' : '') +
-      blocEcoute('artiste', e, e.nom) +
-      '<div class="volets">' +
-        volet('Œuvres clés', liste(e.oeuvres_cles || (e.oeuvre ? [e.oeuvre] : []))) +
-        (mv.nom ? volet('Le courant : ' + mv.nom, '<p>' + esc(mv.texte) + '</p><p class="liens">' + lien(wikiUrl(mv.nom), 'Le courant sur Wikipédia') + '</p>') : '') +
-        volet('Le résumé de Wikipédia', zone(k, 'artiste', 'extrait', true)) +
-        volet('Pour aller plus loin', '<p class="liens">' + lien(wikiUrl(e.wikipedia || e.nom), 'L’article complet sur Wikipédia') +
-          lien('https://artsandculture.google.com/search?q=' + encodeURIComponent(e.nom), 'Ses œuvres sur Google Arts & Culture') +
-          lien('https://www.youtube.com/results?search_query=' + encodeURIComponent(e.nom), 'Des vidéos sur YouTube') + '</p>') +
-      '</div>';
-  }
-  function vueFiche() {
-    var f = etat.fiche, e = entreeDe(f.type, f.cle);
-    if (!e) { etat.fiche = null; return vueOnglet(); }
-    var contenu = f.type === 'mot' ? ficheMot(e, f.cle) : f.type === 'date' ? ficheDate(e, f.cle) : ficheArtiste(e, f.cle);
-    return '<article class="fiche m-' + f.type + '"><div class="page">' +
-      '<div class="fiche-haut"><button class="rond" data-fermer aria-label="Revenir">' + ICONES.retour + '</button>' +
-      '<span>' + (f.cle === D.aujourdhui ? NOMS[f.type] : capitale(titreJour(f.cle))) + '</span><span style="width:44px"></span></div>' +
-      '<div class="illus">' + ILLUS[f.type] + '</div>' + contenu + '</div></article>';
-  }
-
-  // ---------- Vue : carnet ----------
-  function rangee(t, k, e, sousTitre) {
-    return '<button class="rangee m-' + t + '" data-ouvrir="' + t + '|' + k + '"><div class="mini">' + ILLUS[t] + '</div>' +
-      '<div class="txt"><small>' + esc(sousTitre) + '</small><strong>' + esc(titreDe(t, e)) + '</strong></div></button>';
+  // ---------- Écran Carnet ----------
+  function rangee(t, k, e, sur) {
+    return '<button class="ligne" data-ouvrir="' + t + '|' + k + '"><i class="marque m-' + t + '"></i>' +
+      '<span><small>' + esc(sur) + '</small><strong>' + esc(titreDe(t, e)) + '</strong><span class="resume">' + esc(resumeDe(t, e)) + '</span></span>' +
+      '<span class="fin">' + I.chevron + '</span></button>';
   }
   function vueCarnet() {
+    var bascule = '<div class="bascule"><button data-carnet="calendrier" aria-pressed="' + (etat.vueCarnet === 'calendrier') + '">Calendrier</button>' +
+      '<button data-carnet="gardes" aria-pressed="' + (etat.vueCarnet === 'gardes') + '">Gardés (' + favoris.length + ')</button></div>';
+    if (etat.vueCarnet === 'gardes') {
+      var html = favoris.slice().reverse().map(function (f) { return rangee(f.type, f.jour, f.entree, COURTS[f.type] + ', ' + titreJour(f.jour)); }).join('');
+      return bascule + (html ? '<div class="lignes">' + html + '</div>' : '<p class="vide">Touchez « garder » sur une fiche pour la retrouver ici.</p>');
+    }
     var cles = Object.keys(D.jours).sort();
-    var aujOuvert = D.jours[D.aujourdhui] && D.jours[D.aujourdhui].mot;
-    if (!etat.choisi) etat.choisi = aujOuvert || cles.length < 2 ? D.aujourdhui : cles[cles.length - 2];
+    if (!etat.choisi) etat.choisi = (D.jours[D.aujourdhui] && D.jours[D.aujourdhui].mot) || cles.length < 2 ? D.aujourdhui : cles[cles.length - 2];
     if (!etat.mois) etat.mois = etat.choisi.slice(0, 7);
     var an = +etat.mois.slice(0, 4), mo = +etat.mois.slice(5, 7) - 1;
     var decalage = (new Date(an, mo, 1).getDay() + 6) % 7, nb = new Date(an, mo + 1, 0).getDate(), cases = '';
     for (var i = 0; i < decalage; i++) cases += '<span class="case"></span>';
     for (var d = 1; d <= nb; d++) {
       var k = an + '-' + pad(mo + 1) + '-' + pad(d), j = D.jours[k];
-      if (!j || !(j.mot || j.date || j.artiste)) { cases += '<span class="case ' + (k > D.aujourdhui ? 'futur' : 'hors') + '">' + d + '</span>'; continue; }
+      if (!j || !(j.mot || j.date || j.artiste)) { cases += '<span class="case ' + (k > D.aujourdhui ? 'futur' : 'hors') + '"><span class="num">' + d + '</span></span>'; continue; }
       cases += '<button class="case jour' + (k === etat.choisi ? ' choisi' : '') + (k === D.aujourdhui ? ' auj' : '') + '" data-jour="' + k +
-        '" aria-label="' + esc(titreJour(k)) + '"><span class="num">' + d + '</span><span class="points">' +
-        TYPES.map(function (t) { return '<b' + (j[t] ? ' class="p-' + t + '"' : '') + '></b>'; }).join('') + '</span></button>';
+        '" aria-label="' + esc(titreJour(k)) + '"><span class="num">' + d + '</span><span class="pts">' +
+        TYPES.map(function (t) { return '<b' + (j.lus && j.lus[t] ? ' class="l-' + t + '"' : '') + '></b>'; }).join('') + '</span></button>';
     }
     var min = D.debut.slice(0, 7), max = D.aujourdhui.slice(0, 7), jour = D.jours[etat.choisi] || {};
-    var lignes = TYPES.filter(function (t) { return jour[t]; }).map(function (t) { return rangee(t, etat.choisi, jour[t], NOMS[t]); }).join('');
-    return '<div class="page"><div class="marque"><span>Carnet</span></div>' +
-      '<div class="mois" style="margin-top:14px">' +
-        '<button class="fleche" data-mois="-1" aria-label="Mois précédent"' + (etat.mois <= min ? ' disabled' : '') + '>' + ICONES.gauche + '</button>' +
+    var lignes = TYPES.filter(function (t) { return jour[t]; }).map(function (t) { return rangee(t, etat.choisi, jour[t], heure(t) + ' · ' + COURTS[t]); }).join('');
+    return bascule + '<div class="mois">' +
+        '<button class="fleche" data-mois="-1" aria-label="Mois précédent"' + (etat.mois <= min ? ' disabled' : '') + '>' + I.gauche + '</button>' +
         '<h2>' + capitale(MOIS[mo]) + ' ' + an + '</h2>' +
-        '<button class="fleche" data-mois="1" aria-label="Mois suivant"' + (etat.mois >= max ? ' disabled' : '') + '>' + ICONES.droite + '</button></div>' +
+        '<button class="fleche" data-mois="1" aria-label="Mois suivant"' + (etat.mois >= max ? ' disabled' : '') + '>' + I.droite + '</button></div>' +
       '<div class="semaine">' + ['L', 'M', 'M', 'J', 'V', 'S', 'D'].map(function (x) { return '<span>' + x + '</span>'; }).join('') + '</div>' +
       '<div class="grille">' + cases + '</div>' +
-      '<p class="cles"><span><b class="p-mot"></b>Mot</span><span><b class="p-date"></b>Date</span><span><b class="p-artiste"></b>Artiste</span></p>' +
+      '<p class="cles"><span><b class="m-mot"></b>Mot lu</span><span><b class="m-date"></b>Date lue</span><span><b class="m-artiste"></b>Artiste lu</span></p>' +
       '<h2 class="titre-section">' + capitale(titreJour(etat.choisi)) + '</h2>' +
-      (lignes || '<p class="vide-texte">Rien n’a encore été révélé ce jour-là.</p>') +
-      (cles.length <= 1 ? '<p class="vide-texte">Votre carnet se remplit jour après jour. Dès demain, vous y retrouverez ce que vous avez appris aujourd’hui.</p>' : '') +
+      (lignes ? '<div class="lignes">' + lignes + '</div>' : '<p class="vide">Rien n’a encore été révélé ce jour-là.</p>') +
+      (cles.length <= 1 ? '<p class="vide">Votre carnet se remplit jour après jour. Dès demain, vous y retrouverez ce que vous avez appris aujourd’hui.</p>' : '');
+  }
+
+  // ---------- Écran Quiz ----------
+  function vueQuestion() {
+    var q = etat.quiz, cour = q.questions[q.i], rep = q.reponses[q.i], repondu = rep != null;
+    var barre = '<div class="q-barre" style="grid-template-columns: repeat(' + q.questions.length + ', minmax(0, 1fr))">' +
+      q.questions.map(function (x, i) { return '<i class="' + (q.reponses[i] == null ? '' : x.juste ? 'ok' : 'ko') + '"></i>'; }).join('') + '</div>';
+    var opts = cour.options.map(function (o, n) {
+      var cls = 'option';
+      if (repondu) cls += o.bon ? ' bonne' : n === rep ? ' fausse' : ' terne';
+      return '<button class="' + cls + '" data-rep="' + n + '"' + (repondu ? ' disabled' : '') + '><span class="lettre">' + 'ABC'.charAt(n) + '</span><span>' + esc(o.texte) + '</span></button>';
+    }).join('');
+    var bonne = cour.options.filter(function (o) { return o.bon; })[0].texte;
+    var verdict = repondu ? '<div class="verdict"><strong>' + (cour.juste ? 'Exact.' : 'Pas tout à fait. Réponse : ' + esc(bonne)) + '</strong>' +
+      (cour.explication ? '<p>' + esc(cour.explication) + '</p>' : '') + '</div>' +
+      '<button class="btn btn-plein btn-large" data-suivante>' + (q.i + 1 < q.questions.length ? 'Question suivante' : 'Voir le résultat') + '</button>' : '';
+    return '<div class="q-tete"><span>' + (q.mode === 'semaine' ? 'Quiz de la semaine' : 'Révision') + '</span><span>' + (q.i + 1) + ' / ' + q.questions.length + '</span></div>' + barre +
+      '<p class="q-type"><i class="marque m-' + cour.type + '"></i>' + COURTS[cour.type] + ' du ' + jourMois(cour.jour) + '</p>' +
+      '<h2 class="q-enonce">' + esc(cour.enonce) + '</h2>' + (cour.citation ? '<p class="q-citation">' + esc(cour.citation) + '</p>' : '') + opts + verdict;
+  }
+  function vueResultat() {
+    var q = etat.quiz, n = q.questions.length;
+    var message = q.score === n ? 'Sans faute.' : q.score >= n * 0.7 ? 'Très bien retenu.' : q.score >= n * 0.4 ? 'Une bonne base, le carnet vous aidera pour le reste.' : 'Les fiches de la semaine sont dans le carnet, pour une seconde lecture.';
+    var ratees = q.questions.filter(function (x) { return !x.juste; });
+    return '<p class="petit">' + (q.mode === 'semaine' ? 'Quiz de la semaine' : 'Révision') + '</p>' +
+      '<p class="score">' + q.score + '<small> / ' + n + '</small></p>' +
+      '<p class="lead" style="margin-top: 10px">' + message + '</p>' +
+      (q.compte ? '<p class="note">' + q.score + ' point' + (q.score > 1 ? 's' : '') + ' ajouté' + (q.score > 1 ? 's' : '') + ' à votre jauge.</p>' : q.mode === 'semaine' ? '<p class="note">Quiz déjà compté cette semaine : cette partie ne rapporte pas de points.</p>' : '<p class="note">La révision ne rapporte pas de points.</p>') +
+      (ratees.length ? '<h2 class="titre-section">À relire</h2><div class="lignes">' + ratees.map(function (x) { return rangee(x.type, x.jour, x.entree, COURTS[x.type] + ', ' + titreJour(x.jour)); }).join('') + '</div>' : '') +
+      '<div class="rangee-btn"><button class="btn btn-plein" data-quitter>Terminer</button></div>';
+  }
+  function vueQuiz() {
+    if (etat.quiz) return etat.quiz.fini ? vueResultat() : vueQuestion();
+    var s = etatQuizSemaine(), items = D.quizSemaine.entrees;
+    var semaine = items.length
+      ? (s.fait
+        ? '<div class="encart encart-bord"><small>Quiz de la semaine</small><strong>' + s.fait.score + ' / ' + s.fait.total + '</strong><span>Prochain quiz ' + titreJour(D.quizSemaine.prochain) + ', à ' + heure('mot') + '.</span></div>' +
+          '<div class="rangee-btn"><button class="btn" data-quiz="semaine">Le refaire, sans points</button></div>'
+        : '<div class="encart encart-vert"><small>Quiz de la semaine</small><strong>' + D.questionsSemaine + ' questions</strong><span>Sur les mots, les dates et les artistes du ' + jourMois(s.debut) + ' au ' + jourMois(items[items.length - 1].jour) + '. Ouvert jusqu’au ' + titreJour(D.quizSemaine.prochain) + '.</span></div>' +
+          '<div class="rangee-btn"><button class="btn btn-vert" data-quiz="semaine">Commencer</button></div>')
+      : '';
+    var dispo = entreesCarnet().length;
+    var revision = '<h2 class="titre-section">Révision libre</h2><p class="texte">' + Math.min(D.questionsRevision, dispo) + ' questions tirées de votre carnet, à tout moment. Elles ne rapportent pas de points.</p>' +
+      '<div class="rangee-btn"><button class="btn btn-plein" data-quiz="revision"' + (dispo ? '' : ' disabled') + '>Réviser maintenant</button></div>';
+    var passes = Object.keys(quizFaits).sort().reverse();
+    var hist = passes.length ? '<h2 class="titre-section">Vos quiz</h2><div class="historique">' + passes.map(function (k) {
+      return '<div><span>' + capitale(titreJour(k)) + '</span><span>' + quizFaits[k].score + ' / ' + quizFaits[k].total + '</span></div>';
+    }).join('') + '</div>' : '';
+    return '<h1 class="titre-page">Quiz</h1><p class="sous-titre">Chaque dimanche, la semaine en questions</p>' + semaine + revision + hist;
+  }
+
+  // ---------- Écran Progrès ----------
+  function vueProgres() {
+    var n = niveau(), l = fichesLues(), s = serie();
+    var j = segments(Math.round(n.part * SEGMENTS)).map(function (c) { return '<i class="' + c + '"></i>'; }).join('');
+    var auj = dateDe(D.aujourdhui), sept = '';
+    for (var i = 6; i >= 0; i--) {
+      var d = new Date(auj); d.setDate(d.getDate() - i);
+      var jj = D.jours[cleDe(d)] || {};
+      sept += '<div class="col">' + TYPES.map(function (t) { return '<b' + (jj.lus && jj.lus[t] ? ' class="l-' + t + '"' : '') + '></b>'; }).join('') + '<span>' + INITIALES[d.getDay()] + '</span></div>';
+    }
+    return '<p class="petit">Votre grade</p><h1 class="grade">' + n.nom + '</h1>' +
+      '<div class="jauge" aria-hidden="true">' + j + '</div>' +
+      '<p class="texte">' + n.points + ' point' + (n.points > 1 ? 's' : '') + (n.suivant ? '. Encore ' + n.manque + ' pour devenir ' + n.suivant.nom.toLowerCase() + '.' : '. Vous avez atteint le plus haut grade.') + '</p>' +
+      '<div class="stats">' +
+        '<div class="stat"><i class="m-mot"></i><strong>' + l.mot + '</strong><span>mots lus</span></div>' +
+        '<div class="stat"><i class="m-date"></i><strong>' + l.date + '</strong><span>dates lues</span></div>' +
+        '<div class="stat"><i class="m-artiste"></i><strong>' + l.artiste + '</strong><span>artistes lus</span></div>' +
+        '<div class="stat"><i class="m-quiz"></i><strong>' + pointsQuiz() + '</strong><span>points de quiz</span></div></div>' +
+      '<h2 class="titre-section">Les sept derniers jours</h2><div class="sept">' + sept + '</div>' +
+      '<p class="note">' + (s > 1 ? 'Série de ' + s + ' jours de lecture.' : s === 1 ? 'Un jour de lecture dans la série en cours.' : 'Ouvrez une fiche pour commencer une série.') + '</p>' +
+      '<h2 class="titre-section">Le barème</h2><div class="bareme">' +
+        '<div><span>Une fiche lue</span><span>1 point</span></div>' +
+        '<div><span>Une bonne réponse au quiz de la semaine</span><span>1 point</span></div>' +
+        D.niveaux.map(function (x) { return '<div><span>' + x.nom + '</span><span>dès ' + x.seuil + ' points</span></div>'; }).join('') + '</div>';
+  }
+
+  // ---------- Fiche ----------
+  function ilYa(annee) {
+    var txt = String(annee), n = parseInt(txt.replace(/[^0-9]/g, ''), 10);
+    if (!n) return '';
+    var auj = new Date().getFullYear();
+    var ecart = /av\./.test(txt) ? auj + n - 1 : auj - n;
+    if (ecart < 1) return '';
+    return 'il y a ' + (/vers/.test(txt) ? 'environ ' : '') + nombre(ecart) + NB + 'ans';
+  }
+  function tailleTitre(t, texte) {
+    var n = String(texte).length;
+    if (t === 'artiste') return Math.max(34, Math.min(72, Math.floor(1000 / Math.max(n, 8))));
+    return Math.max(40, Math.min(118, Math.floor(600 / Math.max(n, 4))));
+  }
+  function section(titre) { return '<h2 class="section"><i aria-hidden="true"></i>' + esc(titre) + '</h2>'; }
+  function blocEcoute(e) {
+    if (!e.ecouter || !e.ecouter.length) return '';
+    return section('à écouter') + e.ecouter.map(function (c) {
+      return lien(c.url, '<span class="jouer">' + I.jouer + '</span><span><small>' + esc([c.emission, c.chaine].filter(Boolean).join(' · ')) + '</small><strong>' + esc(c.titre) + '</strong></span>', 'ecoute');
+    }).join('');
+  }
+  function actions(t, e) {
+    var fav = estFavori(t, e);
+    return '<div class="actions"><button class="action" data-favori aria-pressed="' + fav + '">' + (fav ? I.garde : I.garder) + '<span>' + (fav ? 'gardé' : 'garder') + '</span></button>' +
+      '<button class="action action-plein" data-partager>' + I.partager + '<span>partager</span></button></div>';
+  }
+  function zoneWiki(t, k, partie, classe) { return '<div class="' + (classe || '') + '" data-wiki="' + t + '|' + k + '" data-part="' + partie + '"></div>'; }
+  function corpsMot(e, k) {
+    var lemme = e.lemme || String(e.mot).toLowerCase();
+    var nature = CATEGORIES[e.categorie] || e.categorie || '';
+    return (nature ? '<span class="tag">' + esc(nature) + '</span>' : '') + actions('mot', e) +
+      '<p class="lead">' + esc(e.definition) + '</p>' +
+      (e.exemple ? '<p class="citation">« ' + esc(e.exemple) + ' »</p>' : '') +
+      (e.synonymes && e.synonymes.length ? section('synonymes') + '<div class="mots">' + e.synonymes.map(function (s) { return '<span>' + esc(s) + '</span>'; }).join('') + '</div>' : '') +
+      blocEcoute(e) +
+      section('à lire') +
+      lien('https://www.cnrtl.fr/definition/' + encodeURIComponent(lemme), '<span><small>cnrtl, trésor de la langue française</small><strong>' + esc(e.mot) + ' : définition et étymologie</strong></span>' + I.sortie, 'lire') +
+      '<div class="volets">' + volet('en situation', liste(e.situations)) + volet('la nuance', e.piege ? '<p>' + esc(e.piege) + '</p>' : '') + '</div>';
+  }
+  function corpsDate(e, k) {
+    var ecart = ilYa(e.annee);
+    return '<h1>' + esc(e.evenement) + '</h1>' + (ecart ? '<span class="tag">' + ecart + '</span>' : '') + actions('date', e) +
+      '<p class="lead">' + esc(e.contexte) + '</p>' +
+      zoneWiki('date', k, 'image', 'visuel') +
+      (e.recit ? '<p class="texte">' + esc(e.recit) + '</p>' : '') +
+      blocEcoute(e) +
+      zoneWiki('date', k, 'lire', 'zone-lire') +
+      '<div class="volets">' + volet('le résumé de wikipédia', zoneWiki('date', k, 'extrait')) + '</div>';
+  }
+  function corpsArtiste(e, k) {
+    var meta = [e.discipline, e.pays, e.epoque].filter(Boolean).join(' · ');
+    var mv = e.mouvement || {};
+    return (meta ? '<span class="tag">' + esc(meta) + '</span>' : '') + actions('artiste', e) +
+      '<p class="lead">' + esc(e.presentation) + '</p>' +
+      zoneWiki('artiste', k, 'galerie', 'galerie') +
+      (e.oeuvre ? section('pour commencer') + '<p class="lead">' + esc(e.oeuvre) + '</p>' : '') +
+      (e.bio ? section('sa vie') + '<p class="texte">' + esc(e.bio) + '</p>' : '') +
+      blocEcoute(e) +
+      zoneWiki('artiste', k, 'lire', 'zone-lire') +
+      '<div class="volets">' +
+        volet('œuvres clés', liste(e.oeuvres_cles || (e.oeuvre ? [e.oeuvre] : []))) +
+        (mv.nom ? volet('le courant : ' + mv.nom.toLowerCase(), '<p>' + esc(mv.texte) + '</p>') : '') +
+        volet('le résumé de wikipédia', zoneWiki('artiste', k, 'extrait')) +
       '</div>';
   }
-
-  // ---------- Vue : favoris ----------
-  function vueFavoris() {
-    var html = favoris.slice().reverse().map(function (f) { return rangee(f.type, f.jour, f.entree, COURTS[f.type] + ', ' + titreJour(f.jour)); }).join('');
-    return '<div class="page"><div class="marque"><span>Favoris</span></div>' +
-      '<h1 class="grand-titre">Ce que vous gardez</h1>' +
-      (html || '<p class="vide-texte">Touchez « Garder » sur une fiche pour la retrouver ici, même quand le carnet aura tourné la page.</p>') + '</div>';
-  }
-
-  // ---------- Vue : progrès ----------
-  function arc(cx, cy, r, a1, a2) {
-    var p1 = [cx + r * Math.cos(a1), cy + r * Math.sin(a1)], p2 = [cx + r * Math.cos(a2), cy + r * Math.sin(a2)];
-    return 'M' + p1[0].toFixed(1) + ' ' + p1[1].toFixed(1) + ' A' + r + ' ' + r + ' 0 0 1 ' + p2[0].toFixed(1) + ' ' + p2[1].toFixed(1);
-  }
-  function vueProgres() {
-    var s = serie(), teintes = ['--rose', '--jaune', '--pervenche', '--sauge', '--ciel', '--peche', '--rose'];
-    var auj = dateDe(D.aujourdhui), jours7 = [];
-    for (var i = 6; i >= 0; i--) { var d = new Date(auj); d.setDate(d.getDate() - i); jours7.push(d); }
-    var pas = Math.PI * 2 / 7, ecart = 0.2, arcs = '';
-    jours7.forEach(function (d, i) {
-      var j = D.jours[cleDe(d)], lu = j && j.lu;
-      var a1 = -Math.PI / 2 + i * pas + ecart / 2, a2 = a1 + pas - ecart;
-      arcs += '<path d="' + arc(125, 125, 104, a1, a2) + '" fill="none" stroke-width="22" stroke-linecap="round" style="stroke: var(' + (lu ? teintes[i] : '--vide') + ')"/>';
-    });
-    var cles = Object.keys(D.jours), compte = { mot: 0, date: 0, artiste: 0 }, lus = 0;
-    cles.forEach(function (k) { TYPES.forEach(function (t) { if (D.jours[k][t]) compte[t]++; }); if (D.jours[k].lu) lus++; });
-    return '<div class="page"><div class="marque"><span>Progrès</span></div>' +
-      '<div class="anneau"><svg viewBox="0 0 250 250">' + arcs + '</svg><div class="centre"><strong>' + s + '</strong><span>' +
-        (s > 1 ? 'jours de lecture d’affilée' : 'jour de lecture') + '</span></div></div>' +
-      '<div class="semaine-lue">' + jours7.map(function (d) { return '<span>' + INITIALES[d.getDay()] + '</span>'; }).join('') + '</div>' +
-      '<div class="stats">' +
-        '<div class="stat m-mot"><strong>' + compte.mot + '</strong><span>mots découverts</span></div>' +
-        '<div class="stat m-date"><strong>' + compte.date + '</strong><span>dates découvertes</span></div>' +
-        '<div class="stat m-artiste"><strong>' + compte.artiste + '</strong><span>artistes découverts</span></div>' +
-        '<div class="stat s-sauge"><strong>' + favoris.length + '</strong><span>favoris</span></div></div>' +
-      '<p class="explication">Une journée compte dans la série quand vous ouvrez la fiche. Les sept arcs représentent les sept derniers jours, du plus ancien au plus récent. ' +
-        lus + ' jour' + (lus > 1 ? 's' : '') + ' de lecture depuis le ' + titreJour(D.debut) + '.</p></div>';
+  function vueFiche() {
+    var f = etat.fiche, t = f.type, e = entreeDe(t, f.cle);
+    if (!e) { etat.fiche = null; return null; }
+    var n = niveau();
+    var titre = t === 'mot' ? e.mot : t === 'date' ? String(e.annee).replace(/^vers\s+/, '') : e.nom;
+    var vers = t === 'date' && /^vers\s/.test(String(e.annee));
+    var contenu = t === 'mot' ? corpsMot(e, f.cle) : t === 'date' ? corpsDate(e, f.cle) : corpsArtiste(e, f.cle);
+    return '<article class="fiche f-' + t + '"><header class="hero"><div class="hero-tri" aria-hidden="true"></div>' +
+      '<div class="hero-haut"><button class="retour" data-fermer aria-label="Revenir">' + I.retour + '</button><span>' + NOMS_FICHE[t] + ' · ' + heure(t) +
+      (f.cle !== D.aujourdhui ? ' · ' + jourMois(f.cle) : '') + '</span></div>' +
+      (vers ? '<span class="hero-vers">vers</span>' : '') +
+      '<p class="hero-titre' + (t === 'date' ? '' : ' bas-casse') + '" style="font-size: ' + tailleTitre(t, titre) + 'px">' + esc(titre) + '</p></header>' +
+      '<div class="corps">' + contenu + '</div>' +
+      '<div class="bandeau"><span>' + (f.nouveau ? 'fiche lue <span class="plus">+1</span>' : 'fiche déjà lue') + '</span><span>' + esc(libelleNiveau(n).toLowerCase()) + '</span></div></article>';
   }
 
   // ---------- Rendu ----------
-  function vueOnglet() { return etat.onglet === 'carnet' ? vueCarnet() : etat.onglet === 'favoris' ? vueFavoris() : etat.onglet === 'progres' ? vueProgres() : vueJour(); }
   function barre() {
-    var onglets = [['jour', 'Aujourd’hui'], ['carnet', 'Carnet'], ['favoris', 'Favoris'], ['progres', 'Progrès']];
-    return '<nav class="barre" aria-label="Navigation">' + onglets.map(function (o) {
-      return '<button data-onglet="' + o[0] + '"' + (etat.onglet === o[0] && !etat.fiche ? ' aria-current="page"' : '') + '>' + ICONES[o[0]] + '<span>' + o[1] + '</span></button>';
+    var onglets = [['jour', 'Aujourd’hui'], ['carnet', 'Carnet'], ['quiz', 'Quiz'], ['progres', 'Progrès']];
+    return '<nav class="nav" aria-label="Navigation">' + onglets.map(function (o) {
+      return '<button data-onglet="' + o[0] + '" style="--c: ' + COULEUR_ONGLET[o[0]] + '"' + (etat.onglet === o[0] ? ' aria-current="page"' : '') + '><i></i><span>' + o[1] + '</span></button>';
     }).join('') + '</nav>';
   }
-  function rendre() {
-    document.getElementById('app').innerHTML = (etat.fiche ? vueFiche() : vueOnglet()) + barre();
-    if (etat.fiche) demander(etat.fiche.type, etat.fiche.cle);
+  function libellesBord(n) {
+    var s = serie(), prochain = 'Prochain quiz : ' + titreJour(D.quizSemaine.prochain);
+    var bas = etat.onglet === 'quiz' && etat.quiz ? 'Une bonne réponse, un point' : (etat.onglet === 'progres' ? 'Un point par fiche lue' : prochain);
+    return '<div class="lib lib-haut"><span>Trois fois par jour</span><span>' + jourMois(D.aujourdhui) + '</span></div>' +
+      '<div class="lib lib-droite">' + esc(libelleNiveau(n)) + (n.suivant ? ' · ' + n.suivant.nom + ' dans ' + n.manque : '') + '</div>' +
+      '<div class="lib lib-gauche">' + (s > 1 ? 'Série de ' + s + ' jours' : 'Série en cours : ' + s + ' jour') + '</div>' +
+      '<div class="lib lib-bas">' + esc(bas) + '</div>';
+  }
+  function vueOnglet() {
+    return etat.onglet === 'carnet' ? vueCarnet() : etat.onglet === 'quiz' ? vueQuiz() : etat.onglet === 'progres' ? vueProgres() : vueJour();
+  }
+  function rendre(garderDefilement) {
+    var app = document.getElementById('app');
+    var z = document.querySelector('.zone'), y = garderDefilement && z ? z.scrollTop : 0;
+    var fiche = etat.fiche ? vueFiche() : null;
+    if (fiche) {
+      app.innerHTML = fiche;
+      if (!garderDefilement) window.scrollTo(0, 0);
+      demander(etat.fiche.type, etat.fiche.cle);
+      remplir();
+      return;
+    }
+    var n = niveau();
+    app.innerHTML = cadre(n) + libellesBord(n) + '<main class="zone">' + vueOnglet() + '</main>' + barre();
+    var nz = document.querySelector('.zone');
+    if (nz) nz.scrollTop = y;
+  }
+  function ouvrir(t, k) {
+    var nouveau = !estLu(t, k);
+    if (nouveau) {
+      D.jours[k] = D.jours[k] || {};
+      D.jours[k].lus = D.jours[k].lus || {};
+      D.jours[k].lus[t] = true;
+      pont('lire', { cle: k, type: t });
+    }
+    etat.fiche = { type: t, cle: k, nouveau: nouveau };
+    rendre();
   }
 
   // ---------- Wikipédia (via Scriptable) ----------
   function demander(t, k) {
-    var cle = t + '|' + k;
+    var c = t + '|' + k;
     if (t === 'mot') return;
-    if (demandes[cle]) { remplir(); return; }
+    if (demandes[c]) { remplir(); return; }
     var e = entreeDe(t, k);
     if (!e) return;
-    demandes[cle] = true;
-    setTimeout(function () { if (!wiki[cle]) { wiki[cle] = { vide: true }; remplir(); } }, 15000);
-    pont('wiki', { cle: cle, items: [{ id: t, q: t === 'date' ? (e.wikipedia || e.evenement) : (e.wikipedia || e.nom), galerie: t === 'artiste' }] });
+    demandes[c] = true;
+    setTimeout(function () { if (!wiki[c]) { wiki[c] = { vide: true }; remplir(); } }, 15000);
+    pont('wiki', { cle: c, items: [{ id: t, q: t === 'date' ? (e.wikipedia || e.evenement) : (e.wikipedia || e.nom), galerie: t === 'artiste' }] });
   }
   window.recevoirWiki = function (r) {
     var res = r.resultats || {};
@@ -869,7 +1104,7 @@ const SCRIPT_PAGE = String.raw`
     var zones = document.querySelectorAll('[data-wiki]');
     for (var i = 0; i < zones.length; i++) {
       var z = zones[i], w = wiki[z.getAttribute('data-wiki')];
-      if (!w) continue;
+      if (!w) { if (z.getAttribute('data-part') === 'extrait') z.innerHTML = '<p class="attente">Chargement…</p>'; continue; }
       var partie = z.getAttribute('data-part');
       if (partie === 'image') {
         z.innerHTML = w.image ? '<img src="' + esc(w.image) + '" alt=""><p class="legende-img">Image : Wikipédia</p>' : '';
@@ -877,6 +1112,8 @@ const SCRIPT_PAGE = String.raw`
         z.innerHTML = w.galerie && w.galerie.length ? w.galerie.map(function (g) {
           return '<figure><img src="' + esc(g.src) + '" alt="' + esc(g.legende) + '" loading="lazy">' + (g.legende ? '<figcaption>' + esc(g.legende) + '</figcaption>' : '') + '</figure>';
         }).join('') : '';
+      } else if (partie === 'lire') {
+        z.innerHTML = w.url ? section('à lire') + '<div style="height: 14px"></div>' + lien(w.url, '<span><small>wikipédia</small><strong>' + esc(w.titre) + '</strong></span>' + I.sortie, 'lire') : '';
       } else {
         z.innerHTML = w.extrait
           ? '<p>' + esc(w.extrait) + '</p><p class="source">Source : Wikipédia, article « ' + esc(w.titre) + ' »</p>'
@@ -893,29 +1130,41 @@ const SCRIPT_PAGE = String.raw`
     return e.nom + ' (' + [e.discipline, e.epoque].filter(Boolean).join(', ') + '). ' + e.presentation + (e.oeuvre ? '\nÀ découvrir : ' + e.oeuvre : '') + signature;
   }
   function basculerFavori() {
-    var f = etat.fiche, e = entreeDe(f.type, f.cle), id = identite(f.type, e), actif = !estFavori(f.type, e);
+    var f = etat.fiche, e = entreeDe(f.type, f.cle), id = identite(f.type, e), actifFav = !estFavori(f.type, e);
     favoris = favoris.filter(function (x) { return !(x.type === f.type && x.id === id); });
-    if (actif) favoris.push({ type: f.type, id: id, jour: f.cle, entree: e });
+    if (actifFav) favoris.push({ type: f.type, id: id, jour: f.cle, entree: e });
     pont('favoris', { liste: favoris });
-    var y = window.scrollY; rendre(); window.scrollTo(0, y);
+    var y = window.scrollY; rendre(true); window.scrollTo(0, y);
   }
 
   // ---------- Interactions ----------
   document.addEventListener('click', function (ev) {
-    var b = ev.target.closest('[data-onglet],[data-ouvrir],[data-fermer],[data-jour],[data-mois],[data-favori],[data-partager]');
-    if (!b) return;
+    var b = ev.target.closest('[data-onglet],[data-ouvrir],[data-fermer],[data-jour],[data-mois],[data-favori],[data-partager],[data-carnet],[data-quiz],[data-rep],[data-suivante],[data-quitter]');
+    if (!b || b.disabled) return;
     if (b.hasAttribute('data-onglet')) {
-      etat.onglet = b.getAttribute('data-onglet'); etat.fiche = null; rendre(); window.scrollTo(0, 0);
+      etat.onglet = b.getAttribute('data-onglet'); etat.fiche = null;
+      if (etat.onglet !== 'quiz' && etat.quiz && etat.quiz.fini) etat.quiz = null;
+      rendre();
     } else if (b.hasAttribute('data-ouvrir')) {
       var p = b.getAttribute('data-ouvrir').split('|');
-      etat.fiche = { type: p[0], cle: p[1] }; rendre(); window.scrollTo(0, 0);
+      ouvrir(p[0], p[1]);
     } else if (b.hasAttribute('data-fermer')) {
-      etat.fiche = null; rendre(); window.scrollTo(0, 0);
+      etat.fiche = null; rendre();
     } else if (b.hasAttribute('data-jour')) {
-      etat.choisi = b.getAttribute('data-jour'); rendre();
+      etat.choisi = b.getAttribute('data-jour'); rendre(true);
     } else if (b.hasAttribute('data-mois')) {
       var a = +etat.mois.slice(0, 4), m = +etat.mois.slice(5, 7) - 1 + (+b.getAttribute('data-mois'));
-      etat.mois = cleDe(new Date(a, m, 1)).slice(0, 7); rendre();
+      etat.mois = cleDe(new Date(a, m, 1)).slice(0, 7); rendre(true);
+    } else if (b.hasAttribute('data-carnet')) {
+      etat.vueCarnet = b.getAttribute('data-carnet'); rendre();
+    } else if (b.hasAttribute('data-quiz')) {
+      lancerQuiz(b.getAttribute('data-quiz')); rendre();
+    } else if (b.hasAttribute('data-rep')) {
+      repondre(+b.getAttribute('data-rep')); rendre(true);
+    } else if (b.hasAttribute('data-suivante')) {
+      suivante(); rendre();
+    } else if (b.hasAttribute('data-quitter')) {
+      etat.quiz = null; rendre();
     } else if (b.hasAttribute('data-favori')) {
       basculerFavori();
     } else if (b.hasAttribute('data-partager')) {
@@ -924,8 +1173,7 @@ const SCRIPT_PAGE = String.raw`
   });
 
   // Un tap sur le widget ouvre directement la fiche qui vient d'être révélée
-  if (D.actuel) etat.fiche = { type: D.actuel, cle: D.aujourdhui };
-  rendre();
+  if (D.actuel) ouvrir(D.actuel, D.aujourdhui); else rendre();
 })();
 `
 
@@ -985,8 +1233,6 @@ if (config.runsInWidget) {
     for (const t of TYPES) noter(h, hier, t, choisir(listes[t], hier))
   }
   if (!h.debut) h.debut = cleAujourdhui
-  h.jours[cleAujourdhui] = h.jours[cleAujourdhui] || {}
-  h.jours[cleAujourdhui].lu = true
   ecrireHistorique(h)
 
   // Chaque jour depuis la première utilisation, jusqu'à aujourd'hui inclus
@@ -1003,8 +1249,20 @@ if (config.runsInWidget) {
       }
     }
     if (garde.lu) j.lu = true
+    if (garde.lus) j.lus = garde.lus
     jours[k] = j
     curseur.setDate(curseur.getDate() + 1)
+  }
+
+  // Le quiz porte sur les six jours qui précèdent son dimanche
+  const dimanche = dimancheDuQuiz(maintenant)
+  const entreesQuiz = []
+  for (let i = 6; i >= 1; i--) {
+    const jour = decaler(dimanche, -i)
+    const garde = h.jours[cle(jour)] || {}
+    for (const t of TYPES) {
+      entreesQuiz.push({ type: t, jour: cle(jour), entree: actualiser(t, garde[t], listes[t]) || choisir(listes[t], jour) })
+    }
   }
 
   const donnees = {
@@ -1013,7 +1271,12 @@ if (config.runsInWidget) {
     debut: h.debut,
     actuel: revele("mot", maintenant) ? momentActuel(maintenant).type : null,
     jours,
-    emissions: EMISSIONS,
+    listes,
+    niveaux: NIVEAUX,
+    quiz: h.quiz,
+    quizSemaine: { cle: cle(dimanche), prochain: cle(decaler(dimanche, 7)), entrees: entreesQuiz },
+    questionsSemaine: QUESTIONS_SEMAINE,
+    questionsRevision: QUESTIONS_REVISION,
     favoris: lireFavoris(),
     depot: DEPOT,
   }
@@ -1021,7 +1284,7 @@ if (config.runsInWidget) {
   const vue = new WebView()
 
   // La page demande à Scriptable ce qu'elle ne peut pas faire seule :
-  // charger Wikipédia, enregistrer les favoris, ouvrir le partage.
+  // charger Wikipédia, enregistrer la lecture, les favoris et le quiz, ouvrir le partage.
   async function pont(url) {
     try {
       const action = url.slice("tfpj://".length, url.indexOf("?"))
@@ -1030,6 +1293,18 @@ if (config.runsInWidget) {
         const resultats = {}
         await Promise.all(demande.items.map(async it => { resultats[it.id] = await wikipedia(it.q, it.galerie) }))
         await vue.evaluateJavaScript(`window.recevoirWiki(${JSON.stringify({ cle: demande.cle, resultats })})`, false)
+      } else if (action === "lire") {
+        const hh = lireHistorique()
+        hh.jours[demande.cle] = hh.jours[demande.cle] || {}
+        hh.jours[demande.cle].lus = hh.jours[demande.cle].lus || {}
+        hh.jours[demande.cle].lus[demande.type] = true
+        ecrireHistorique(hh)
+      } else if (action === "quiz") {
+        const hh = lireHistorique()
+        if (!hh.quiz[demande.cle]) {
+          hh.quiz[demande.cle] = { score: demande.score, total: demande.total }
+          ecrireHistorique(hh)
+        }
       } else if (action === "favoris") {
         ecrireFavoris(demande.liste || [])
       } else if (action === "partager") {
