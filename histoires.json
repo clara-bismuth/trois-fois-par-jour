@@ -1,0 +1,765 @@
+{
+ "version": 1,
+ "titre": "Les folles histoires",
+ "sous_titre": "dénichées sur Wikipédia",
+ "licence": "Textes rédigés pour Trois fois par jour, CC BY 4.0. Sources : articles de Wikipédia en français.",
+ "statuts": {
+  "vrai": "Histoire vraie",
+  "embelli": "Histoire embellie",
+  "mythe": "En partie un mythe",
+  "legende": "Légende",
+  "dispute": "Version disputée"
+ },
+ "histoires": [
+  {
+   "id": "zappolino",
+   "categorie": "Guerres",
+   "titre": "La guerre du seau",
+   "accroche": "Deux villes italiennes, des milliers de combattants, et un seau en bois comme trophée.",
+   "recit": "Le 15 novembre 1325, près de Bologne, les troupes de Modène écrasent celles de Bologne à Zappolino. Les deux cités se détestent depuis des décennies : l'une soutient l'empereur, l'autre le pape. Les chroniques parlent de dizaines de milliers de combattants et de plus de deux mille morts, ce qui en fait l'une des grandes batailles du Moyen Âge italien. Les vainqueurs n'assiègent pas la ville. Ils se contentent de narguer les vaincus en organisant des courses de chevaux sous leurs remparts, puis repartent avec un butin inattendu : le seau en bois d'un puits bolonais. Au XVIIe siècle, le poète Alessandro Tassoni en tire une épopée moqueuse, Le Seau enlevé. Depuis, on raconte volontiers que la guerre a éclaté à cause du seau. En réalité, il n'en a été que le trophée.",
+   "annee": "1325",
+   "lieu": "Zappolino, Italie",
+   "statut": "embelli",
+   "statut_texte": "Bataille bien réelle, mais le seau n'en est pas la cause : il fut le trophée de la victoire.",
+   "article": {
+    "titre": "Bataille de Zappolino",
+    "url": "https://fr.wikipedia.org/wiki/Bataille_de_Zappolino"
+   }
+  },
+  {
+   "id": "stubbs",
+   "categorie": "Animaux",
+   "titre": "Le chat maire de Talkeetna",
+   "accroche": "Un village d'Alaska a gardé un chat roux à sa tête pendant vingt ans.",
+   "recit": "En 1997, à Talkeetna, petit village d'Alaska, des habitants déçus par les candidats d'une élection locale lancent une idée : voter pour Stubbs, un chaton roux trouvé abandonné quelques jours plus tôt. La blague prend. Stubbs devient « maire honorifique » et le reste jusqu'à sa mort, en 2017. Son bilan fait l'unanimité : il n'augmente pas les impôts et ne se mêle pas des affaires des commerçants. Les touristes viennent le saluer, et les dons affluent du monde entier quand il est grièvement blessé par un chien en 2013. Petite nuance : Talkeetna n'est pas une commune et n'a pas de conseil municipal. Le titre de Stubbs était donc symbolique. Mais vingt ans de mandat sans le moindre scandale, peu d'élus peuvent en dire autant.",
+   "annee": "1997",
+   "lieu": "Talkeetna, Alaska",
+   "statut": "embelli",
+   "statut_texte": "Titre purement honorifique : Talkeetna n'a pas de mairie.",
+   "article": {
+    "titre": "Stubbs (chat)",
+    "url": "https://fr.wikipedia.org/wiki/Stubbs_(chat)"
+   }
+  },
+  {
+   "id": "lustig",
+   "categorie": "Personnages",
+   "titre": "L'homme qui vendit la tour Eiffel",
+   "accroche": "Un escroc a convaincu des ferrailleurs que la tour Eiffel allait être démolie.",
+   "recit": "Dans les années 1920, la tour Eiffel coûte cher à entretenir et la presse se demande parfois s'il faut la garder. Victor Lustig, escroc polyglotte né en Bohême, y voit une occasion. Il se fait passer pour un haut fonctionnaire, réunit discrètement des ferrailleurs dans un grand hôtel parisien et leur annonce que l'État va vendre la tour pour sa ferraille. Un acheteur mord à l'hameçon et lui verse une forte somme. Trop honteux pour porter plainte, il se tait, et Lustig aurait même tenté le coup une seconde fois. Plus tard, aux États-Unis, il vend des boîtes censées imprimer des billets et compte Al Capone parmi ses victimes. Arrêté pour fausse monnaie, il passe par Alcatraz et meurt en détention en 1947.",
+   "annee": "Années 1920",
+   "lieu": "Paris",
+   "statut": "embelli",
+   "statut_texte": "Escroc bien réel, mais l'épisode de la tour n'est connu que par des récits ultérieurs.",
+   "article": {
+    "titre": "Victor Lustig",
+    "url": "https://fr.wikipedia.org/wiki/Victor_Lustig"
+   }
+  },
+  {
+   "id": "spaghetti",
+   "categorie": "Canulars",
+   "titre": "La récolte des spaghettis",
+   "accroche": "Le 1er avril 1957, la BBC montre des familles suisses cueillant des pâtes sur des arbres.",
+   "recit": "Le 1er avril 1957, Panorama, l'émission d'actualités très sérieuse de la BBC, diffuse un court reportage : au bord du lac de Lugano, en Suisse, la récolte des spaghettis est exceptionnelle grâce à un hiver doux et à la quasi-disparition du charançon du spaghetti. On y voit des familles cueillir des pâtes suspendues aux branches. La voix grave de Richard Dimbleby, journaliste très respecté, rend le tout crédible. À l'époque, beaucoup de Britanniques ne connaissent les pâtes qu'en conserve. Environ huit millions de personnes regardent l'émission, et des centaines appellent ensuite la BBC, certaines pour savoir comment faire pousser leur propre arbre. La réponse de la chaîne est restée célèbre : planter un brin de spaghetti dans de la sauce tomate, et garder espoir.",
+   "annee": "1957",
+   "lieu": "Royaume-Uni",
+   "statut": "vrai",
+   "statut_texte": "Canular avéré, assumé par la BBC.",
+   "article": {
+    "titre": "Arbre à spaghetti",
+    "url": "https://fr.wikipedia.org/wiki/Arbre_%C3%A0_spaghetti"
+   }
+  },
+  {
+   "id": "defenestration",
+   "categorie": "Histoire",
+   "titre": "Tombés par la fenêtre",
+   "accroche": "Trois hommes jetés d'une fenêtre du château de Prague survivent. Miracle ou fumier ?",
+   "recit": "Le 23 mai 1618, des nobles protestants de Bohême, furieux des atteintes à leur liberté de culte, montent au château de Prague. Après une dispute houleuse, ils saisissent deux gouverneurs catholiques, Martinic et Slavata, ainsi que leur secrétaire Fabricius, et les jettent par la fenêtre, de la hauteur de plusieurs étages. Les trois hommes survivent. Les catholiques crient au miracle et parlent d'anges venus amortir la chute. Les protestants ont une explication plus terre à terre : un tas de fumier au pied du mur. Le secrétaire est ensuite anobli avec un titre qui signifie à peu près « de la haute chute ». La scène a l'air comique, mais elle déclenche la guerre de Trente Ans, l'un des conflits les plus meurtriers de l'histoire européenne.",
+   "annee": "1618",
+   "lieu": "Prague",
+   "statut": "dispute",
+   "statut_texte": "Les faits sont sûrs ; la raison de leur survie reste discutée.",
+   "article": {
+    "titre": "Défenestration de Prague (1618)",
+    "url": "https://fr.wikipedia.org/wiki/D%C3%A9fenestration_de_Prague_(1618)"
+   }
+  },
+  {
+   "id": "marathon-1904",
+   "categorie": "Sport",
+   "titre": "Le marathon le plus absurde",
+   "accroche": "Un coureur en voiture, un vainqueur dopé au poison et des chiens sur le parcours.",
+   "recit": "Le 30 août 1904, aux Jeux olympiques de Saint-Louis, trente-deux coureurs s'élancent sous une chaleur écrasante, sur des routes de terre où les voitures des officiels soulèvent des nuages de poussière. Frederick Lorz abandonne, monte dans une voiture, en descend avant l'arrivée et franchit la ligne en vainqueur, avant d'être démasqué. Le vrai gagnant, Thomas Hicks, a tenu grâce à des doses de strychnine, un poison, mêlées à du brandy et à des blancs d'œufs : c'est le premier dopage avéré des Jeux. Le facteur cubain Félix Carvajal, venu en stop et en pantalon coupé, s'arrête pour manger des pommes pourries et faire une sieste, et finit pourtant quatrième. Un autre coureur est chassé hors du parcours par des chiens. Sur trente-deux partants, quatorze seulement terminent.",
+   "annee": "1904",
+   "lieu": "Saint-Louis, États-Unis",
+   "statut": "vrai",
+   "statut_texte": "Tout est documenté par le rapport officiel de la course.",
+   "article": {
+    "titre": "Marathon aux Jeux olympiques de 1904",
+    "url": "https://fr.wikipedia.org/wiki/Marathon_aux_Jeux_olympiques_de_1904"
+   }
+  },
+  {
+   "id": "faisans",
+   "categorie": "Lieux",
+   "titre": "L'île qui change de pays",
+   "accroche": "Six mois française, six mois espagnole : une île minuscule alterne depuis le XVIIe siècle.",
+   "recit": "Sur la Bidassoa, la rivière qui sépare Hendaye d'Irun, se cache l'île des Faisans : à peine deux cents mètres de long. C'est là qu'en 1659, sur un terrain neutre, la France et l'Espagne négocient la paix des Pyrénées et le mariage de Louis XIV avec l'infante Marie-Thérèse. Pour ne vexer personne, l'île devient un condominium : elle appartient aux deux pays, qui l'administrent à tour de rôle, six mois chacun. C'est aujourd'hui le seul territoire au monde géré ainsi, en alternance. Deux fois par an, l'île change donc de pays sans bouger d'un centimètre. Pas de maisons, pas d'habitants, seulement des arbres et un monument qui rappelle la conférence de 1659. Son accès est interdit au public : on l'admire depuis les berges.",
+   "annee": "1659",
+   "lieu": "Bidassoa, Pays basque",
+   "statut": "vrai",
+   "statut_texte": "Situation réelle et toujours en vigueur.",
+   "article": {
+    "titre": "Île des Faisans",
+    "url": "https://fr.wikipedia.org/wiki/%C3%8Ele_des_Faisans"
+   }
+  },
+  {
+   "id": "wojtek",
+   "categorie": "Animaux",
+   "titre": "Wojtek, l'ours soldat",
+   "accroche": "Un ours brun enrôlé dans l'armée polonaise aurait porté des obus au Mont-Cassin.",
+   "recit": "En 1942, en Iran, des soldats polonais échangent un ourson orphelin contre quelques conserves. Ils le nourrissent au lait concentré dans une bouteille de vodka vide et le baptisent Wojtek. L'ours grandit avec la troupe, à travers l'Irak, la Syrie, la Palestine et l'Égypte. Il boit de la bière, mâchonne des cigarettes, lutte pour jouer et salue quand on le salue. L'armée finit par l'enregistrer officiellement comme soldat, et il obtient le grade de caporal. Lors de la bataille du Mont-Cassin, en Italie, il aurait aidé à porter des caisses d'obus : un ours portant un obus devient l'emblème de sa compagnie. Démobilisé en Écosse, il finit sa vie au zoo d'Édimbourg, où d'anciens camarades venaient le voir. Il meurt en 1963.",
+   "annee": "1944",
+   "lieu": "Iran, Italie, Écosse",
+   "statut": "vrai",
+   "statut_texte": "Histoire attestée par les vétérans ; son rôle exact au combat est difficile à vérifier.",
+   "article": {
+    "titre": "Wojtek",
+    "url": "https://fr.wikipedia.org/wiki/Wojtek"
+   }
+  },
+  {
+   "id": "patisseries",
+   "categorie": "Guerres",
+   "titre": "La guerre des Pâtisseries",
+   "accroche": "Une boutique de gâteaux saccagée à Mexico finit en blocus naval français.",
+   "recit": "En 1832, à Mexico, des officiers auraient pillé la boutique d'un pâtissier français, un certain Remontel. Le Mexique vit alors une période très instable et les commerçants étrangers multiplient les plaintes pour pillages et violences. Quelques années plus tard, la France réclame 600 000 pesos de dédommagement pour l'ensemble de ses ressortissants. Le Mexique refuse. En 1838, la flotte française bloque le port de Veracruz et bombarde la forteresse qui le protège. Le général Santa Anna, déjà connu pour le siège de Fort Alamo, prend la tête de la défense et y perd une partie de sa jambe gauche, qu'il fera plus tard enterrer avec les honneurs militaires. En 1839, après une médiation britannique, le Mexique accepte de payer. La plainte du pâtissier, elle, a donné son nom à la guerre.",
+   "annee": "1838",
+   "lieu": "Veracruz, Mexique",
+   "statut": "vrai",
+   "statut_texte": "Conflit réel ; le surnom vient de la plainte du pâtissier.",
+   "article": {
+    "titre": "Guerre des Pâtisseries",
+    "url": "https://fr.wikipedia.org/wiki/Guerre_des_P%C3%A2tisseries"
+   }
+  },
+  {
+   "id": "norton",
+   "categorie": "Personnages",
+   "titre": "Norton Ier, empereur des États-Unis",
+   "accroche": "Un commerçant ruiné se proclame empereur. San Francisco joue le jeu pendant vingt ans.",
+   "recit": "Joshua Norton arrive à San Francisco en 1849 et y fait fortune, avant de tout perdre en spéculant sur le riz. En 1859, il envoie aux journaux une proclamation : il est désormais Norton Ier, empereur des États-Unis. Un journal la publie pour rire, et la ville entière décide de suivre. Norton parcourt les rues en uniforme bleu à épaulettes dorées, inspecte les trottoirs et publie des décrets : il dissout le Congrès, puis ordonne la construction d'un pont entre San Francisco et Oakland. Les billets qu'il fait imprimer sont acceptés dans les commerces qu'il fréquente, et quand son uniforme s'use, la municipalité lui en offre un neuf. À sa mort, en 1880, des milliers de personnes suivent ses funérailles. Le pont, lui, sera construit dans les années 1930.",
+   "annee": "1859",
+   "lieu": "San Francisco",
+   "statut": "vrai",
+   "statut_texte": "Personnage bien réel, célébré par Mark Twain et Robert Louis Stevenson.",
+   "article": {
+    "titre": "Joshua Norton",
+    "url": "https://fr.wikipedia.org/wiki/Joshua_Norton"
+   }
+  },
+  {
+   "id": "boronali",
+   "categorie": "Canulars",
+   "titre": "Le tableau peint par un âne",
+   "accroche": "En 1910, un âne de Montmartre expose au Salon des Indépendants sous un faux nom.",
+   "recit": "Le 8 mars 1910, l'écrivain Roland Dorgelès emprunte Lolo, l'âne du patron du cabaret du Lapin agile, à Montmartre. Il attache un pinceau à sa queue, place une toile derrière lui et, en présence d'un huissier, le laisse barbouiller. Le résultat, signé Joachim-Raphaël Boronali, peintre génois inventé de toutes pièces, est exposé au Salon des Indépendants sous le titre Et le soleil s'endormit sur l'Adriatique. Un faux manifeste de l'« excessivisme » accompagne l'œuvre, et la presse s'en empare. Puis Dorgelès révèle la supercherie : Boronali est l'anagramme d'Aliboron, nom traditionnel de l'âne. Son but : moquer une partie de la peinture moderne. Le tableau est vendu 400 francs, reversés à un orphelinat. On peut toujours le voir à Milly-la-Forêt.",
+   "annee": "1910",
+   "lieu": "Paris",
+   "statut": "vrai",
+   "statut_texte": "Canular avéré, constaté par huissier.",
+   "article": {
+    "titre": "Et le soleil s'endormit sur l'Adriatique",
+    "url": "https://fr.wikipedia.org/wiki/Et_le_soleil_s'endormit_sur_l'Adriatique"
+   }
+  },
+  {
+   "id": "haydn",
+   "categorie": "Histoire",
+   "titre": "Le crâne baladeur de Haydn",
+   "accroche": "La tête du compositeur a voyagé seule pendant près de 150 ans avant de rejoindre son corps.",
+   "recit": "Joseph Haydn meurt à Vienne en 1809. Quelques jours après l'enterrement, deux admirateurs passionnés de phrénologie, une théorie à la mode qui prétend lire le talent dans la forme du crâne, soudoient le fossoyeur et emportent la tête du compositeur pour l'étudier. Personne ne s'en aperçoit avant 1820, quand le prince Esterházy fait transférer la dépouille à Eisenstadt et découvre un corps sans tête. Une enquête remonte jusqu'aux voleurs, qui rendent un faux crâne. Le vrai passe ensuite de main en main, puis finit exposé dans une institution musicale de Vienne. Il faut attendre 1954 pour que la tête de Haydn rejoigne enfin le reste de son corps, lors d'une cérémonie solennelle. Le faux crâne, lui, est resté dans la tombe : elle en contient donc deux.",
+   "annee": "1809",
+   "lieu": "Vienne, Eisenstadt",
+   "statut": "vrai",
+   "statut_texte": "Faits établis par l'enquête de 1820 et le retour du crâne en 1954.",
+   "article": {
+    "titre": "Joseph Haydn",
+    "url": "https://fr.wikipedia.org/wiki/Joseph_Haydn"
+   }
+  },
+  {
+   "id": "deschanel",
+   "categorie": "Personnages",
+   "titre": "Le président tombé du train",
+   "accroche": "En pleine nuit, le chef de l'État français chute en pyjama du train présidentiel.",
+   "recit": "Dans la nuit du 23 au 24 mai 1920, le train présidentiel roule vers Montbrison. Paul Deschanel, élu président de la République quelques mois plus tôt, n'arrive pas à dormir. Il a pris des calmants, il fait chaud, il veut ouvrir la fenêtre de son compartiment et tombe sur la voie, en pyjama, près de Montargis. Légèrement blessé, il marche le long des rails et rencontre un ouvrier à qui il explique qu'il est le président. L'homme n'y croit guère mais le conduit chez un garde-barrière, où on le soigne et le couche. Selon une anecdote célèbre, l'épouse du garde-barrière aurait dit qu'elle avait bien vu qu'il s'agissait d'un monsieur : il avait les pieds propres. Épuisé et moqué, Deschanel démissionne en septembre 1920.",
+   "annee": "1920",
+   "lieu": "Près de Montargis",
+   "statut": "vrai",
+   "statut_texte": "Faits établis ; la phrase des « pieds propres » est une anecdote rapportée.",
+   "article": {
+    "titre": "Paul Deschanel",
+    "url": "https://fr.wikipedia.org/wiki/Paul_Deschanel"
+   }
+  },
+  {
+   "id": "hans",
+   "categorie": "Animaux",
+   "titre": "Hans, le cheval qui savait compter",
+   "accroche": "Un cheval berlinois résolvait des calculs. En réalité, il lisait les visages.",
+   "recit": "Au début du XXe siècle, à Berlin, un ancien professeur de mathématiques, Wilhelm von Osten, présente un cheval prodige : Hans. On lui pose une addition, une division, une question sur le calendrier, et Hans répond en tapant du sabot le bon nombre de fois. Von Osten est sincère : il croit vraiment avoir instruit son cheval. Une commission d'experts ne trouve aucune tricherie. Le psychologue Oskar Pfungst pousse l'enquête plus loin et remarque que Hans échoue quand son interlocuteur ignore la réponse, ou quand il ne le voit pas. Le cheval guettait en fait des signes infimes : une tête qui se penche quand il doit commencer, qui se redresse quand il doit s'arrêter. Ce phénomène porte aujourd'hui son nom, l'effet Hans le Malin, et les scientifiques s'en méfient dans leurs expériences.",
+   "annee": "1904",
+   "lieu": "Berlin",
+   "statut": "vrai",
+   "statut_texte": "Cas réel, étudié et publié par Oskar Pfungst en 1907.",
+   "article": {
+    "titre": "Hans le Malin",
+    "url": "https://fr.wikipedia.org/wiki/Hans_le_Malin"
+   }
+  },
+  {
+   "id": "335-ans",
+   "categorie": "Guerres",
+   "titre": "La guerre de 335 ans",
+   "accroche": "Les Pays-Bas et un archipel anglais seraient restés en guerre de 1651 à 1986, sans un seul tir.",
+   "recit": "En 1651, pendant la guerre civile anglaise, des royalistes retranchés aux îles Scilly, au large de la Cornouailles, attaquent des navires hollandais. L'amiral néerlandais Tromp vient réclamer réparation et, selon certains récits, déclare la guerre à l'archipel. Quelques mois plus tard, les royalistes se rendent, et tout le monde oublie l'affaire. Personne ne signe la paix. En 1985, un historien local, président du conseil des îles, écrit à l'ambassade néerlandaise pour tordre le cou à cette vieille rumeur. Surprise : on ne trouve aucun traité. L'ambassadeur se déplace donc en personne et signe la paix, avec humour, le 17 avril 1986, trois cent trente-cinq ans après. Seul bémol : rien ne prouve que la déclaration de guerre de 1651 ait jamais été valable.",
+   "annee": "1651",
+   "lieu": "Îles Scilly",
+   "statut": "mythe",
+   "statut_texte": "En partie un mythe : la déclaration de guerre initiale est douteuse.",
+   "article": {
+    "titre": "Guerre de Trois cent trente-cinq Ans",
+    "url": "https://fr.wikipedia.org/wiki/Guerre_de_Trois_cent_trente-cinq_Ans"
+   }
+  },
+  {
+   "id": "petomane",
+   "categorie": "Personnages",
+   "titre": "Le Pétomane, star du Moulin-Rouge",
+   "accroche": "Un Marseillais a fait fortune en jouant des airs avec ses gaz.",
+   "recit": "Enfant, en se baignant à Marseille, Joseph Pujol découvre qu'il peut aspirer de l'eau, puis de l'air, par le bas du ventre et l'expulser à volonté. Adulte, il en fait un numéro de music-hall. Sous le nom du Pétomane, il imite des instruments, éteint une bougie à distance et joue des airs connus sur une petite flûte reliée à un tuyau. Il rassure toujours le public : ses vents ne sentent rien. Engagé au Moulin-Rouge en 1890, il remplit la salle soir après soir. Les spectateurs pleurent de rire, et ses recettes dépassent parfois celles de Sarah Bernhardt, la plus grande actrice de l'époque. La Première Guerre mondiale met fin à sa carrière. Il se retire dans le Sud et meurt à Toulon en 1945.",
+   "annee": "1890",
+   "lieu": "Paris",
+   "statut": "vrai",
+   "statut_texte": "Carrière documentée par la presse et les affiches de l'époque.",
+   "article": {
+    "titre": "Le Pétomane",
+    "url": "https://fr.wikipedia.org/wiki/Le_P%C3%A9tomane"
+   }
+  },
+  {
+   "id": "turc",
+   "categorie": "Canulars",
+   "titre": "Le Turc mécanique",
+   "accroche": "Un automate joueur d'échecs a battu l'Europe pendant des décennies. Il cachait un humain.",
+   "recit": "En 1770, l'inventeur Wolfgang von Kempelen présente à l'impératrice Marie-Thérèse une machine extraordinaire : un mannequin en turban, assis derrière un meuble rempli d'engrenages, qui joue aux échecs et gagne. Avant chaque partie, on ouvre les portes du meuble pour montrer le mécanisme. Le Turc fait le tour de l'Europe, puis de l'Amérique. Selon les récits, il affronte Napoléon et Benjamin Franklin. Edgar Allan Poe lui consacre un essai. Le secret ? Un joueur d'échecs de talent, caché dans le meuble, qui se déplaçait d'un compartiment à l'autre pendant qu'on ouvrait les portes, et suivait la partie grâce à des aimants placés sous l'échiquier. Le subterfuge est expliqué dans les années 1820. La machine disparaît dans un incendie à Philadelphie, en 1854.",
+   "annee": "1770",
+   "lieu": "Vienne",
+   "statut": "vrai",
+   "statut_texte": "Mystification avérée, longtemps restée inexpliquée.",
+   "article": {
+    "titre": "Turc mécanique",
+    "url": "https://fr.wikipedia.org/wiki/Turc_m%C3%A9canique"
+   }
+  },
+  {
+   "id": "tycho-brahe",
+   "categorie": "Histoire",
+   "titre": "Tycho Brahe, le nez de métal",
+   "accroche": "Un génie de l'astronomie, un nez perdu en duel et une mort devenue légende.",
+   "recit": "Tycho Brahe, noble danois né en 1546, mesure le ciel à l'œil nu avec une précision inégalée, et ses observations permettront à Kepler de comprendre le mouvement des planètes. Sa vie est tout aussi spectaculaire. Étudiant, il se bat en duel avec un cousin et y perd une partie du nez : il portera toute sa vie une prothèse en métal. Sur son île de Ven, il bâtit un palais-observatoire, et l'on raconte qu'il possédait un élan apprivoisé, mort après avoir bu trop de bière. Sa mort, en 1601 à Prague, a nourri une autre légende : invité à un banquet, il n'aurait pas osé quitter la table pour aller se soulager, et sa vessie aurait éclaté. Les analyses de ses restes ont écarté cette version. La cause exacte de sa mort reste discutée.",
+   "annee": "1601",
+   "lieu": "Danemark, Prague",
+   "statut": "legende",
+   "statut_texte": "Le nez perdu est réel ; la vessie qui éclate est une légende.",
+   "article": {
+    "titre": "Tycho Brahe",
+    "url": "https://fr.wikipedia.org/wiki/Tycho_Brahe"
+   }
+  },
+  {
+   "id": "baerle",
+   "categorie": "Lieux",
+   "titre": "Le village aux deux pays",
+   "accroche": "À Baerle, la frontière belgo-néerlandaise traverse des maisons, des cafés et des jardins.",
+   "recit": "Au sud des Pays-Bas, le village de Baerle est en réalité deux communes : Baerle-Nassau, néerlandaise, et Baerle-Duc, belge. Au Moyen Âge, les terres ont été partagées parcelle par parcelle entre deux seigneurs, et ce puzzle n'a jamais été démêlé. Quand la Belgique et les Pays-Bas fixent leur frontière en 1843, ils renoncent à trancher dans ce secteur. Résultat : des enclaves belges en territoire néerlandais, et même des enclaves néerlandaises à l'intérieur de ces enclaves belges. Certaines ne font que quelques dizaines de mètres carrés. Des maisons sont coupées en deux par la frontière, tracée au sol par des croix blanches. La nationalité d'une maison dépend souvent de l'endroit où se trouve sa porte d'entrée.",
+   "annee": "1843",
+   "lieu": "Baerle, Belgique et Pays-Bas",
+   "statut": "vrai",
+   "statut_texte": "Situation réelle et toujours en vigueur.",
+   "article": {
+    "titre": "Baerle-Duc",
+    "url": "https://fr.wikipedia.org/wiki/Baerle-Duc"
+   }
+  },
+  {
+   "id": "cher-ami",
+   "categorie": "Animaux",
+   "titre": "Cher Ami, le pigeon qui sauva 194 soldats",
+   "accroche": "Blessé, une patte arrachée, il a porté le message qui a arrêté un tir ami.",
+   "recit": "Octobre 1918, forêt d'Argonne. Plus de cinq cents soldats américains, encerclés par les Allemands, se retrouvent en plus sous les obus de leur propre artillerie, qui ignore leur position. Leur commandant, Charles Whittlesey, envoie des pigeons voyageurs. Les premiers sont abattus. Il reste Cher Ami. Il s'envole avec un message attaché à la patte : notre artillerie tire sur nous, par pitié, arrêtez. Les Allemands le visent. Il est touché à la poitrine et à l'œil, une patte ne tient plus que par un tendon. Il parcourt pourtant une quarantaine de kilomètres en vingt-cinq minutes. Le tir cesse : 194 hommes survivent. Les médecins lui posent une petite patte en bois. Décoré de la croix de guerre, il est aujourd'hui exposé au Smithsonian, à Washington.",
+   "annee": "1918",
+   "lieu": "Argonne",
+   "statut": "vrai",
+   "statut_texte": "Épisode attesté par l'armée américaine.",
+   "article": {
+    "titre": "Cher Ami",
+    "url": "https://fr.wikipedia.org/wiki/Cher_Ami"
+   }
+  },
+  {
+   "id": "mincemeat",
+   "categorie": "Guerres",
+   "titre": "L'homme qui n'a jamais existé",
+   "accroche": "Pour tromper Hitler, les Britanniques ont confié de faux plans à un mort.",
+   "recit": "En 1943, les Alliés veulent débarquer en Sicile, mais la cible est évidente. Les services secrets britanniques imaginent alors une ruse macabre. Ils récupèrent le corps d'un homme mort à Londres, Glyndwr Michael, et lui inventent une identité : le major William Martin, des Royal Marines. Dans ses poches, ils glissent des tickets de théâtre et des lettres d'une fiancée imaginaire. À son poignet, une mallette contient de fausses lettres d'officiers annonçant un débarquement dans les Balkans et en Sardaigne. Le 30 avril, un sous-marin dépose le corps au large de Huelva, en Espagne. Les documents remontent jusqu'à l'état-major allemand, qui y croit et déplace des troupes. En juillet, le débarquement en Sicile réussit. Le faux major repose toujours à Huelva.",
+   "annee": "1943",
+   "lieu": "Huelva, Espagne",
+   "statut": "vrai",
+   "statut_texte": "Opération déclassifiée et largement documentée.",
+   "article": {
+    "titre": "Opération Mincemeat",
+    "url": "https://fr.wikipedia.org/wiki/Op%C3%A9ration_Mincemeat"
+   }
+  },
+  {
+   "id": "jack-churchill",
+   "categorie": "Personnages",
+   "titre": "Mad Jack, l'officier à l'épée",
+   "accroche": "En pleine Seconde Guerre mondiale, un officier britannique combattait à l'arc et à la cornemuse.",
+   "recit": "Jack Churchill, officier britannique né à Hong Kong en 1906, est un excellent archer et un joueur de cornemuse. Il a même décroché un petit rôle au cinéma. Quand la Seconde Guerre mondiale éclate, il part au front avec son arc, ses flèches et une grande épée écossaise : selon lui, un officier sans son épée n'est pas correctement habillé. En mai 1940, dans le nord de la France, il donne le signal d'une embuscade en abattant un sous-officier allemand d'une flèche. On cite souvent ce tir comme l'un des derniers faits d'armes à l'arc. En 1941, lors d'un raid de commandos en Norvège, il descend de la barge en jouant de la cornemuse avant de se lancer à l'assaut. On le surnommait Mad Jack, et on comprend pourquoi.",
+   "annee": "1940",
+   "lieu": "France, Norvège",
+   "statut": "vrai",
+   "statut_texte": "Faits militaires attestés.",
+   "article": {
+    "titre": "Jack Churchill",
+    "url": "https://fr.wikipedia.org/wiki/Jack_Churchill"
+   }
+  },
+  {
+   "id": "toft",
+   "categorie": "Canulars",
+   "titre": "La femme qui accouchait de lapins",
+   "accroche": "En 1726, une paysanne anglaise a fait croire aux médecins du roi qu'elle mettait au monde des lapins.",
+   "recit": "Automne 1726, à Godalming, dans le sud de l'Angleterre. Mary Toft, une jeune paysanne, affirme avoir donné naissance à des morceaux d'animaux, puis à des lapins. Le chirurgien local assiste à plusieurs de ces « accouchements » et prévient des confrères éminents. L'affaire remonte jusqu'à la cour du roi George Ier, qui envoie ses propres chirurgiens. L'un d'eux est convaincu, un autre reste sceptique. Mary Toft est amenée à Londres pour être examinée de près, et c'est là que le mystère s'effondre : sous surveillance, plus aucun lapin. Un employé avoue avoir été chargé de lui en procurer. Elle finit par reconnaître la supercherie. Plusieurs médecins sont ridiculisés, et le graveur William Hogarth s'en donne à cœur joie.",
+   "annee": "1726",
+   "lieu": "Godalming, Angleterre",
+   "statut": "vrai",
+   "statut_texte": "Canular avéré, avoué par Mary Toft.",
+   "article": {
+    "titre": "Mary Toft",
+    "url": "https://fr.wikipedia.org/wiki/Mary_Toft"
+   }
+  },
+  {
+   "id": "tour-1904",
+   "categorie": "Sport",
+   "titre": "Le Tour de France de tous les coups",
+   "accroche": "Supporters violents, clous sur la route, tricheries : le deuxième Tour a failli être le dernier.",
+   "recit": "En 1904, le Tour de France n'a qu'un an, et sa deuxième édition tourne au chaos. Des supporters arrêtent des coureurs en pleine nuit et les frappent pour favoriser leur champion. Des clous sont semés sur la route et provoquent des crevaisons. Plusieurs coureurs sont soupçonnés d'avoir pris le train ou de s'être fait tirer par des voitures. À l'arrivée, Maurice Garin, vainqueur en 1903, l'emporte de nouveau. Mais quatre mois plus tard, les quatre premiers du classement et tous les vainqueurs d'étape sont disqualifiés. La victoire revient au cinquième, Henri Cornet, qui avait fini une étape sur deux pneus crevés. À dix-neuf ans, il reste le plus jeune vainqueur du Tour. L'organisateur craint alors que la course ne s'en remette pas. Elle repart pourtant dès 1905.",
+   "annee": "1904",
+   "lieu": "France",
+   "statut": "vrai",
+   "statut_texte": "Disqualifications officielles ; certaines tricheries restent des soupçons.",
+   "article": {
+    "titre": "Tour de France 1904",
+    "url": "https://fr.wikipedia.org/wiki/Tour_de_France_1904"
+   }
+  },
+  {
+   "id": "zarafa",
+   "categorie": "Animaux",
+   "titre": "La girafe qui traversa la France à pied",
+   "accroche": "En 1827, une girafe offerte au roi marche de Marseille à Paris et lance une mode.",
+   "recit": "En 1826, le vice-roi d'Égypte, Méhémet Ali, offre une girafe au roi Charles X. On n'en a pas vu en Europe depuis plus de trois siècles. L'animal traverse la Méditerranée sur un navire dont on a percé le pont pour laisser passer son cou, puis débarque à Marseille. Au printemps 1827, elle part à pied pour Paris : 880 kilomètres en six semaines, escortée par le naturaliste Geoffroy Saint-Hilaire, des gendarmes à cheval et deux vaches qui lui fournissent du lait. Sur la route, les foules se pressent. À Paris, elle attire 600 000 curieux en un seul été, et la mode s'en empare : coiffures, tissus et vaisselle « à la girafe ». Elle vit dix-huit ans au Jardin des plantes. Naturalisée, on peut toujours la voir au muséum de La Rochelle.",
+   "annee": "1827",
+   "lieu": "Marseille, Paris",
+   "statut": "vrai",
+   "statut_texte": "Voyage documenté, girafe conservée à La Rochelle.",
+   "article": {
+    "titre": "Girafe offerte à Charles X par Méhémet Ali",
+    "url": "https://fr.wikipedia.org/wiki/Girafe_offerte_%C3%A0_Charles_X_par_M%C3%A9h%C3%A9met_Ali"
+   }
+  },
+  {
+   "id": "karansebes",
+   "categorie": "Guerres",
+   "titre": "L'armée qui s'est battue contre elle-même",
+   "accroche": "En 1788, l'armée autrichienne aurait perdu une bataille sans croiser l'ennemi.",
+   "recit": "Septembre 1788, guerre entre l'Autriche et l'Empire ottoman. Une nuit, près de Karánsebes, dans l'actuelle Roumanie, des hussards autrichiens partis en éclaireurs tombent sur un campement qui leur vend de l'eau-de-vie. Ils refusent de la partager avec les fantassins arrivés après eux. La dispute dégénère, un coup de feu part, quelqu'un crie que les Turcs arrivent. Dans le noir, les soldats d'une armée qui parle de nombreuses langues ne se comprennent plus, et des officiers qui crient « Halte ! » seraient entendus comme « Allah ! ». Les unités se tirent dessus, puis s'enfuient. Ce récit spectaculaire, avec ses milliers de victimes, n'apparaît pourtant qu'une quarantaine d'années plus tard. Les historiens le jugent très probablement exagéré, voire inventé.",
+   "annee": "1788",
+   "lieu": "Karánsebes, Roumanie",
+   "statut": "legende",
+   "statut_texte": "Légende probable : aucune source de l'époque ne la confirme.",
+   "article": {
+    "titre": "Bataille de Karánsebes",
+    "url": "https://fr.wikipedia.org/wiki/Bataille_de_Kar%C3%A1nsebes"
+   }
+  },
+  {
+   "id": "palais-ideal",
+   "categorie": "Personnages",
+   "titre": "Le palais du facteur Cheval",
+   "accroche": "Un facteur trébuche sur une pierre et passe 33 ans à bâtir un palais de ses mains.",
+   "recit": "En avril 1879, pendant sa tournée dans la Drôme, le facteur Ferdinand Cheval bute sur une pierre à la forme étrange. Elle lui rappelle un rêve oublié : bâtir un palais féerique. Pendant les trente-trois années suivantes, il ramasse des pierres sur sa longue tournée quotidienne, d'abord dans ses poches, puis dans un panier, puis avec une brouette. Le soir, à la lueur d'une lampe à pétrole, il les assemble avec de la chaux et du ciment. Les villageois le prennent pour un original. En 1912, à 76 ans, il achève son Palais idéal : 26 mètres de long, 12 de haut, mêlant temples, grottes et animaux. En 1969, André Malraux le fait classer monument historique, contre l'avis de fonctionnaires qui le trouvaient hideux.",
+   "annee": "1879",
+   "lieu": "Hauterives, Drôme",
+   "statut": "vrai",
+   "statut_texte": "Monument réel, classé en 1969.",
+   "article": {
+    "titre": "Palais idéal",
+    "url": "https://fr.wikipedia.org/wiki/Palais_id%C3%A9al"
+   }
+  },
+  {
+   "id": "joconde",
+   "categorie": "Histoire",
+   "titre": "Le vol de la Joconde",
+   "accroche": "En 1911, un vitrier sort du Louvre avec Mona Lisa sous sa blouse.",
+   "recit": "Le lundi 21 août 1911, jour de fermeture du Louvre, Vincenzo Peruggia, un vitrier italien qui a travaillé au musée, entre en blouse de travail comme les ouvriers. Il décroche la Joconde, retire son cadre et repart avec le tableau caché sous ses vêtements. Personne ne remarque l'absence avant le lendemain. L'enquête s'emballe : le poète Guillaume Apollinaire est emprisonné quelques jours et Pablo Picasso interrogé, à cause d'une autre affaire de statuettes volées. Pendant ce temps, le tableau reste caché dans la chambre de Peruggia, à Paris. Fait étrange, les visiteurs se pressent au Louvre pour contempler l'emplacement vide. En 1913, Peruggia tente de vendre l'œuvre à un marchand de Florence, qui prévient la police. La Joconde revient au Louvre, plus célèbre que jamais.",
+   "annee": "1911",
+   "lieu": "Paris",
+   "statut": "vrai",
+   "statut_texte": "Vol réel, qui a rendu le tableau plus célèbre que jamais.",
+   "article": {
+    "titre": "Vol de La Joconde",
+    "url": "https://fr.wikipedia.org/wiki/Vol_de_La_Joconde"
+   }
+  },
+  {
+   "id": "bal-ardents",
+   "categorie": "Histoire",
+   "titre": "Le bal des ardents",
+   "accroche": "En 1393, une fête costumée à la cour de Charles VI tourne au drame.",
+   "recit": "Le 28 janvier 1393, la cour fête un mariage à Paris. Le jeune roi Charles VI et cinq compagnons veulent surprendre l'assistance : ils se déguisent en hommes sauvages. On coud leurs costumes de lin directement sur eux, puis on les enduit de poix et de touffes d'étoupe pour imiter les poils. Ces costumes sont terriblement inflammables, et les porteurs de torches ont été tenus à l'écart. Mais le frère du roi, Louis d'Orléans, arrive avec un flambeau et s'approche pour voir qui se cache sous les masques. Une étincelle, et quatre danseurs périssent dans les flammes. Le roi est sauvé par la jeune duchesse de Berry, qui le couvre de sa robe. Un autre danseur survit en plongeant dans une cuve. Le roi, déjà fragile, s'enfonce ensuite dans la folie.",
+   "annee": "1393",
+   "lieu": "Paris",
+   "statut": "vrai",
+   "statut_texte": "Rapporté par plusieurs chroniqueurs de l'époque.",
+   "article": {
+    "titre": "Bal des ardents",
+    "url": "https://fr.wikipedia.org/wiki/Bal_des_ardents"
+   }
+  },
+  {
+   "id": "centralia",
+   "categorie": "Lieux",
+   "titre": "La ville qui brûle depuis 1962",
+   "accroche": "Sous une petite ville de Pennsylvanie, une mine de charbon brûle depuis plus de soixante ans.",
+   "recit": "En 1962, à Centralia, en Pennsylvanie, un feu allumé pour nettoyer une décharge se propage, selon l'hypothèse la plus répandue, à une veine de charbon souterraine. Les galeries des anciennes mines lui offrent un labyrinthe sans fin. Les tentatives pour l'éteindre échouent les unes après les autres. Pendant des années, des fumées toxiques sortent du sol, l'asphalte se fissure, la terre devient chaude sous les pieds. En 1981, un garçon manque d'être englouti par un trou qui s'ouvre dans un jardin. Les autorités finissent par racheter les maisons et évacuer la ville. De près de mille habitants en 1981, Centralia passe à une poignée aujourd'hui. Le feu, lui, couve toujours, et pourrait continuer pendant des siècles selon certaines estimations.",
+   "annee": "1962",
+   "lieu": "Pennsylvanie, États-Unis",
+   "statut": "vrai",
+   "statut_texte": "Incendie réel ; son point de départ exact reste débattu.",
+   "article": {
+    "titre": "Centralia (Pennsylvanie)",
+    "url": "https://fr.wikipedia.org/wiki/Centralia_(Pennsylvanie)"
+   }
+  },
+  {
+   "id": "paul-poulpe",
+   "categorie": "Animaux",
+   "titre": "Paul, le poulpe devin",
+   "accroche": "Un poulpe allemand a prédit tous les matchs de l'Allemagne au Mondial 2010.",
+   "recit": "À l'aquarium d'Oberhausen, en Allemagne, les soigneurs inventent un petit rituel avant chaque match de l'équipe nationale : ils présentent au poulpe Paul deux boîtes transparentes contenant chacune une moule, l'une marquée du drapeau allemand, l'autre de celui de l'adversaire. La boîte qu'il ouvre désigne le vainqueur. Pendant la Coupe du monde 2010, Paul ne se trompe pas une seule fois, y compris en annonçant la défaite de l'Allemagne face à l'Espagne en demi-finale, puis la victoire espagnole en finale. Des supporters allemands furieux proposent des recettes pour le cuisiner, tandis que des responsables espagnols parlent, en plaisantant, de le protéger. Paul meurt quelques mois plus tard, en octobre 2010, devenu une star mondiale. Le hasard, bien sûr, mais quel hasard.",
+   "annee": "2010",
+   "lieu": "Oberhausen, Allemagne",
+   "statut": "vrai",
+   "statut_texte": "Faits réels ; les « prédictions » relèvent évidemment du hasard.",
+   "article": {
+    "titre": "Paul le poulpe",
+    "url": "https://fr.wikipedia.org/wiki/Paul_le_poulpe"
+   }
+  },
+  {
+   "id": "chauves-souris",
+   "categorie": "Guerres",
+   "titre": "Les chauves-souris incendiaires",
+   "accroche": "L'armée américaine a sérieusement préparé une bombe remplie de chauves-souris.",
+   "recit": "Après Pearl Harbor, un dentiste de Pennsylvanie, Lytle Adams, soumet une idée à la Maison-Blanche : équiper des milliers de chauves-souris de minuscules bombes incendiaires et les larguer au-dessus du Japon, où beaucoup de maisons sont en bois et en papier. À l'aube, les animaux iraient se cacher sous les toits, et les charges s'enflammeraient à retardement. L'armée prend l'idée au sérieux et lance des essais au Nouveau-Mexique. Le 15 mai 1943, des chauves-souris équipées s'échappent par accident et mettent le feu à la base d'essai, jusqu'à se nicher sous un réservoir de carburant. Le projet passe à la Marine et coûte environ deux millions de dollars. Il est finalement abandonné : la bombe atomique avance plus vite.",
+   "annee": "1943",
+   "lieu": "Nouveau-Mexique",
+   "statut": "vrai",
+   "statut_texte": "Programme militaire réel et documenté.",
+   "article": {
+    "titre": "Bombe à chauves-souris",
+    "url": "https://fr.wikipedia.org/wiki/Bombe_%C3%A0_chauves-souris"
+   }
+  },
+  {
+   "id": "dexter",
+   "categorie": "Personnages",
+   "titre": "Timothy Dexter, chanceux ou génie ?",
+   "accroche": "Ses rivaux lui donnaient les pires conseils. Chaque fois, il faisait fortune.",
+   "recit": "Timothy Dexter, né pauvre dans le Massachusetts en 1747, épouse une riche veuve et rachète à bas prix des billets émis pendant la guerre d'indépendance, que tout le monde croit sans valeur. Le gouvernement finit par les rembourser : il est riche. Ses rivaux, qui le trouvent ridicule, lui soufflent alors des idées absurdes. Envoyer des bassinoires, ces poêles à chauffer les lits, aux Antilles tropicales ? Elles y sont revendues comme louches pour la mélasse. Expédier du charbon à Newcastle, capitale anglaise du charbon ? La cargaison arrive pendant une grève des mineurs. Dexter écrit ensuite un livre sans aucune ponctuation. Face aux critiques, la deuxième édition ajoute une page entière de points et de virgules, que le lecteur peut répartir à sa guise.",
+   "annee": "Années 1790",
+   "lieu": "Newburyport, États-Unis",
+   "statut": "embelli",
+   "statut_texte": "Dexter a lui-même enjolivé ses exploits ; une partie relève du folklore.",
+   "article": {
+    "titre": "Timothy Dexter",
+    "url": "https://fr.wikipedia.org/wiki/Timothy_Dexter"
+   }
+  },
+  {
+   "id": "canard",
+   "categorie": "Canulars",
+   "titre": "Le canard qui digérait",
+   "accroche": "En 1739, un automate mange du grain et le rejette digéré. Le public est fasciné.",
+   "recit": "En 1739, l'inventeur grenoblois Jacques de Vaucanson présente à Paris un canard mécanique. Il remue la tête, bat des ailes, cancane, boit de l'eau et picore le grain qu'on lui tend. Puis, quelques instants plus tard, il le rejette sous forme d'excréments. Le public est stupéfait : une machine semble capable de digérer comme un être vivant. Le canard rend Vaucanson célèbre dans toute l'Europe et devient un symbole de l'esprit des Lumières. La vérité est moins magique : la digestion était truquée, et les excréments préparés à l'avance dans un compartiment caché. En 1805, l'écrivain Goethe découvre un automate délabré et déplumé, qui mange encore mais ne digère plus. Le canard disparaît ensuite, sans que l'on sache vraiment comment.",
+   "annee": "1739",
+   "lieu": "Paris",
+   "statut": "vrai",
+   "statut_texte": "Automate réel, mais digestion truquée.",
+   "article": {
+    "titre": "Canard de Vaucanson",
+    "url": "https://fr.wikipedia.org/wiki/Canard_de_Vaucanson"
+   }
+  },
+  {
+   "id": "einstein",
+   "categorie": "Histoire",
+   "titre": "Le cerveau baladeur d'Einstein",
+   "accroche": "À la mort d'Einstein, un médecin garde son cerveau, pendant plus de quarante ans.",
+   "recit": "Albert Einstein meurt à Princeton en avril 1955. Il avait demandé à être incinéré, pour que personne ne vienne idolâtrer ses restes. Mais le pathologiste chargé de l'autopsie, Thomas Harvey, retire son cerveau sans autorisation claire, le pèse, le photographie et le découpe en fragments conservés dans des bocaux. La famille finit par accepter, à condition que ce soit pour la science. Harvey perd ensuite son poste et emporte le cerveau avec lui, de déménagement en déménagement. Il envoie des morceaux à des chercheurs, qui croient y repérer des particularités. Les conclusions restent fragiles : difficile de juger un génie sur un seul cerveau. Ce n'est qu'à la fin des années 1990 que Harvey rend ce qu'il en reste à l'hôpital de Princeton.",
+   "annee": "1955",
+   "lieu": "Princeton, États-Unis",
+   "statut": "vrai",
+   "statut_texte": "Faits établis ; les études sur le cerveau restent discutées.",
+   "article": {
+    "titre": "Cerveau d'Albert Einstein",
+    "url": "https://fr.wikipedia.org/wiki/Cerveau_d'Albert_Einstein"
+   }
+  },
+  {
+   "id": "greyfriars-bobby",
+   "categorie": "Animaux",
+   "titre": "Greyfriars Bobby, le chien fidèle",
+   "accroche": "À Édimbourg, un petit terrier aurait veillé quatorze ans sur la tombe de son maître.",
+   "recit": "Selon la tradition, Bobby, un skye-terrier, appartenait à John Gray, un policier d'Édimbourg. Quand Gray meurt de la tuberculose, en 1858, le chien suit le cortège jusqu'au cimetière de Greyfriars et refuse ensuite de quitter la tombe. Les habitants le nourrissent, le gardien finit par l'accepter, et il passe ses nuits près de son maître pendant quatorze ans. En 1867, quand une loi menace les chiens sans maître, le maire de la ville paie lui-même sa licence. Bobby meurt en 1872. Une statue le représente toujours près du cimetière, et les passants frottent son museau pour la chance. Plusieurs historiens pensent toutefois que l'histoire a été enjolivée, et peut-être même qu'un second chien a pris la place du premier.",
+   "annee": "1858",
+   "lieu": "Édimbourg",
+   "statut": "embelli",
+   "statut_texte": "Le chien a existé, mais son histoire a sans doute été embellie.",
+   "article": {
+    "titre": "Greyfriars Bobby",
+    "url": "https://fr.wikipedia.org/wiki/Greyfriars_Bobby"
+   }
+  },
+  {
+   "id": "jessop",
+   "categorie": "Personnages",
+   "titre": "Violet Jessop, l'insubmersible",
+   "accroche": "Elle a vécu l'accident de l'Olympic, le naufrage du Titanic et celui du Britannic.",
+   "recit": "Violet Jessop, née en Argentine en 1887, travaille comme hôtesse sur les paquebots de la compagnie White Star Line. En 1911, elle est à bord de l'Olympic quand il heurte un navire de guerre britannique. Le paquebot est endommagé mais regagne le port. L'année suivante, elle embarque sur son jumeau, le Titanic, pour son voyage inaugural, et survit au naufrage du 15 avril 1912 dans un canot de sauvetage. Pendant la Première Guerre mondiale, elle devient infirmière sur le troisième navire de la série, le Britannic, transformé en navire-hôpital. En novembre 1916, il coule en mer Égée. Cette fois, avant d'évacuer, elle pense à prendre sa brosse à dents : c'est ce qui lui avait le plus manqué après le Titanic. Elle naviguera encore une trentaine d'années.",
+   "annee": "1912",
+   "lieu": "Atlantique, mer Égée",
+   "statut": "vrai",
+   "statut_texte": "Parcours attesté ; elle a publié ses mémoires.",
+   "article": {
+    "titre": "Violet Constance Jessop",
+    "url": "https://fr.wikipedia.org/wiki/Violet_Constance_Jessop"
+   }
+  },
+  {
+   "id": "jo-arts",
+   "categorie": "Sport",
+   "titre": "Les médailles olympiques de peinture",
+   "accroche": "De 1912 à 1948, les Jeux olympiques ont récompensé des poètes, des peintres et des architectes.",
+   "recit": "Pierre de Coubertin, le fondateur des Jeux olympiques modernes, rêvait d'unir le corps et l'esprit. De 1912 à 1948, il obtient que les Jeux décernent aussi des médailles d'art, dans cinq disciplines : architecture, littérature, musique, peinture et sculpture. Une seule condition : les œuvres doivent avoir un lien avec le sport. En 1912, à Stockholm, une Ode au sport remporte la médaille d'or de littérature. Ses deux auteurs, inconnus de tous, cachent en réalité un seul homme : Coubertin lui-même, sous deux pseudonymes. Ces concours disparaissent après 1948, notamment parce que les artistes étaient des professionnels alors que les athlètes devaient rester amateurs. Ces médailles ne figurent plus dans les tableaux officiels, mais leurs lauréats restent des champions olympiques d'un genre unique.",
+   "annee": "1912",
+   "lieu": "Stockholm",
+   "statut": "vrai",
+   "statut_texte": "Épreuves officielles de 1912 à 1948.",
+   "article": {
+    "titre": "Compétitions artistiques aux Jeux olympiques",
+    "url": "https://fr.wikipedia.org/wiki/Comp%C3%A9titions_artistiques_aux_Jeux_olympiques"
+   }
+  },
+  {
+   "id": "hanno",
+   "categorie": "Animaux",
+   "titre": "Hanno, l'éléphant du pape",
+   "accroche": "Un éléphant blanc offert au pape devint la star de Rome, avant un remède fatal.",
+   "recit": "En 1514, le roi Manuel Ier de Portugal veut impressionner le nouveau pape, Léon X. Il lui envoie un cortège somptueux, dont la pièce maîtresse est un jeune éléphant blanc venu d'Inde, baptisé Hanno. Dans les rues de Rome, la foule se presse. Devant le pape, l'éléphant s'agenouille pour le saluer, puis arrose joyeusement l'assistance avec sa trompe. Léon X l'adore : il l'installe dans un bâtiment près du Vatican et le fait participer aux processions. Le peintre Raphaël le dessine. Mais en 1516, Hanno tombe malade. Ses médecins lui administrent un laxatif enrichi de poudre d'or, remède réputé précieux. L'éléphant meurt peu après. Le pape, très affecté, lui fait rédiger une épitaphe et commande une fresque en sa mémoire, aujourd'hui disparue.",
+   "annee": "1514",
+   "lieu": "Rome",
+   "statut": "vrai",
+   "statut_texte": "Rapporté par les chroniqueurs de la cour pontificale.",
+   "article": {
+    "titre": "Hanno (éléphant)",
+    "url": "https://fr.wikipedia.org/wiki/Hanno_(%C3%A9l%C3%A9phant)"
+   }
+  },
+  {
+   "id": "chaton-acoustique",
+   "categorie": "Guerres",
+   "titre": "Le chat espion de la CIA",
+   "accroche": "Dans les années 1960, la CIA a transformé un chat en micro ambulant.",
+   "recit": "En pleine guerre froide, la CIA cherche de nouveaux moyens d'espionner les diplomates soviétiques. Une idée naît : un chat se promène partout sans attirer l'attention. Des techniciens implantent donc dans un chat une batterie, un micro et une antenne qui longe sa colonne vertébrale jusqu'à la queue. Reste à le dresser, ce qui s'avère compliqué : un chat a faim, s'ennuie et n'en fait qu'à sa tête. Selon un ancien cadre de l'agence, le projet aurait coûté environ vingt millions de dollars. Pour sa première mission, dans un parc proche de l'ambassade soviétique à Washington, le chat aurait été écrasé par un taxi quelques instants après avoir été lâché. D'autres témoins contestent cette fin. Seule certitude : le projet est abandonné en 1967.",
+   "annee": "Années 1960",
+   "lieu": "Washington",
+   "statut": "embelli",
+   "statut_texte": "Projet réel, déclassifié en 2001 ; sa fin tragique est contestée.",
+   "article": {
+    "titre": "Opération Chaton acoustique",
+    "url": "https://fr.wikipedia.org/wiki/Op%C3%A9ration_Chaton_acoustique"
+   }
+  },
+  {
+   "id": "tounens",
+   "categorie": "Personnages",
+   "titre": "Orélie-Antoine Ier, roi de Patagonie",
+   "accroche": "Un avoué de Dordogne part en Amérique du Sud et se proclame roi.",
+   "recit": "Antoine de Tounens, avoué à Périgueux, rêve d'aventure. En 1858, il s'embarque pour le Chili et gagne la confiance de chefs mapuches, qui résistent alors à l'expansion du Chili et de l'Argentine. En novembre 1860, il proclame la fondation du royaume d'Araucanie et de Patagonie, dont il devient le roi sous le nom d'Orélie-Antoine Ier. Il rédige une constitution et se dote d'un drapeau. Le Chili n'apprécie pas : en 1862, il est arrêté, jugé fou et renvoyé en France. Loin d'abandonner, il retente l'aventure à plusieurs reprises, sans succès, et fait même frapper une monnaie de son royaume. Il meurt pauvre en 1878, dans son Périgord natal. Des prétendants revendiquent encore aujourd'hui sa couronne.",
+   "annee": "1860",
+   "lieu": "Araucanie, Chili",
+   "statut": "vrai",
+   "statut_texte": "Personnage réel ; son royaume n'a jamais été reconnu.",
+   "article": {
+    "titre": "Antoine de Tounens",
+    "url": "https://fr.wikipedia.org/wiki/Antoine_de_Tounens"
+   }
+  },
+  {
+   "id": "sokal",
+   "categorie": "Canulars",
+   "titre": "Le canular Sokal",
+   "accroche": "Un physicien publie un article volontairement absurde dans une revue savante. Il passe.",
+   "recit": "En 1996, Alan Sokal, physicien à l'université de New York, agacé par certains discours universitaires, tente une expérience. Il rédige un article truffé de jargon et de non-sens, mais qui flatte les idées de Social Text, une revue réputée d'études culturelles. Le titre promet, en substance, une herméneutique transformative de la gravitation quantique. Il y affirme notamment que la réalité physique est une construction sociale. L'article est publié sans avoir été relu par un spécialiste de physique. Le jour de sa parution, Sokal révèle la supercherie dans un autre magazine. Le scandale est immense et lance un long débat sur la rigueur, la science et les sciences humaines. Il en tirera ensuite un livre, écrit avec le physicien belge Jean Bricmont.",
+   "annee": "1996",
+   "lieu": "New York",
+   "statut": "vrai",
+   "statut_texte": "Canular avéré, révélé par son auteur.",
+   "article": {
+    "titre": "Affaire Sokal",
+    "url": "https://fr.wikipedia.org/wiki/Affaire_Sokal"
+   }
+  },
+  {
+   "id": "proces-animaux",
+   "categorie": "Histoire",
+   "titre": "Quand on jugeait les animaux",
+   "accroche": "Au Moyen Âge, des cochons étaient jugés, et des insectes excommuniés.",
+   "recit": "Au Moyen Âge et bien au-delà, la justice européenne poursuit aussi les bêtes. Un porc qui blesse un enfant peut être arrêté, emprisonné, jugé, puis exécuté en public. En 1386, à Falaise, en Normandie, une truie accusée d'avoir tué un enfant est condamnée et pendue, habillée d'une veste et de gants comme un être humain. Les insectes ne sont pas épargnés. Quand des charançons, des sauterelles ou des hannetons ravagent les récoltes, ce sont les tribunaux d'Église qui s'en chargent. On leur nomme parfois un avocat, on les cite à comparaître, et faute de les voir venir, on les excommunie. Ces procès nous semblent absurdes, mais ils racontent une époque qui voulait mettre de l'ordre dans le monde, jusque chez les bêtes.",
+   "annee": "1386",
+   "lieu": "Europe",
+   "statut": "vrai",
+   "statut_texte": "Procès attestés par les archives judiciaires.",
+   "article": {
+    "titre": "Procès d'animaux",
+    "url": "https://fr.wikipedia.org/wiki/Proc%C3%A8s_d'animaux"
+   }
+  },
+  {
+   "id": "darvaza",
+   "categorie": "Lieux",
+   "titre": "La porte de l'Enfer",
+   "accroche": "Dans le désert du Turkménistan, un cratère de gaz brûle sans interruption depuis des décennies.",
+   "recit": "Au milieu du désert du Karakoum, au Turkménistan, s'ouvre un cratère d'environ 70 mètres de large, rempli de flammes jour et nuit. On l'appelle la porte de l'Enfer. Selon le récit le plus répandu, des géologues soviétiques y forent un puits au début des années 1970, à la recherche de gaz naturel. Le sol s'effondre sous leur installation. Pour éviter que le gaz ne se répande, ils décident d'y mettre le feu, en pensant qu'il s'éteindra en quelques jours. Il brûle toujours. D'autres témoignages locaux situent toutefois l'effondrement et l'allumage à d'autres dates. Le site, au milieu de nulle part, est devenu une attraction touristique, et les autorités du pays ont plusieurs fois évoqué l'idée de l'éteindre.",
+   "annee": "1971",
+   "lieu": "Turkménistan",
+   "statut": "dispute",
+   "statut_texte": "Le cratère est bien réel ; la date et les circonstances de son origine sont discutées.",
+   "article": {
+    "titre": "Darvaza",
+    "url": "https://fr.wikipedia.org/wiki/Darvaza"
+   }
+  },
+  {
+   "id": "rhinoceros",
+   "categorie": "Animaux",
+   "titre": "Le rhinocéros que Dürer n'a jamais vu",
+   "accroche": "La gravure de rhinocéros la plus célèbre a été faite sans voir l'animal.",
+   "recit": "En 1515, un rhinocéros indien débarque à Lisbonne, cadeau d'un sultan indien aux Portugais. Personne en Europe n'en a vu de vivant depuis l'Antiquité. Le roi Manuel Ier organise même un combat contre un éléphant, qui prend la fuite. L'animal est ensuite envoyé au pape, mais le navire fait naufrage au large de l'Italie et le rhinocéros se noie. À Nuremberg, le grand graveur Albrecht Dürer ne dispose que d'une lettre et d'un croquis sommaire. Il imagine le reste : une carapace faite de plaques comme une armure, des écailles sur les pattes et une petite corne supplémentaire sur le dos. Sa gravure connaît un succès immense : pendant près de trois siècles, l'Europe a cru que les rhinocéros ressemblaient vraiment à ça.",
+   "annee": "1515",
+   "lieu": "Lisbonne, Nuremberg",
+   "statut": "vrai",
+   "statut_texte": "Gravure et voyage du rhinocéros documentés.",
+   "article": {
+    "titre": "Rhinocéros de Dürer",
+    "url": "https://fr.wikipedia.org/wiki/Rhinoc%C3%A9ros_de_D%C3%BCrer"
+   }
+  },
+  {
+   "id": "carton-de-wiart",
+   "categorie": "Personnages",
+   "titre": "L'officier increvable",
+   "accroche": "Un œil, une main, huit blessures et deux accidents d'avion : rien ne l'arrêtait.",
+   "recit": "Adrian Carton de Wiart, né à Bruxelles en 1880, quitte ses études à Oxford pour combattre en Afrique du Sud. C'est le début d'une carrière invraisemblable. En 1914, en Somalie, il perd un œil. En 1915, en Belgique, sa main gauche est déchiquetée : selon ses mémoires, il arrache lui-même ses doigts quand un médecin refuse de les amputer. Au total, il est blessé huit fois et reçoit la plus haute décoration militaire britannique. Pendant la Seconde Guerre mondiale, il survit à deux accidents d'avion. Fait prisonnier en Italie, il tente de s'évader à plus de soixante ans. Dans ses mémoires, il glisse une phrase restée célèbre : franchement, la guerre lui avait plu.",
+   "annee": "1915",
+   "lieu": "Somalie, Belgique, Italie",
+   "statut": "vrai",
+   "statut_texte": "Faits attestés ; l'épisode des doigts vient de ses mémoires.",
+   "article": {
+    "titre": "Adrian Carton de Wiart",
+    "url": "https://fr.wikipedia.org/wiki/Adrian_Carton_de_Wiart"
+   }
+  },
+  {
+   "id": "mangetout",
+   "categorie": "Personnages",
+   "titre": "Monsieur Mangetout",
+   "accroche": "Un Isérois a mangé un avion entier, morceau par morceau, en deux ans.",
+   "recit": "Michel Lotito, né en Isère en 1950, commence enfant à avaler des objets que personne ne songerait à manger. Il en fait un spectacle sous le nom de Monsieur Mangetout. Selon les médecins, son estomac possède une paroi exceptionnellement épaisse et des sucs digestifs très puissants. Avant chaque séance, il boit de l'huile de paraffine et beaucoup d'eau, puis avale des morceaux découpés d'avance. De 1978 à 1980, il mange un avion de tourisme, un Cessna 150, pièce par pièce. Au fil de sa carrière, il ingère aussi des vélos, des caddies, des téléviseurs et même un cercueil. Ironie du sort, il digérait mal les bananes et les œufs durs. Évidemment, à ne jamais essayer.",
+   "annee": "1978",
+   "lieu": "Grenoble",
+   "statut": "vrai",
+   "statut_texte": "Performances constatées et homologuées par le Livre Guinness des records.",
+   "article": {
+    "titre": "Monsieur Mangetout",
+    "url": "https://fr.wikipedia.org/wiki/Monsieur_Mangetout"
+   }
+  },
+  {
+   "id": "castor-pollux",
+   "categorie": "Animaux",
+   "titre": "Castor et Pollux, au menu du siège",
+   "accroche": "En 1870, affamés par le siège, les Parisiens mangent les éléphants du zoo.",
+   "recit": "En septembre 1870, l'armée prussienne encercle Paris. Le siège dure plus de quatre mois et la nourriture vient à manquer. Les Parisiens mangent d'abord les chevaux, puis les chiens, les chats et les rats. Les animaux du zoo deviennent à leur tour une réserve de viande. Deux éléphants très populaires, Castor et Pollux, sur le dos desquels les enfants se promenaient avant la guerre, sont abattus fin décembre. Un boucher du boulevard Haussmann les achète et revend la trompe comme un morceau de luxe. Le 25 décembre, un grand restaurant inscrit même un « consommé d'éléphant » à son menu, à côté du chameau rôti et du civet de kangourou. Les singes, eux, sont épargnés : on les jugeait trop proches des humains.",
+   "annee": "1870",
+   "lieu": "Paris",
+   "statut": "vrai",
+   "statut_texte": "Faits rapportés par la presse et les menus de l'époque.",
+   "article": {
+    "titre": "Castor et Pollux (éléphants)",
+    "url": "https://fr.wikipedia.org/wiki/Castor_et_Pollux_(%C3%A9l%C3%A9phants)"
+   }
+  },
+  {
+   "id": "tarrare",
+   "categorie": "Personnages",
+   "titre": "Tarrare, l'appétit sans fin",
+   "accroche": "Sous la Révolution, un homme à l'appétit insatiable devient messager secret de l'armée.",
+   "recit": "Né vers 1772 près de Lyon, Tarrare a toujours faim, une faim sans limite. Chassé par ses parents qui ne peuvent plus le nourrir, il devient phénomène de foire et avale devant le public des bouchons, des cailloux et des pommes entières. Engagé dans l'armée révolutionnaire, il ne se contente pas des rations et intrigue les médecins militaires, qui le soumettent à des expériences : il engloutit en une séance un repas prévu pour quinze personnes. L'armée imagine alors de l'utiliser comme messager secret : il avalerait une petite boîte contenant un message et la restituerait une fois les lignes ennemies franchies. Lors de sa première mission, il est capturé par les Prussiens, battu, puis relâché. Il meurt jeune, vers 1798, sans que les médecins aient percé son mystère.",
+   "annee": "Années 1790",
+   "lieu": "France",
+   "statut": "vrai",
+   "statut_texte": "Cas décrit par des médecins militaires de l'époque.",
+   "article": {
+    "titre": "Tarrare",
+    "url": "https://fr.wikipedia.org/wiki/Tarrare"
+   }
+  },
+  {
+   "id": "verre",
+   "categorie": "Histoire",
+   "titre": "Le roi qui se croyait en verre",
+   "accroche": "Charles VI pensait que son corps allait se briser au moindre choc.",
+   "recit": "Charles VI, roi de France depuis 1380, connaît ses premières crises de folie en 1392. Parmi ses délires, l'un est resté célèbre : par moments, il est persuadé d'être fait de verre. Il refuse alors qu'on le touche, de peur de se briser, et porte des vêtements renforcés pour se protéger des chocs. Il n'est pas le seul. Les médecins de la fin du Moyen Âge et de la Renaissance décrivent d'autres patients atteints de cette « illusion de verre », qui craignent de voler en éclats au moindre contact. L'écrivain espagnol Cervantès en fait même le sujet d'une de ses nouvelles, Le Licencié de verre. Le trouble devient rare après le XVIIe siècle, et les historiens se demandent encore ce qu'il révélait des angoisses de l'époque.",
+   "annee": "1392",
+   "lieu": "Paris",
+   "statut": "vrai",
+   "statut_texte": "Rapporté par les chroniqueurs ; un diagnostic précis reste impossible.",
+   "article": {
+    "titre": "Illusion de verre",
+    "url": "https://fr.wikipedia.org/wiki/Illusion_de_verre"
+   }
+  }
+ ]
+}
